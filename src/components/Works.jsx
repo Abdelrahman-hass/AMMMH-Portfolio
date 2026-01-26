@@ -25,30 +25,32 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[520px] flex flex-col"
       >
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-[220px]">
           <img
             src={image}
             alt="project_image"
             className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]"
-            >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
+          {source_code_link && (
+            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]"
+              >
+                <img
+                  src={github}
+                  alt="source code"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 flex-1">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
@@ -62,9 +64,9 @@ const ProjectCard = ({
         </div>
 
         {live_project_link && (
-          <a href={live_project_link} target="_blank" rel="noopener noreferrer">
+          <a href={live_project_link} target="_blank" rel="noopener noreferrer" className="mt-auto">
             <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
-              Live Project
+              View Project
             </button>
           </a>
         )}

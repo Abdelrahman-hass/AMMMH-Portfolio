@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 const CertificationCard = ({ title, icon, type, date, points, credential }) => (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
     <div>
-      <div className="relative w-full h-[50px] mb-4">
+      <div className="relative w-full h-[70px] mb-4">
         <img
           src={icon}
           alt={title}
@@ -42,7 +42,7 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => (
         rel="noopener noreferrer"
         className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
       >
-        View Credential
+        View the Certificate
       </a>
     </div>
   </div>
@@ -142,7 +142,7 @@ const Extracurricular = () => {
         </Swiper>
       </motion.div>
 
-      <style jsx global>{`
+      <style>{`
         .mySwiper {
           width: 100%;
           padding-top: 50px;

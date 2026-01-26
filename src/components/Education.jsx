@@ -1,9 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { Suspense, useMemo, useRef, useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -12,44 +14,105 @@ import { education } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const EducationCard = ({ education }) => {
-  return (
-    <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={education.date}
-      iconStyle={{ background: education.iconBg }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={education.icon}
-            alt={education.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          />
-        </div>
-      }
-    >
-      <div>
-        <h3 className="text-white text-[24px] font-bold">{education.title}</h3>
-        <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
-          {education.company_name}
-        </p>
-      </div>
+const AMMMHLogo = () => {
+  const { scene } = useGLTF("/models/AMMMh+logo+3d+model.glb");
+  const logoRef = useRef(null);
+  const clonedScene = useMemo(() => scene.clone(true), [scene]);
 
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {education.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
+  useFrame((_, delta) => {
+    if (logoRef.current) {
+      logoRef.current.rotation.y += delta * 0.4;
+    }
+  });
+
+  return <primitive ref={logoRef} object={clonedScene} scale={2.2} />;
+};
+
+const AMMMHLogoCanvas = ({ className }) => {
+  return (
+    <div className={`pointer-events-none ${className}`}>
+      <div className="w-[240px] h-[240px] md:w-[360px] md:h-[360px] opacity-85">
+        <Canvas camera={{ position: [0, 0, 7], fov: 42 }}>
+          <ambientLight intensity={0.9} />
+          <directionalLight position={[4, 6, 4]} intensity={1.1} />
+          <Suspense fallback={null}>
+            <AMMMHLogo />
+          </Suspense>
+        </Canvas>
+      </div>
+    </div>
+  );
+};
+
+const EducationCard = ({ education, index }) => {
+  const isLeft = index % 2 === 0;
+  return (
+    <div className="relative">
+      <VerticalTimelineElement
+        position={isLeft ? "left" : "right"}
+        contentStyle={{
+          background: "#1d1836",
+          color: "#fff",
+        }}
+        contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+        date={education.date}
+        iconStyle={{
+          background: education.iconBg,
+          width: "60px",
+          height: "60px",
+          borderRadius: "50%",
+          boxShadow: "0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)",
+        }}
+        icon={
+          <div className="flex justify-center items-center w-full h-full">
+            <img
+              src={education.icon}
+              alt={education.company_name}
+              className="w-[60%] h-[60%] object-contain"
+            />
+          </div>
+        }
+      >
+        <div>
+          <h3 className="text-white text-[24px] font-bold">{education.title}</h3>
+          <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
+            {education.company_name}
+          </p>
+        </div>
+
+        <ul className="mt-5 list-disc ml-5 space-y-2">
+          {education.points.map((point, index) => (
+            <li
+              key={`experience-point-${index}`}
+              className="text-white-100 text-[14px] pl-1 tracking-wider"
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+
+        {education.certificatesUrl && (
+          <div className="mt-6">
+            <a
+              href={education.certificatesUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center px-5 py-2 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-md shadow-[0_5px_0_0_rgba(0,0,0,0.6)] transition-all duration-100 ease-in-out hover:shadow-[0_3px_0_0_rgba(0,0,0,0.6)] hover:translate-y-[2px] active:translate-y-1 active:shadow-none select-none"
+            >
+              View Certificates
+            </a>
+          </div>
+        )}
+      </VerticalTimelineElement>
+
+      <AMMMHLogoCanvas
+        className={`hidden md:flex absolute top-[56%] -translate-y-1/2 ${
+          isLeft
+            ? "left-[80%] -translate-x-1/2"
+            : "left-[20%] -translate-x-1/2"
+        }`}
+      />
+    </div>
   );
 };
 
@@ -91,7 +154,7 @@ const Education = () => {
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {education.map((education, index) => (
-            <EducationCard key={`experience-${index}`} education={education} />
+            <EducationCard key={`experience-${index}`} education={education} index={index} />
           ))}
         </VerticalTimeline>
       </div>

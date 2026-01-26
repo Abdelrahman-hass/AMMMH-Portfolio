@@ -1,80 +1,46 @@
-import React, { useState, useCallback, useMemo, useTransition, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { FaGlobe, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { styles } from "../styles";
-import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant, fadeIn } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 
-const ExperienceCard = React.memo(({ experience, isActive, onClick, index }) => {
-  return (
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.1, 0.5)}
-      className={`flex items-center p-4 rounded-lg cursor-pointer transition-all duration-300 ${
-        isActive ? "bg-tertiary" : "bg-primary"
-      }`}
-      onClick={onClick}
-      onKeyDown={(e) => e.key === 'Enter' && onClick()}
-      role="button"
-      tabIndex={0}
-      aria-selected={isActive}
-      aria-label={`${experience.title} at ${experience.company_name}`}
-    >
-      <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden mr-4">
-        <img
-          src={experience.icon}
-          alt={experience.company_name}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div>
-        <h3 className="text-white text-[18px] font-bold">{experience.title}</h3>
-        <p className="text-secondary text-[14px]">{experience.company_name}</p>
-      </div>
-    </motion.div>
-  );
-});
+const schoolDescription =
+  "Al Ekhaa Private Schools is one of the leading private educational institutions in Jeddah, recognized for academic excellence, early adoption of modern and international education systems, and graduating students who achieve outstanding results in national assessments and professional fields.";
 
-const ExperienceDetails = React.memo(({ experience }) => {
-  return (
-    <motion.div
-      key={experience.company_name}
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
-      className="bg-tertiary p-8 rounded-lg"
-    >
-      <h3 className="text-white text-[24px] font-bold mb-4">{experience.title}</h3>
-      <p className="text-secondary text-[16px] mb-4">{experience.company_name}</p>
-      <p className="text-white-100 text-[14px] mb-4">{experience.date}</p>
-      <ul className="list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-});
+const platformLinks = [
+  {
+    label: "Website",
+    href: "https://alekhaaschools.com/",
+    Icon: FaGlobe,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/alekhaaschools?igsh=MW80Y3g5ejN0eXlmZw==",
+    Icon: FaInstagram,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/EKHAASCHOOLS",
+    Icon: FaFacebook,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@ekhaaele",
+    Icon: FaYoutube,
+  },
+  {
+    label: "X",
+    href: "https://x.com/alekhaa_schools",
+    Icon: FaXTwitter,
+  },
+];
 
 const Experience = () => {
-  const [activeExperience, setActiveExperience] = useState(0);
-  const [isPending, startTransition] = useTransition();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const mainControls = useAnimation();
-
-  const handleExperienceClick = useCallback((index) => {
-    startTransition(() => {
-      setActiveExperience(index);
-    });
-  }, []);
-
-  const currentExperience = useMemo(() => experiences[activeExperience], [activeExperience]);
 
   useEffect(() => {
     if (isInView) {
@@ -92,9 +58,7 @@ const Experience = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <p className={`${styles.sectionSubText} text-center`}>
-          My Professional Journey
-        </p>
+        <p className={`${styles.sectionSubText} text-center`}>Al Ekhaa Private Schools</p>
       </motion.div>
 
       <motion.div
@@ -105,31 +69,46 @@ const Experience = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience
-        </h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>About My School</h2>
       </motion.div>
 
-      <div className="mt-20 flex flex-col md:flex-row gap-10">
-        <div className="md:w-1/3">
-          <div className="flex flex-col space-y-4">
-            {experiences.map((experience, index) => (
-              <ExperienceCard
-                key={`experience-${index}`}
-                experience={experience}
-                isActive={index === activeExperience}
-                onClick={() => handleExperienceClick(index)}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="md:w-2/3">
-          <AnimatePresence mode="wait" initial={false}>
-            {!isPending && (
-              <ExperienceDetails key={currentExperience.company_name} experience={currentExperience} />
-            )}
-          </AnimatePresence>
+      <div className="mt-16 flex justify-center">
+        <div className="w-full max-w-5xl flex flex-col lg:flex-row items-stretch justify-center gap-8">
+          <motion.div
+            variants={fadeIn("left", "spring", 0.1, 0.6)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex-1 bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)]"
+          >
+            <h3 className="text-white text-[24px] font-bold">Al Ekhaa Private Schools (Jeddah)</h3>
+            <p className="text-secondary text-[16px] mt-2">Grade 10 High School</p>
+            <p className="text-white-100 text-[15px] mt-6 leading-7">{schoolDescription}</p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeIn("right", "spring", 0.2, 0.6)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="w-full lg:w-[320px] bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)]"
+          >
+            <h3 className="text-white text-[20px] font-bold text-center">Official Platforms</h3>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-5">
+              {platformLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="w-14 h-14 rounded-xl bg-primary border border-white/10 flex items-center justify-center text-secondary hover:text-white hover:border-purple-400/60 transition-all duration-300 hover:shadow-[0_0_20px_rgba(145,94,255,0.35)]"
+                >
+                  <Icon className="text-[26px]" />
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

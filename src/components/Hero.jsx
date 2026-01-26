@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import { useState, useEffect } from "react";
 
 const TypewriterText = ({ texts }) => {
   const [displayText, setDisplayText] = useState("");
@@ -21,10 +21,10 @@ const TypewriterText = ({ texts }) => {
             setIsTyping(true);
             setDisplayText("");
             setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-          }, 2000); // Delay before next typing cycle
+          }, 2000);
         }
       }
-    }, 100); // Typing speed
+    }, 100);
 
     return () => {
       clearInterval(typingInterval);
@@ -32,8 +32,8 @@ const TypewriterText = ({ texts }) => {
   }, [currentIndex, isTyping, texts, displayText]);
 
   return (
-    <span className="inline-block text-[#915EFF] font-bold">
-      {displayText.split('').map((char, index) => (
+    <span className="inline-block text-[#915EFF] font-bold break-words">
+      {displayText.split("").map((char, index) => (
         <motion.span
           key={index}
           initial={{ opacity: 0 }}
@@ -59,26 +59,21 @@ const TypewriterText = ({ texts }) => {
 
 const WavingHand = () => {
   return (
-    <img 
-      src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png" 
+    <img
+      src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png"
       alt="Waving Hand"
       className="wave-emoji"
-      style={{ display: 'inline-block', marginLeft: '10px', width: '50px', height: '50px' }}
+      style={{ display: "inline-block", marginLeft: "10px", width: "50px", height: "50px" }}
     />
   );
 };
 
 const Hero = () => {
-  const typedItems = [
-    "Software Developer",
-    "Systems Administrator",
-    "Computer Enthusiast",
-    "Team Leader"
-  ];
+  const typedItems = ["Grade 10 High School Student at Al Ekhaa Private Schools"];
 
   return (
     <section className="relative w-full h-screen mx-auto">
-      <style jsx>{`
+      <style>{`
         @keyframes wave {
           0% { transform: rotate(0deg); }
           10% { transform: rotate(-10deg); }
@@ -96,26 +91,28 @@ const Hero = () => {
           display: inline-block;
         }
       `}</style>
-      <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
+
+      <div
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+      >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Sunny</span> <WavingHand />
+          <h1 className={`${styles.heroHeadText} text-white lg:text-[72px] lg:leading-[86px] mt-1`}>
+            Hi, I'm <span className="text-[#915EFF]">Abdelrahman Mohamed Hassanein</span> <WavingHand />
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-1 text-white-100 max-w-[720px]`}>
             I'm a <TypewriterText texts={typedItems} />
-            <br />
-            <b>Welcome to my portfolio, please view on desktop for an interactive experience!</b>
           </p>
         </div>
       </div>
-      <br /><br /><br />
 
-      <ComputersCanvas />
+      <div className="absolute inset-x-0 top-[260px] bottom-0">
+        <ComputersCanvas />
+      </div>
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">

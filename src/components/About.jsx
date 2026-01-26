@@ -6,7 +6,7 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import { styles } from "../styles"
 import { SectionWrapper } from "../hoc"
 import { fadeIn } from "../utils/motion"
-import { resume, profilepic } from "../assets"
+import { resume } from "../assets"
 
 const ServiceCard = ({ index, title, icon }) => (
   <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="w-full xs:w-[250px]">
@@ -77,42 +77,18 @@ const About = () => {
           className="w-full md:w-1/3 flex flex-col items-center"
         >
           <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-[0_0_22.5px_7.5px_rgba(128,0,1028,1.0)]">
-            <div className="w-full h-full overflow-hidden">
-              <img
-                src={profilepic || "/placeholder.svg"}
-                alt="Sunny Patel"
-                className="w-full h-full object-cover"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "50% 50%",
-                }}
-              />
-            </div>
+            <img
+              src="/Logos/Profile.png"
+              alt="Profile"
+              className="w-full h-full object-cover object-[50%_35%]"
+            />
           </div>
           <div className="mt-10 flex flex-wrap gap-5 justify-center">
-            <motion.button
-              className="px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-md shadow-[0_5px_0_0_rgba(0,0,0,0.6)] transition-all duration-100 ease-in-out hover:shadow-[0_3px_0_0_rgba(0,0,0,0.6)] hover:translate-y-[2px] active:translate-y-1 active:shadow-none select-none"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.open(resume, "_blank")}
-            >
-              Resume
-            </motion.button>
-
-            <motion.button
-              className="px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-[0_5px_0_0_rgba(0,0,0,0.6)] transition-all duration-100 ease-in-out hover:shadow-[0_3px_0_0_rgba(0,0,0,0.6)] hover:translate-y-[2px] active:translate-y-1 active:shadow-none select-none"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://www.linkedin.com/in/sunny-patel-30b460204/", "_blank")}
-            >
-              LinkedIn
-            </motion.button>
-
             <motion.button
               className="px-6 py-3 font-semibold text-white bg-gradient-to-r from-gray-600 to-gray-800 rounded-md shadow-[0_5px_0_0_rgba(0,0,0,0.6)] transition-all duration-100 ease-in-out hover:shadow-[0_3px_0_0_rgba(0,0,0,0.6)] hover:translate-y-[2px] active:translate-y-1 active:shadow-none select-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://github.com/sunnypatell", "_blank")}
+              onClick={() => window.open("https://github.com/Abdelrahman-hass?tab=repositories", "_blank")}
             >
               GitHub
             </motion.button>
@@ -127,33 +103,37 @@ const About = () => {
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.1, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">👨‍💻</span>
               <span>
-                I&apos;m a Software Engineer with over 4 years of experience in software development and cloud
-                technologies.
+                I&apos;m a hardworking student at Al Ekhaa Private Schools.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.2, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">🎓</span>
               <span>
-                Currently working toward my Honours Bachelor of Science in Computer Science at Ontario Tech University,
-                I&apos;m all about building reliable, scalable software that makes a difference.
+                I&apos;m in Grade 10 and I focus on strong academic performance and continuous improvement.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.3, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">🛠</span>
               <span>
-                From full-stack development to cloud-based solutions, I&apos;ve led enterprise-level projects that
-                streamline operations and deliver real impact.
+                I have a solid set of valuable certificates that reflect my commitment to learning.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.4, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">🔧</span>
               <span>
-                I enjoy automating workflows, optimizing systems, and turning complex challenges into real results. 📈
+                For the past four years at Al Ekhaa, I&apos;ve consistently achieved high marks and have not scored
+                below 99% overall.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.5, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">💡</span>
-              <span>I&apos;m always curious and constantly learning.</span>
+              <span>I bring focus, discipline, and a positive attitude to every challenge.</span>
+            </motion.li>
+            <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.6, 0.75)}>
+              <span className="mr-4 text-2xl flex-shrink-0">🧠</span>
+              <span>
+                I&apos;m a student who loves working with computers, learning new skills, and understanding how to use AI.
+              </span>
             </motion.li>
           </motion.ul>
         </motion.div>

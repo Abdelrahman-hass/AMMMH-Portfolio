@@ -12,9 +12,9 @@ import close from "./close.svg";
 import docker from "./tech/docker.png";
 // import figma from "./tech/figma.png";  // unused - not displayed
 // import mysql from "./tech/mysql.png";  // unused - not displayed
-// import css from "./tech/css.png";      // unused - not displayed
+import css from "./tech/css.png";
 // import git from "./tech/git.png";      // unused - not displayed
-// import html from "./tech/html.png";    // unused - not displayed
+import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import java from "./tech/java.png";
 import ubuntu from "./tech/ubuntu.png";
@@ -84,9 +84,9 @@ export {
   github,
   menu,
   close,
-  // css,
+  css,
   // git,
-  // html,
+  html,
   javascript,
   java,
   ubuntu,

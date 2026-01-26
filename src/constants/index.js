@@ -68,23 +68,15 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "About My School",
   },
   {
     id: "extracurricular",
     title: "Certifications",
   },
   {
-    id: "skills",
-    title: "Skills",
-  },
-  {
     id: "projects",
     title: "Projects",
-  },
-  {
-    id: "contact",
-    title: "Contact",
   },
 ];
 
@@ -109,27 +101,63 @@ const services = [
 
 const education = [
   {
-    title: "Honours Computer Science (H. BSc)",
-    company_name: "Ontario Tech University, Oshawa, ON",
-    icon: otu,
+    title: "Grades 4–6",
+    company_name: "Al Ekhaa Private Schools",
+    icon: rhhs,
     iconBg: "#fff",
-    date: "2022 - Present",
+    date: "2016 - 2022",
     points: [
-      "President's List - Winter 2025",
-      "Dean's Honours List - Fall 2024",
-      // "Courses undertaken: Data Structures and Algorithms, OOP, REST API, Software Design, Python Data Analysis, Discrete Mathematics, Computer Architecture, Operating Systems, PostgreSQL.",
+      "Started my journey at Al Ekhaa Private Schools in Grade 4.",
+      "Built strong academic foundations through Grades 5 and 6.",
+      "Continued to grow with consistent performance and discipline.",
     ],
   },
   {
-    title: "High School",
-    company_name: "Richmond Hill High School, ON",
+    title: "Grade 7",
+    company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
     iconBg: "#fff",
-    date: "2018-2022",
+    date: "2022 - 2023",
     points: [
-      "Ontario Scholar",
-      "12th Grade: 96%",
+      "My first year at Al Ekhaa Private Schools, focused on building strong study habits.",
+      "Year Grade: 99%",
     ],
+  },
+  {
+    title: "Grade 8",
+    company_name: "Al Ekhaa Private Schools",
+    icon: rhhs,
+    iconBg: "#fff",
+    date: "2023 - 2024",
+    points: [
+      "Maintained excellent performance across all subjects at Al Ekhaa Private Schools.",
+      "Year Grade: 99.48%",
+    ],
+    certificatesUrl: "/certificates-grade-8.html",
+  },
+  {
+    title: "Grade 9",
+    company_name: "Al Ekhaa Private Schools",
+    icon: rhhs,
+    iconBg: "#fff",
+    date: "2024 - 2025",
+    points: [
+      "Consistently high results and steady improvement throughout the year.",
+      "Year Grade: 99.58%",
+    ],
+    certificatesUrl: "/certificates-grade-9.html",
+  },
+  {
+    title: "Grade 10",
+    company_name: "Al Ekhaa Private Schools",
+    icon: rhhs,
+    iconBg: "#fff",
+    date: "2025 - 2026 (Term 1)",
+    points: [
+      "Completed Term 1 at Al Ekhaa Private Schools with strong performance.",
+      "Term 1 Grade: 99.85%",
+    ],
+    certificatesUrl: "/certificates-grade-10.html",
   },
 ];
 
@@ -315,194 +343,215 @@ const experiences = [
 
 const extracurricular = [
   {
-  title: "GitHub Copilot Intermediate (GH-300)",
-  type: "Microsoft Certification",
-  icon: microsoft,
-  iconBg: "#000000",
-  date: "Issued: Oct 13, 2025 - Expires: Oct 13, 2027",
-  points: [
-    "Prompt Engineering, Copilot Chat Architecture, Policy Enforcement, Enterprise AI Integration, Secure Development Workflows"
-  ],
-  credential: "https://learn.microsoft.com/api/credentials/share/en-us/sunnypatell/D07D3774894C605?sharingId=6255C292987551EF",
-  },
-  {
-    title: "MongoDB Python Developer Path",
-    type: "Proof of Completion",
-    icon: mongodb,
-    iconBg: "#000000",
-    date: "Feb 2025",
-    points: ["PyMongo, NoSQL Schema Design, Data Aggregation, MongoDB Query Optimization"],
-    credential: "https://learn.mongodb.com/c/tf2DSC7hTcyM3NBZjkLPoA",
-  },
-  {
-    title: "Github Foundations",
-    type: "Professional Certificate",
-    icon: github,
-    iconBg: "#000000",
-    date: "Issued: Sep 2024 - Expires: Sep 2027",
-    points: ["Version Control, Git, Actions, CI/CD, Repository Management, SAP Workflow"],
-    credential: "https://www.credly.com/badges/b6f69785-2da8-447e-b02c-3350bf9af803",
-  },
-  {
-    title: "Certified Enterprise Scripting Architect",
-    type: "Automate | Connectwise University",
-    icon: connectwise,
-    iconBg: "#748C7B",
-    date: "Jul 2024",
-    points: ["RMM, MDM, Powershell, Scripting, Windows Server, Enterprise Architecture, Query Optimization"],
-    credential: connectwisecert,
-  },
-  {
-    title: "Google IT Automation With Python",
-    type: "Professional Certificate",
-    icon: google,
-    iconBg: "#050C18",
-    date: "Mar 2023",
+    title: "Award Certificate",
+    type: "School Award",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
     points: [
-      "Configuration Management, Automation, Google Cloud Platform (GCP), Cloud Servers and VM's, Version Control Tools, Automation.",
+      "Official award certificate.",
+      "Recognizes academic effort and achievement.",
     ],
-    credential: "https://www.coursera.org/account/accomplishments/specialization/certificate/82SZFUWF4B3T",
+    credential: "/certificate-award.html",
   },
   {
-    title: "WHMIS (Worker Health and Safety)",
-    type: "Government Workforce Requirement",
-    icon: whmis,
-    iconBg: "#CCCFD8",
-    date: "Sep 2020",
-    points: ["Hazard Awareness, Legal Compliance, Personal Protection, Accident Prevention"],
+    title: "Award Certificate 2",
+    type: "School Award",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    points: [
+      "Official award certificate.",
+      "Recognizes continued excellence and performance.",
+    ],
+    credential: "/certificate-award-2.html",
+  },
+  {
+    title: "Award Certificate 3",
+    type: "School Award",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    points: [
+      "Official award certificate.",
+      "Recognizes outstanding academic results.",
+    ],
+    credential: "/certificate-award-3.html",
+  },
+  {
+    title: "CS50P Certificate",
+    type: "HarvardX / edX",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "Certificate of completion for CS50P.",
+      "Focus on Python programming fundamentals.",
+    ],
+    credential: "/certificate-cs50p.html",
+  },
+  {
+    title: "CS50x Certificate",
+    type: "HarvardX / edX",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "Certificate of completion for CS50x.",
+      "Covers core computer science concepts.",
+    ],
+    credential: "/certificate-cs50x.html",
+  },
+  {
+    title: "CS50 Cybersecurity Certificate",
+    type: "HarvardX / edX",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "Cybersecurity course completion certificate.",
+      "Covers security concepts and best practices.",
+    ],
+    credential: "/certificate-cs50-cybersecurity.html",
+  },
+  {
+    title: "CS50P Certificate (edX)",
+    type: "HarvardX / edX",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "edX credential for CS50P.",
+      "Verifies completion and achievement.",
+    ],
+    credential: "/certificate-cs50p-edx.html",
+  },
+  {
+    title: "CS50x Certificate (edX)",
+    type: "HarvardX / edX",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "edX credential for CS50x.",
+      "Verifies completion and achievement.",
+    ],
+    credential: "/certificate-cs50x-edx.html",
+  },
+  {
+    title: "Mawhiba Hub Certificate",
+    type: "Mawhiba Hub",
+    icon: "/Logos/Mawhiba_logo.png",
+    iconBg: "#050C18",
+    date: "Issued: See certificate",
+    points: [
+      "Official Mawhiba Hub certificate.",
+      "Recognizes participation and achievement.",
+    ],
+    credential: "/certificate-mawhiba-hub.html",
+  },
+  {
+    title: "Professional Certificate (edX)",
+    type: "edX Professional Certificate",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "Professional certificate credential.",
+      "Issued and verified by edX.",
+    ],
+    credential: "/certificate-professional-edx.html",
+  },
+  {
+    title: "Professional Certificate (Cybersecurity)",
+    type: "edX Professional Certificate",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "Cybersecurity professional certificate.",
+      "Issued and verified by edX.",
+    ],
+    credential: "/certificate-professional-cybersecurity.html",
+  },
+  {
+    title: "Steam Certificate",
+    type: "Certificate",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    points: [
+      "Official certificate document.",
+      "Recognizes completion or participation.",
+    ],
+    credential: "/certificate-steam.html",
   },
 ];
 
 const projects = [
-    {
-    name: "Axelot ✍️",
+  {
+    name: "AIST (Advanced Intelligent Smart Desk)",
     description:
-      "Axelot is a real-time collaborative writing and knowledge workspace built with Next.js 16, TypeScript, Firebase, TipTap 3, and Yjs. It supports multi-user editing with presence cursors, CRDT-based conflict-free sync over WebRTC, and AI-assisted editing via OpenRouter-backed Next.js API routes. Features secure auth with NextAuth v5 (Google/GitHub OAuth, email/password with bcrypt), Firestore-backed storage with Firebase custom tokens, a Vercel cron-powered trending algorithm, and production deployment via multi-stage Docker pipeline.",
+      "AIST (Advanced Intelligent Smart Desk) is a next-generation interactive desktop system inspired by futuristic HUD technology. It combines AI, gesture control, 3D visualization, voice interaction, and advanced UI into one intelligent platform.",
     tags: [
-      {
-        name: "Next.js 16",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "TipTap 3 / Yjs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "WebRTC",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "OpenRouter AI",
-        color: "blue-text-gradient",
-      },
+      { name: "AI", color: "blue-text-gradient" },
+      { name: "HUD", color: "green-text-gradient" },
+      { name: "3D UI", color: "pink-text-gradient" },
     ],
-    image: axelotlanding,
-    source_code_link: "https://github.com/royce-mathew/axelot",
-    live_project_link: "https://www.axelot.io",
+    image:
+      "/Projects/AIST_Project/WhatsApp%20Unknown%202026-01-26%20at%2015.18.04/WhatsApp%20Unknown%202026-01-26%20at%2015.18.04%20(1)/MAIN.jpeg",
+    source_code_link: "",
+    live_project_link: "/project-aist.html",
   },
   {
-    name: "Netdash (Networking Toolbox) 🌐",
+    name: "ELEGOO Smart Car",
     description:
-      "Netdash is a cross-platform Electron desktop app (macOS, Windows, Linux) with Homebrew distribution, featuring Firebase Auth with Google OAuth and real-time Firestore sync. It includes 15+ networking tools for subnetting, VLSM, IP conflict detection, and multi-vendor configuration generation. Built with RTT measurement via Performance API, TCP port scanning, DNS-over-HTTPS with TTL-aware caching, and RFC-compliant IPv4/IPv6 algorithms with WCAG2.2 accessibility compliance.",
+      "The ELEGOO Smart Car is an autonomous vehicle powered by an UNO R3 microcontroller. It uses DC motors and servo steering to move and navigate its environment.",
     tags: [
-      {
-        name: "Electron",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "DNS-over-HTTPS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "WCAG2.2",
-        color: "blue-text-gradient",
-      },
+      { name: "Robotics", color: "blue-text-gradient" },
+      { name: "Arduino", color: "green-text-gradient" },
+      { name: "Automation", color: "pink-text-gradient" },
     ],
-    image: netdashlanding,
-    source_code_link: "https://github.com/sunnypatell/netdash-toolkit/",
-    live_project_link: "https://netdash-toolkit.vercel.app/",
+    image:
+      "/Projects/Car_project/WhatsApp%20Unknown%202026-01-26%20at%2015.20.42/WhatsApp%20Unknown%202026-01-26%20at%2015.20.44/MAIN2.jpeg",
+    source_code_link: "",
+    live_project_link: "/project-car.html",
   },
   {
-    name: "SecureBank 🏦",
+    name: "CS50x Project — ARNcode Web Designed App",
     description:
-      "SecureBank is a deliberately vulnerable banking simulation built for Capture The Flag (CTF) training, focused on SQL injection and privilege escalation. It features exploit paths including raw query interpolation, single/double URL encoding, and a hidden admin portal to teach secure coding by example. Core features include transaction search/filter, a feedback system, and an admin dashboard with live DB console and security logs. Backed by a normalized SQLite schema with session handling via cookie-signature, and dockerized with structured challenge documentation.",
+      "A web-designed application project built for CS50x, showcased in the demo with its interface flow, core pages, and main functionality.",
     tags: [
-      {
-        name: "CTF",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "SQLi/XSS",
-        color: "green-text-gradient",
-      },
-      {
-        name: "SQLite",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Docker",
-        color: "blue-text-gradient",
-      },
+      { name: "CS50x", color: "blue-text-gradient" },
+      { name: "Web App", color: "green-text-gradient" },
     ],
-    image: securebankdashboard,
-    source_code_link: "https://github.com/sunnypatell/securebank-ctf",
-    live_project_link: "https://github.com/sunnypatell/securebank-ctf",
+    image: "https://img.youtube.com/vi/tAm0Aluw5mg/hqdefault.jpg",
+    source_code_link: "",
+    live_project_link: "/project-video-1.html",
   },
   {
-    name: "Sunnify (Spotify Downloader) 🎵",
+    name: "CS50 Cyber Security Project",
     description:
-      "Sunnify is a Spotify downloader that reverse-engineers embed pages to extract track metadata by parsing protected JSON states without authentication. It features a cross-platform PyQt5 desktop client (macOS, Windows, Linux) with thread-safe UI updates and supports playlists with 1000+ tracks via Spotify's internal spclient API. Includes retry logic with exponential backoff for rate limiting, cross-platform FFmpeg detection, 43 pytest unit tests with GitHub Actions CI/CD, and ships as a Homebrew Cask.",
+      "A cybersecurity project demo highlighting security concepts, testing flow, and results presented in the video.",
     tags: [
-      {
-        name: "Python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "PyQt5",
-        color: "green-text-gradient",
-      },
-      {
-        name: "yt-dlp",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Homebrew",
-        color: "blue-text-gradient",
-      },
+      { name: "Security", color: "blue-text-gradient" },
+      { name: "CS50", color: "green-text-gradient" },
     ],
-    image: sunnifyimage,
-    source_code_link: "https://github.com/sunnypatell/sunnify-spotify-downloader",
-    live_project_link: "https://sunnify-spotify-downloader.vercel.app/",
+    image: "https://img.youtube.com/vi/SAXQMy7NPiE/hqdefault.jpg",
+    source_code_link: "",
+    live_project_link: "/project-video-2.html",
   },
   {
-    name: "FinancialFlow 💸",
+    name: "CS50P Project",
     description:
-      "Comprehensive personal finance management application built with Next.js and Typescript. It empowers users to take control of their financial health through intuitive tracking, insightful analytics, and personalized recommendations.",
+      "A CS50P Python project demo showing the program workflow, outputs, and key features from the video.",
     tags: [
-      {
-        name: "React-native",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Typescript",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Tailwind CSS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Next.js",
-        color: "blue-text-gradient",
-      },
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "CS50P", color: "green-text-gradient" },
     ],
-    image: financialflowimage,
-    source_code_link: "https://github.com/sunnypatell/financialflow",
-    live_project_link: "https://financial-flow.vercel.app/",
+    image: "https://img.youtube.com/vi/rfRNsY1Uw0M/hqdefault.jpg",
+    source_code_link: "",
+    live_project_link: "/project-video-3.html",
   },
   // {
   //   name: "Enterprise API Tester 🌐",
@@ -531,30 +580,17 @@ const projects = [
   //   live_project_link: "https://enterprise-api-request-tester.vercel.app/",
   // },
   {
-    name: "KnifeThrow 🎯",
+    name: "My Protoflio",
     description:
-      "KnifeThrow is a Java Swing-based 2D mini-game, packed by maven with over 5000 lines of code. It includes a menu, game-over screens, sound effects, and custom sprites. Players unlock different knives with varied abilities in a dedicated knife shop. The game features improved collision systems, animations, and particle effects for an immersive experience.",
+      "My Protoflio is the personal portfolio website you are viewing now. It highlights my projects, certifications, education, and 3D work in a clean, interactive layout.",
     tags: [
-      {
-        name: "java",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "swing",
-        color: "green-text-gradient",
-      },
-      {
-        name: "maven",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "arcadegame",
-        color: "green-text-gradient",
-      },
+      { name: "Portfolio", color: "blue-text-gradient" },
+      { name: "Three.js", color: "green-text-gradient" },
+      { name: "React", color: "pink-text-gradient" },
     ],
-    image: knifethrowimage,
-    source_code_link: "https://github.com/sunnypatell/KnifeThrow",
-    live_project_link: "https://github.com/sunnypatell/KnifeThrow",
+    image: "/Projects/Protoflio.jpeg",
+    source_code_link: "",
+    live_project_link: "",
   },
   // {
   //   name: "COVID-19 GTA Cases Data Analysis 🧪",

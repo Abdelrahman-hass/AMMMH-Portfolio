@@ -12,6 +12,8 @@ import {
   cplusplus,
   typescript,
   docker,
+  html,
+  css,
   tailwind,
   reactjs,
   postgresql,
@@ -38,6 +40,8 @@ const programming = [
   { name: "Java", icon: java },
   { name: "C++", icon: cplusplus },
   { name: "JavaScript", icon: javascript },
+  { name: "HTML", icon: html },
+  { name: "CSS", icon: css },
   { name: "TypeScript", icon: typescript },
   { name: "Docker", icon: docker },
   { name: "Tailwind CSS", icon: tailwind },
@@ -65,6 +69,20 @@ const contentProduction = [
   { name: "Photoshop", icon: photoshop },
   { name: "Premiere Pro", icon: premiere },
   { name: "Cinema 4D", icon: cinema4d },
+];
+
+const studentSkills = [
+  "Arduino",
+  "Sensors",
+  "Motors",
+  "Wiring",
+  "Machine Learning Basics",
+  "Prompt Engineering",
+  "AI Tools",
+  "VS Code",
+  "Problem-Solving",
+  "Teamwork",
+  "Presentation",
 ];
 
 const Tech = () => {
@@ -228,6 +246,64 @@ const Tech = () => {
         {renderCategory("programming", rows.programming)}
         {renderCategory("itTools", rows.itTools)}
         {renderCategory("contentProduction", rows.contentProduction)}
+        <motion.div
+          className="category-container"
+          initial="hidden"
+          animate={mainControls}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { duration: 0.6 } },
+          }}
+        >
+          <motion.h2
+            className="category-title top"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            style={{
+              fontFamily: "'', cursive",
+              fontSize: "26px",
+              background: "linear-gradient(90deg, #915EFF, #00BFFF)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              textFillColor: "transparent",
+              filter: "drop-shadow(0 0 10px #915EFF)",
+            }}
+          >{`<studentSkills>`}</motion.h2>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {studentSkills.map((skill) => (
+              <motion.span
+                key={skill}
+                className="px-4 py-2 rounded-full bg-tertiary/80 text-white text-[14px] border border-white/10 shadow-card"
+                variants={hexagonVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+          <motion.h2
+            className="category-title bottom"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            style={{
+              fontFamily: "'', cursive",
+              fontSize: "26px",
+              background: "linear-gradient(90deg, #915EFF, #00BFFF)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              textFillColor: "transparent",
+              filter: "drop-shadow(0 0 10px #915EFF)",
+            }}
+          >{`</studentSkills>`}</motion.h2>
+        </motion.div>
       </div>
     </section>
   );

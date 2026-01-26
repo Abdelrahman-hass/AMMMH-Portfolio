@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -84,7 +83,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <img src="/Logos/AMMMH_logo.png" alt='logo' className='w-16 h-16 object-contain' />
           <motion.p 
             className='text-white text-[18px] font-bold cursor-pointer flex items-center'
             initial={{ opacity: 0, y: -20 }}
@@ -103,7 +102,7 @@ const Navbar = () => {
                 textFillColor: "transparent",
               }} 
             >
-              {"</"}Sunny Patel{">"}
+              {"</"}AMMMH{">"}
             </span>
           </motion.p>
         </Link>

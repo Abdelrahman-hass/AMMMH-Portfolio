@@ -1,12 +1,44 @@
-import React, { Suspense, useEffect, useState, useRef } from "react";
+import React, { Suspense, useEffect, useMemo, useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import * as THREE from "three";
 
 import CanvasLoader from "../Loader";
 
+const CLIP_Y = -1.35;
+
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("/models/qyem+2.glb");
   const meshRef = useRef();
+  const clippingPlane = useMemo(
+    () => new THREE.Plane(new THREE.Vector3(0, 1, 0), -CLIP_Y),
+    [],
+  );
+
+  useEffect(() => {
+    computer.scene.traverse((child) => {
+      if (!child.isMesh || !child.material) return;
+
+      const applyClipping = (material) => {
+        if (!material) return;
+        material.clippingPlanes = [clippingPlane];
+        material.clipIntersection = false;
+        material.needsUpdate = true;
+      };
+
+      if (Array.isArray(child.material)) {
+        child.material.forEach(applyClipping);
+        return;
+      }
+
+      applyClipping(child.material);
+    });
+
+    // Recenter the model so rotation feels like it's around the true middle.
+    const bounds = new THREE.Box3().setFromObject(computer.scene);
+    const center = bounds.getCenter(new THREE.Vector3());
+    computer.scene.position.sub(center);
+  }, [computer.scene, clippingPlane]);
 
   useFrame((state, delta) => {
     if (meshRef.current && isMobile) {
@@ -16,20 +48,24 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh ref={meshRef}>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <ambientLight intensity={0.35} />
+      <hemisphereLight intensity={0.6} groundColor="black" color="#4cc9ff" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={1.8}
+        color="#6dd3ff"
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={1} />
+      <pointLight position={[0, 6, 8]} intensity={2.2} color="#3aa0ff" />
+      <pointLight position={[-6, 2, -6]} intensity={1.6} color="#1e4bff" />
+      <directionalLight position={[8, 10, 5]} intensity={1.2} color="#7ad7ff" />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.75 : 0.75}
-        position={isMobile ? [0, -3, 0] : [0, -3.25, -1.5]}
+        scale={isMobile ? 3.6 : 5}
+        position={isMobile ? [0, -1.6, 0] : [0, -2.1, -1.5]}
         rotation={isMobile ? [0, 0, 0] : [-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -70,13 +106,14 @@ const ComputersCanvas = () => {
         { position: [20, 3, 5], fov: 25 }
       }
       gl={{ preserveDrawingBuffer: true }}
+      onCreated={({ gl }) => {
+        gl.localClippingEnabled = true;
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         {!isMobile && (
           <OrbitControls
             enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
             autoRotate={true}
           />
         )}
