@@ -192,7 +192,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="h-[2100px] md:h-[1600px] lg:h-[1400px]" aria-hidden="true" />
+      <div className="h-[2600px] sm:h-[2300px] md:h-[1600px] lg:h-[1400px]" aria-hidden="true" />
     </section>
   );
 };
