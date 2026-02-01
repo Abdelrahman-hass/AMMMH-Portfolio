@@ -59,24 +59,28 @@ import {
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: "executive-summary",
+    title: "Executive Summary",
+  },
+  {
+    id: "projects",
+    title: "Projects",
+  },
+  {
+    id: "certifications",
+    title: "Certifications",
+  },
+  {
+    id: "school-certificates",
+    title: "School Certificates",
   },
   {
     id: "education",
     title: "Education",
   },
   {
-    id: "work",
+    id: "about-my-school",
     title: "About My School",
-  },
-  {
-    id: "extracurricular",
-    title: "Certifications",
-  },
-  {
-    id: "projects",
-    title: "Projects",
   },
 ];
 
@@ -101,39 +105,16 @@ const services = [
 
 const education = [
   {
-    title: "Grades 4–6",
+    title: "Grade 10",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
     iconBg: "#fff",
-    date: "2016 - 2022",
+    date: "2025 - 2026 (Term 1)",
     points: [
-      "Started my journey at Al Ekhaa Private Schools in Grade 4.",
-      "Built strong academic foundations through Grades 5 and 6.",
-      "Continued to grow with consistent performance and discipline.",
+      "Completed Term 1 at Al Ekhaa Private Schools with strong performance.",
+      "Term 1 Grade: 99.85%",
     ],
-  },
-  {
-    title: "Grade 7",
-    company_name: "Al Ekhaa Private Schools",
-    icon: rhhs,
-    iconBg: "#fff",
-    date: "2022 - 2023",
-    points: [
-      "My first year at Al Ekhaa Private Schools, focused on building strong study habits.",
-      "Year Grade: 99%",
-    ],
-  },
-  {
-    title: "Grade 8",
-    company_name: "Al Ekhaa Private Schools",
-    icon: rhhs,
-    iconBg: "#fff",
-    date: "2023 - 2024",
-    points: [
-      "Maintained excellent performance across all subjects at Al Ekhaa Private Schools.",
-      "Year Grade: 99.48%",
-    ],
-    certificatesUrl: "/certificates-grade-8.html",
+    certificatesUrl: "/certificates-grade-10.html",
   },
   {
     title: "Grade 9",
@@ -148,16 +129,39 @@ const education = [
     certificatesUrl: "/certificates-grade-9.html",
   },
   {
-    title: "Grade 10",
+    title: "Grade 8",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
     iconBg: "#fff",
-    date: "2025 - 2026 (Term 1)",
+    date: "2023 - 2024",
     points: [
-      "Completed Term 1 at Al Ekhaa Private Schools with strong performance.",
-      "Term 1 Grade: 99.85%",
+      "Maintained excellent performance across all subjects at Al Ekhaa Private Schools.",
+      "Year Grade: 99.48%",
     ],
-    certificatesUrl: "/certificates-grade-10.html",
+    certificatesUrl: "/certificates-grade-8.html",
+  },
+  {
+    title: "Grade 7",
+    company_name: "Al Ekhaa Private Schools",
+    icon: rhhs,
+    iconBg: "#fff",
+    date: "2022 - 2023",
+    points: [
+      "Continued my journey at Al Ekhaa Private Schools, focused on building strong study habits.",
+      "Year Grade: 99%",
+    ],
+  },
+  {
+    title: "Grades 4–6",
+    company_name: "Al Ekhaa Private Schools",
+    icon: rhhs,
+    iconBg: "#fff",
+    date: "2019 - 2022",
+    points: [
+      "Started my journey at Al Ekhaa Private Schools in Grade 4.",
+      "Built strong academic foundations through Grades 5 and 6.",
+      "Continued to grow with consistent performance and discipline.",
+    ],
   },
 ];
 
@@ -343,42 +347,6 @@ const experiences = [
 
 const extracurricular = [
   {
-    title: "Award Certificate",
-    type: "School Award",
-    icon: "/Logos/Qyem_logo.png",
-    iconBg: "#1b1f3a",
-    date: "Issued: See certificate",
-    points: [
-      "Official award certificate.",
-      "Recognizes academic effort and achievement.",
-    ],
-    credential: "/certificate-award.html",
-  },
-  {
-    title: "Award Certificate 2",
-    type: "School Award",
-    icon: "/Logos/Qyem_logo.png",
-    iconBg: "#1b1f3a",
-    date: "Issued: See certificate",
-    points: [
-      "Official award certificate.",
-      "Recognizes continued excellence and performance.",
-    ],
-    credential: "/certificate-award-2.html",
-  },
-  {
-    title: "Award Certificate 3",
-    type: "School Award",
-    icon: "/Logos/Qyem_logo.png",
-    iconBg: "#1b1f3a",
-    date: "Issued: See certificate",
-    points: [
-      "Official award certificate.",
-      "Recognizes outstanding academic results.",
-    ],
-    credential: "/certificate-award-3.html",
-  },
-  {
     title: "CS50P Certificate",
     type: "HarvardX / edX",
     icon: "/Logos/Harvard_logo.png",
@@ -413,6 +381,18 @@ const extracurricular = [
       "Covers security concepts and best practices.",
     ],
     credential: "/certificate-cs50-cybersecurity.html",
+  },
+  {
+    title: "CS50 Cybersecurity Certificate",
+    type: "CS50 Certificate",
+    icon: "/Logos/Harvard_logo.png",
+    iconBg: "#0b1f2a",
+    date: "Issued: See certificate",
+    points: [
+      "Official CS50 cybersecurity certificate.",
+      "Verified completion and achievement.",
+    ],
+    credential: "/certificate-cs50-cybersecurity-direct.html",
   },
   {
     title: "CS50P Certificate (edX)",
@@ -474,15 +454,90 @@ const extracurricular = [
     ],
     credential: "/certificate-professional-cybersecurity.html",
   },
+];
+
+const schoolCertificates = [
   {
-    title: "Steam Certificate",
-    type: "Certificate",
+    title: "Grade 8 Certificates",
+    type: "Al Ekhaa Private Schools",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificates",
+    points: [
+      "Grade 8 academic performance certificates.",
+      "Includes quarterly results and achievements.",
+    ],
+    credential: "/certificates-grade-8.html",
+  },
+  {
+    title: "Grade 9 Certificates",
+    type: "Al Ekhaa Private Schools",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificates",
+    points: [
+      "Grade 9 academic performance certificates.",
+      "Includes quarterly results and achievements.",
+    ],
+    credential: "/certificates-grade-9.html",
+  },
+  {
+    title: "Grade 10 Certificates",
+    type: "Al Ekhaa Private Schools",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificates",
+    points: [
+      "Grade 10 Term 1 certificates.",
+      "Shows academic performance for Term 1.",
+    ],
+    credential: "/certificates-grade-10.html",
+  },
+  {
+    title: "Award Certificate",
+    type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificate",
     points: [
-      "Official certificate document.",
-      "Recognizes completion or participation.",
+      "Official school award certificate.",
+      "Recognizes academic effort and achievement.",
+    ],
+    credential: "/certificate-award.html",
+  },
+  {
+    title: "Award Certificate 2",
+    type: "Al Ekhaa Private Schools",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    points: [
+      "Official school award certificate.",
+      "Recognizes continued excellence and performance.",
+    ],
+    credential: "/certificate-award-2.html",
+  },
+  {
+    title: "Award Certificate 3",
+    type: "Al Ekhaa Private Schools",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    points: [
+      "Official school award certificate.",
+      "Recognizes outstanding academic results.",
+    ],
+    credential: "/certificate-award-3.html",
+  },
+  {
+    title: "Steam Certificate",
+    type: "School Achievement",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    points: [
+      "School recognition certificate.",
+      "Celebrates applied learning and creativity.",
     ],
     credential: "/certificate-steam.html",
   },
@@ -689,6 +744,7 @@ export {
   designTools,
   experiences,
   extracurricular,
+  schoolCertificates,
   projects,
   education,
   testimonials

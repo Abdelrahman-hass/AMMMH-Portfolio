@@ -81,6 +81,8 @@ const About = () => {
               src="/Logos/Profile.png"
               alt="Profile"
               className="w-full h-full object-cover object-[50%_35%]"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="mt-10 flex flex-wrap gap-5 justify-center">

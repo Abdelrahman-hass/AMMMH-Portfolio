@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
-import { About, Education, Experience, Extracurricular, Hero, Navbar, Works, StarsCanvas } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
+import { Education, Experience, Extracurricular, Hero, Navbar, Works, SchoolCertificates } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
 import Feedbacks from './components/Feedbacks'
 // import { Analytics } from "@vercel/analytics/react"
 
@@ -13,15 +13,13 @@ function App() {
             <Navbar />
             <Hero />
           </div>
-          <About />
+          <Works />
+          <Extracurricular />
+          <SchoolCertificates />
           <Education />
           <Experience />
-          <Extracurricular />
-          <Works />
           {/* <Feedbacks /> */}
-          <div className="div relative z-0">
-            <StarsCanvas />
-          </div>
+          <div className="div relative z-0" />
         </div>
       </BrowserRouter>
   )

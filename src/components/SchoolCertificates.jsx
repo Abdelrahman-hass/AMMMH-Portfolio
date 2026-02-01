@@ -2,19 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
+
 import { styles } from "../styles";
-import { extracurricular } from "../constants";
+import { schoolCertificates } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
-const CertificationCard = ({ title, icon, type, date, points, credential }) => (
+const SchoolCertificateCard = ({ title, icon, type, date, points, credential }) => (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
     <div>
-      <div className="relative w-full h-[70px] mb-4">
+      <div className="relative w-full h-[70px] mb-4 flex items-center justify-center">
         <img
           src={icon}
           alt={title}
@@ -29,7 +30,7 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => (
       <ul className="list-disc ml-5 space-y-1">
         {points.slice(0, 2).map((point, index) => (
           <li
-            key={`certification-point-${index}`}
+            key={`school-cert-point-${index}`}
             className="text-white-100 text-[12px] pl-1 tracking-wider no-select"
           >
             {point}
@@ -50,7 +51,7 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => (
   </div>
 );
 
-const Extracurricular = () => {
+const SchoolCertificates = () => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -85,7 +86,7 @@ const Extracurricular = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <p className={`${styles.sectionSubText} text-center`}>Continuous Learning</p>
+        <p className={`${styles.sectionSubText} text-center`}>Academic Records</p>
       </motion.div>
 
       <motion.div
@@ -96,10 +97,10 @@ const Extracurricular = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>Certifications</h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>School Certificates</h2>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         whileInView="show"
@@ -107,7 +108,7 @@ const Extracurricular = () => {
         className="mt-20 flex flex-col items-center"
       >
         <Swiper
-          effect={'coverflow'}
+          effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={"auto"}
@@ -118,7 +119,7 @@ const Extracurricular = () => {
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows: false, // Disable slide shadows entirely
+            slideShadows: false,
           }}
           pagination={{
             clickable: true,
@@ -130,15 +131,14 @@ const Extracurricular = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            1024:{
+            1024: {
               slidesPerView: 3,
-            }
+            },
           }}
-         
         >
-          {extracurricular.map((certification, index) => (
-            <SwiperSlide key={`certification-${index}`}>
-              <CertificationCard {...certification} />
+          {schoolCertificates.map((certification, index) => (
+            <SwiperSlide key={`school-cert-${index}`}>
+              <SchoolCertificateCard {...certification} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -209,4 +209,4 @@ const Extracurricular = () => {
   );
 };
 
-export default SectionWrapper(Extracurricular, "certifications");
+export default SectionWrapper(SchoolCertificates, "school-certificates");

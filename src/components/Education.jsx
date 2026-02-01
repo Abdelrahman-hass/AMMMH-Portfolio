@@ -1,11 +1,9 @@
-import React, { Suspense, useMemo, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -13,36 +11,6 @@ import { styles } from "../styles";
 import { education } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-
-const AMMMHLogo = () => {
-  const { scene } = useGLTF("/models/AMMMh+logo+3d+model.glb");
-  const logoRef = useRef(null);
-  const clonedScene = useMemo(() => scene.clone(true), [scene]);
-
-  useFrame((_, delta) => {
-    if (logoRef.current) {
-      logoRef.current.rotation.y += delta * 0.4;
-    }
-  });
-
-  return <primitive ref={logoRef} object={clonedScene} scale={2.2} />;
-};
-
-const AMMMHLogoCanvas = ({ className }) => {
-  return (
-    <div className={`pointer-events-none ${className}`}>
-      <div className="w-[240px] h-[240px] md:w-[360px] md:h-[360px] opacity-85">
-        <Canvas camera={{ position: [0, 0, 7], fov: 42 }}>
-          <ambientLight intensity={0.9} />
-          <directionalLight position={[4, 6, 4]} intensity={1.1} />
-          <Suspense fallback={null}>
-            <AMMMHLogo />
-          </Suspense>
-        </Canvas>
-      </div>
-    </div>
-  );
-};
 
 const EducationCard = ({ education, index }) => {
   const isLeft = index % 2 === 0;
@@ -53,6 +21,7 @@ const EducationCard = ({ education, index }) => {
         contentStyle={{
           background: "#1d1836",
           color: "#fff",
+          minHeight: "240px",
         }}
         contentArrowStyle={{ borderRight: "7px solid  #232631" }}
         date={education.date}
@@ -69,6 +38,8 @@ const EducationCard = ({ education, index }) => {
               src={education.icon}
               alt={education.company_name}
               className="w-[60%] h-[60%] object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         }
@@ -105,13 +76,6 @@ const EducationCard = ({ education, index }) => {
         )}
       </VerticalTimelineElement>
 
-      <AMMMHLogoCanvas
-        className={`hidden md:flex absolute top-[56%] -translate-y-1/2 ${
-          isLeft
-            ? "left-[80%] -translate-x-1/2"
-            : "left-[20%] -translate-x-1/2"
-        }`}
-      />
     </div>
   );
 };
@@ -158,6 +122,20 @@ const Education = () => {
           ))}
         </VerticalTimeline>
       </div>
+
+      <style>{`
+        .vertical-timeline-element {
+          margin: 32px 0;
+        }
+        .vertical-timeline-element:last-child {
+          margin-bottom: 0;
+        }
+        @media (min-width: 1170px) {
+          .vertical-timeline-element {
+            margin: 36px 0;
+          }
+        }
+      `}</style>
     </div>
   );
 };

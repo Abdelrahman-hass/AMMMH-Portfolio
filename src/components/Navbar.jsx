@@ -10,6 +10,15 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const handleNavClick = (event, id, title) => {
+    event.preventDefault();
+    setActive(title);
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -83,7 +92,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src="/Logos/AMMMH_logo.png" alt='logo' className='w-16 h-16 object-contain' />
+          <img
+            src="/Logos/AMMMH_logo.png"
+            alt="logo"
+            className="w-16 h-16 object-contain"
+            loading="lazy"
+            decoding="async"
+          />
           <motion.p 
             className='text-white text-[18px] font-bold cursor-pointer flex items-center'
             initial={{ opacity: 0, y: -20 }}
@@ -120,7 +135,7 @@ const Navbar = () => {
                 className={`${
                   active === nav.title ? "text-white" : "text-secondary"
                 } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300`}
-                onClick={() => setActive(nav.title)}
+                onClick={(event) => handleNavClick(event, nav.id, nav.title)}
               >
                 {nav.title}
               </a>
@@ -157,10 +172,26 @@ const Navbar = () => {
                   }`}
                   onClick={() => {
                     setToggle(!toggle);
+                    const target = document.getElementById(nav.id);
                     setActive(nav.title);
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a
+                    href={`#${nav.id}`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setToggle(false);
+                      const target = document.getElementById(nav.id);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </a>
                 </motion.li>
               ))}
             </ul>

@@ -10,6 +10,7 @@ import About from "./About";
 import Education from "./Education";
 import Experience from "./Experience";
 import Extracurricular from "./Extracurricular";
+import SchoolCertificates from "./SchoolCertificates";
 import Works from "./Works";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
@@ -21,6 +22,7 @@ export {
   Education,
   Experience,
   Extracurricular,
+  SchoolCertificates,
   Works,
   Contact,
   CanvasLoader,
