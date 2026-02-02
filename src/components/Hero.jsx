@@ -70,12 +70,16 @@ const Hero = ({ lang, t }) => {
 
   const numberRegex = /(\d+(?:\.\d+)?%?\+?)/g;
 
+  const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
   const renderWithHighlights = (text, highlights = []) => {
     if (!text) return null;
     let parts = [text];
     highlights.forEach((word) => {
       parts = parts.flatMap((part) =>
-        typeof part === "string" ? part.split(new RegExp(`(${word})`, "gi")) : part
+        typeof part === "string"
+          ? part.split(new RegExp(`(${escapeRegExp(word)})`, "gi"))
+          : part
       );
     });
 
@@ -241,7 +245,7 @@ const Hero = ({ lang, t }) => {
                 </h3>
               </div>
 
-              <div className="text-white text-[24px] md:text-[26px] font-bold text-center h-[64px] flex items-center justify-center whitespace-nowrap truncate">
+              <div className="text-white text-[24px] md:text-[26px] font-bold text-center h-[64px] flex items-center justify-center leading-tight line-clamp-2">
                 {renderWithHighlights(card.main, card.mainHighlights || [])}
               </div>
 
