@@ -10,14 +10,14 @@ import { fadeIn } from "../utils/motion";
 
 const ProjectCard = ({
   name,
-  description,
-  descriptionAr,
+  descriptionKey,
   tags,
   image,
   source_code_link,
   live_project_link,
   animate,
   lang,
+  t,
 }) => {
   return (
     <motion.div variants={animate}>
@@ -59,7 +59,7 @@ const ProjectCard = ({
         <div className="mt-5 flex-1">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className={`mt-2 text-secondary text-[14px] ${lang === "ar" ? "text-right" : "text-left"}`}>
-            {lang === "ar" ? descriptionAr || description : description}
+            {descriptionKey ? t(descriptionKey) : ""}
           </p>
         </div>
 
@@ -74,7 +74,7 @@ const ProjectCard = ({
         {live_project_link && (
           <a href={live_project_link} target="_blank" rel="noopener noreferrer" className="mt-auto">
             <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
-              {lang === "ar" ? "عرض المشروع" : "View Project"}
+              {t("buttons.viewProject")}
             </button>
           </a>
         )}
@@ -83,7 +83,7 @@ const ProjectCard = ({
   );
 };
 
-const Works = ({ lang }) => {
+const Works = ({ lang, t }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" }); // Adjust amount as needed
   const mainControls = useAnimation();
@@ -105,7 +105,7 @@ const Works = ({ lang }) => {
         }}
       >
         <h3 className={`${styles.sectionSubText} text-center`}>
-          {lang === "ar" ? "ابتكارات مميزة" : "Innovative Creations"}
+          {t("sections.projects.sub")}
         </h3>
       </motion.div>
 
@@ -118,7 +118,7 @@ const Works = ({ lang }) => {
         }}
       >
         <h3 className={`${styles.sectionHeadText} text-center`}>
-          {lang === "ar" ? "المشاريع" : "Projects."}
+          {t("sections.projects.title")}
         </h3>
       </motion.div>
 
@@ -129,6 +129,7 @@ const Works = ({ lang }) => {
               key={`project-${index}`}
               animate={fadeIn("up", "spring", index * 0.5, 0.75)}
               lang={lang}
+              t={t}
               {...project}
             />
           ))}

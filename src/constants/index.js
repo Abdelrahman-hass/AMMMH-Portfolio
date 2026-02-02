@@ -105,6 +105,7 @@ const services = [
 
 const education = [
   {
+    id: "grade10",
     title: "Grade 10",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
@@ -124,6 +125,7 @@ const education = [
     certificatesUrl: "/certificates-grade-10.html",
   },
   {
+    id: "grade9",
     title: "Grade 9",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
@@ -143,6 +145,7 @@ const education = [
     certificatesUrl: "/certificates-grade-9.html",
   },
   {
+    id: "grade8",
     title: "Grade 8",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
@@ -162,6 +165,7 @@ const education = [
     certificatesUrl: "/certificates-grade-8.html",
   },
   {
+    id: "grade7",
     title: "Grade 7",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
@@ -180,6 +184,7 @@ const education = [
     ],
   },
   {
+    id: "grades46",
     title: "Grades 4–6",
     company_name: "Al Ekhaa Private Schools",
     icon: rhhs,
@@ -383,6 +388,7 @@ const experiences = [
 
 const extracurricular = [
   {
+    id: "cs50p",
     title: "CS50P Certificate",
     type: "HarvardX / edX",
     icon: "/Logos/Harvard_logo.png",
@@ -402,6 +408,7 @@ const extracurricular = [
     credential: "/certificate-cs50p.html",
   },
   {
+    id: "cs50x",
     title: "CS50x Certificate",
     type: "HarvardX / edX",
     icon: "/Logos/Harvard_logo.png",
@@ -421,6 +428,7 @@ const extracurricular = [
     credential: "/certificate-cs50x.html",
   },
   {
+    id: "cs50cyber",
     title: "CS50 Cybersecurity Certificate",
     type: "HarvardX / edX",
     icon: "/Logos/Harvard_logo.png",
@@ -440,6 +448,7 @@ const extracurricular = [
     credential: "/certificate-cs50-cybersecurity.html",
   },
   {
+    id: "cs50cyberDirect",
     title: "CS50 Cybersecurity Certificate",
     type: "CS50 Certificate",
     icon: "/Logos/Harvard_logo.png",
@@ -459,6 +468,7 @@ const extracurricular = [
     credential: "/certificate-cs50-cybersecurity-direct.html",
   },
   {
+    id: "cs50pEdx",
     title: "CS50P Certificate (edX)",
     type: "HarvardX / edX",
     icon: "/Logos/Harvard_logo.png",
@@ -478,6 +488,7 @@ const extracurricular = [
     credential: "/certificate-cs50p-edx.html",
   },
   {
+    id: "cs50xEdx",
     title: "CS50x Certificate (edX)",
     type: "HarvardX / edX",
     icon: "/Logos/Harvard_logo.png",
@@ -497,6 +508,7 @@ const extracurricular = [
     credential: "/certificate-cs50x-edx.html",
   },
   {
+    id: "mawhiba",
     title: "Mawhiba Hub Certificate",
     type: "Mawhiba Hub",
     icon: "/Logos/Mawhiba_logo.png",
@@ -516,6 +528,7 @@ const extracurricular = [
     credential: "/certificate-mawhiba-hub.html",
   },
   {
+    id: "profEdx",
     title: "Professional Certificate (edX)",
     type: "edX Professional Certificate",
     icon: "/Logos/Harvard_logo.png",
@@ -535,6 +548,7 @@ const extracurricular = [
     credential: "/certificate-professional-edx.html",
   },
   {
+    id: "profCyber",
     title: "Professional Certificate (Cybersecurity)",
     type: "edX Professional Certificate",
     icon: "/Logos/Harvard_logo.png",
@@ -557,6 +571,7 @@ const extracurricular = [
 
 const schoolCertificates = [
   {
+    id: "grade8",
     title: "Grade 8 Certificates",
     type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
@@ -576,6 +591,7 @@ const schoolCertificates = [
     credential: "/certificates-grade-8.html",
   },
   {
+    id: "grade9",
     title: "Grade 9 Certificates",
     type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
@@ -595,6 +611,7 @@ const schoolCertificates = [
     credential: "/certificates-grade-9.html",
   },
   {
+    id: "grade10",
     title: "Grade 10 Certificates",
     type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
@@ -614,6 +631,7 @@ const schoolCertificates = [
     credential: "/certificates-grade-10.html",
   },
   {
+    id: "award1",
     title: "Award Certificate",
     type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
@@ -633,6 +651,7 @@ const schoolCertificates = [
     credential: "/certificate-award.html",
   },
   {
+    id: "award2",
     title: "Award Certificate 2",
     type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
@@ -652,6 +671,7 @@ const schoolCertificates = [
     credential: "/certificate-award-2.html",
   },
   {
+    id: "award3",
     title: "Award Certificate 3",
     type: "Al Ekhaa Private Schools",
     icon: "/Logos/Qyem_logo.png",
@@ -671,6 +691,7 @@ const schoolCertificates = [
     credential: "/certificate-award-3.html",
   },
   {
+    id: "steam",
     title: "Steam Certificate",
     type: "School Achievement",
     icon: "/Logos/Qyem_logo.png",
@@ -694,10 +715,7 @@ const schoolCertificates = [
 const projects = [
   {
     name: "AIST (Advanced Intelligent Smart Desk)",
-    description:
-      "AIST (Advanced Intelligent Smart Desk) is a next-generation interactive desktop system inspired by futuristic HUD technology. It combines AI, gesture control, 3D visualization, voice interaction, and advanced UI into one intelligent platform.",
-    descriptionAr:
-      "نظام AIST هو مكتب تفاعلي من الجيل القادم مستوحى من واجهات HUD المستقبلية. يجمع الذكاء الاصطناعي والتحكم بالإيماءات والتصور ثلاثي الأبعاد والتفاعل الصوتي وواجهة متقدمة في منصة واحدة.",
+    descriptionKey: "projects.aist",
     tags: [
       { name: "AI", color: "blue-text-gradient" },
       { name: "HUD", color: "green-text-gradient" },
@@ -710,10 +728,7 @@ const projects = [
   },
   {
     name: "ELEGOO Smart Car",
-    description:
-      "The ELEGOO Smart Car is an autonomous vehicle powered by an UNO R3 microcontroller. It uses DC motors and servo steering to move and navigate its environment.",
-    descriptionAr:
-      "سيارة ELEGOO الذكية مركبة ذاتية التحكم تعمل بوحدة UNO R3. تستخدم محركات DC وتوجيه سيرفو للحركة والتنقل في البيئة.",
+    descriptionKey: "projects.car",
     tags: [
       { name: "Robotics", color: "blue-text-gradient" },
       { name: "Arduino", color: "green-text-gradient" },
@@ -726,10 +741,7 @@ const projects = [
   },
   {
     name: "CS50x Project — ARNcode Web Designed App",
-    description:
-      "A web-designed application project built for CS50x, showcased in the demo with its interface flow, core pages, and main functionality.",
-    descriptionAr:
-      "مشروع تطبيق ويب لـ CS50x يعرض في الفيديو تدفق الواجهة والصفحات الأساسية والوظائف الرئيسية.",
+    descriptionKey: "projects.cs50x",
     tags: [
       { name: "CS50x", color: "blue-text-gradient" },
       { name: "Web App", color: "green-text-gradient" },
@@ -740,10 +752,7 @@ const projects = [
   },
   {
     name: "CS50 Cyber Security Project",
-    description:
-      "A cybersecurity project demo highlighting security concepts, testing flow, and results presented in the video.",
-    descriptionAr:
-      "عرض لمشروع أمن سيبراني يوضح مفاهيم الحماية وتدفق الاختبارات والنتائج في الفيديو.",
+    descriptionKey: "projects.cyber",
     tags: [
       { name: "Security", color: "blue-text-gradient" },
       { name: "CS50", color: "green-text-gradient" },
@@ -754,10 +763,7 @@ const projects = [
   },
   {
     name: "CS50P Project",
-    description:
-      "A CS50P Python project demo showing the program workflow, outputs, and key features from the video.",
-    descriptionAr:
-      "عرض لمشروع CS50P بلغة بايثون يوضح سير العمل والمخرجات والميزات الرئيسية في الفيديو.",
+    descriptionKey: "projects.cs50p",
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "CS50P", color: "green-text-gradient" },
@@ -794,10 +800,7 @@ const projects = [
   // },
   {
     name: "My Protoflio",
-    description:
-      "My Protoflio is the personal portfolio website you are viewing now. It highlights my projects, certifications, education, and 3D work in a clean, interactive layout.",
-    descriptionAr:
-      "موقعي الشخصي الذي تشاهده الآن، يعرض مشاريعي وشهاداتي وتعليمي في تصميم تفاعلي وأنيق.",
+    descriptionKey: "projects.portfolio",
     tags: [
       { name: "Portfolio", color: "blue-text-gradient" },
       { name: "Three.js", color: "green-text-gradient" },

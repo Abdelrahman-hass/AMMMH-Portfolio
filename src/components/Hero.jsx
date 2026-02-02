@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 
-const Hero = ({ lang }) => {
+const Hero = ({ lang, t }) => {
   const highlightClasses = {
     Harvard: "text-red-300",
     "6+": "text-blue-300",
@@ -104,153 +104,62 @@ const Hero = ({ lang }) => {
 
   const isArabic = lang === "ar";
 
-  const dashboardCards = isArabic
-    ? [
-        {
-          title: "اعتمادات Harvard",
-          logo: "/Logos/Harvard_logo.png",
-          main: "8\u00A0الشهادات",
-          mainHighlights: ["8", "الشهادات"],
-          lines: [
-            {
-              text: "أكملت خلال ~4 أشهر • 24 مهمة • 24 محاضرة",
-              highlights: ["~4", "24", "أشهر", "مهمة", "محاضرة"],
-            },
-            { text: "2 شهادات احترافية", highlights: ["2", "شهادات احترافية"] },
-            { text: "أنجزت 3 مشاريع خلال البرنامج", highlights: ["3", "مشاريع"] },
-          ],
-          button: "عرض الشهادات",
-          target: "certifications",
-        },
-        {
-          title: "النتائج الأكاديمية",
-          logo: "/Logos/Qyem_logo.png",
-          main: "99%+\u00A0الاستمرارية",
-          mainHighlights: ["99%+", "الاستمرارية"],
-          lines: [
-            { text: "الهدف: 99.5%+ متوسط سنوي", highlights: ["الهدف:", "99.5%+"] },
-            { text: "دراسة مركزة وتحسن مستمر", highlights: ["تحسن"] },
-          ],
-          button: "عرض الشهادات المدرسية",
-          target: "school-certificates",
-        },
-        {
-          title: "الإنتاج التقني",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "6+\u00A0مشاريع",
-          mainHighlights: ["6+", "مشاريع"],
-          lines: [
-            {
-              text: "الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب",
-              highlights: ["الذكاء الاصطناعي", "الأمن السيبراني", "الروبوتات", "الويب"],
-            },
-            { text: "بناء مشاريع طلابية حقيقية", highlights: ["مشاريع"] },
-          ],
-          button: "عرض المشاريع",
-          target: "projects",
-        },
-        {
-          title: "خارطة التعلم (2026)",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "المحطات القادمة",
-          lines: [
-            { text: "إكمال برنامجين إضافيين من Harvard/edX", highlights: ["برنامجين", "Harvard"] },
-            { text: "الهدف: ميدالية ذهبية في مسابقة الكنغر الرياضي", highlights: ["ميدالية ذهبية"] },
-          ],
-        },
-        {
-          title: "المسار المهني",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "ذكاء اصطناعي • أمن • أنظمة",
-          mainHighlights: ["ذكاء", "أمن", "أنظمة"],
-          lines: [
-            { text: "الهدف: بناء منصات تعلم ذكية", highlights: ["ذكية"] },
-            { text: "التركيز على أنظمة آمنة ومفيدة", highlights: ["أنظمة مفيدة"] },
-          ],
-        },
-        {
-          title: "مميزاتي",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "تعلم وبحث ذكي",
-          lines: [
-            { text: "أستخدم الذكاء الاصطناعي للبحث عن معلومات موثوقة بسرعة", highlights: ["الذكاء الاصطناعي"] },
-            { text: "أطبق الذكاء الاصطناعي لتوفير الوقت أثناء التعلم", highlights: ["توفير الوقت"] },
-          ],
-        },
-      ]
-    : [
-        {
-          title: "Harvard Credentials",
-          logo: "/Logos/Harvard_logo.png",
-          main: "8\u00A0Certificates",
-          mainHighlights: ["8", "Certificates"],
-          lines: [
-            {
-              text: "Completed in ~4 months • 24 assignments • 24 lectures",
-              highlights: ["~4 months", "24", "assignments", "lectures"],
-            },
-            { text: "2 professional certificates", highlights: ["2", "professional certificates"] },
-            { text: "Built 3 projects during the program", highlights: ["projects"] },
-          ],
-          button: "View Certificates",
-          target: "certifications",
-        },
-        {
-          title: "Academic Results",
-          logo: "/Logos/Qyem_logo.png",
-          main: "99%+\u00A0Consistency",
-          mainHighlights: ["99%+", "Consistency"],
-          lines: [
-            { text: "Target: 99.5%+ yearly average", highlights: ["Target:", "99.5%+"] },
-            { text: "Focused study and steady improvement", highlights: ["improvement"] },
-          ],
-          button: "View School Certificates",
-          target: "school-certificates",
-        },
-        {
-          title: "Tech Output",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "6+\u00A0Projects",
-          mainHighlights: ["6+", "Projects"],
-          lines: [
-            {
-              text: "AI • Cybersecurity • Robotics • Web",
-              highlights: ["Cybersecurity", "Robotics", "Web"],
-            },
-            { text: "Building real student projects", highlights: ["projects"] },
-          ],
-          button: "View Projects",
-          target: "projects",
-        },
-        {
-          title: "Learning Roadmap (2026)",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "Next Milestones",
-          lines: [
-            { text: "Complete 2 additional Harvard/edX programs", highlights: ["2", "Harvard"] },
-            { text: "Aim for Gold Medal in Math Kangaroo competitions", highlights: ["Gold Medal"] },
-          ],
-        },
-        {
-          title: "Career Path",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "AI • Cyber • Systems",
-          mainHighlights: ["AI", "Cyber", "Systems"],
-          lines: [
-            { text: "Goal: Build intelligent learning platforms", highlights: ["intelligent"] },
-            { text: "Focus on safe, useful systems", highlights: ["useful systems"] },
-          ],
-        },
-        {
-          title: "My Strengths",
-          logo: "/Logos/AMMMH_logo.png",
-          main: "Smart Learning",
-          lines: [
-            { text: "Use AI to research and find reliable information faster", highlights: ["AI"] },
-            { text: "Apply AI to real tasks and save time while learning", highlights: ["save time"] },
-          ],
-        },
-      ];
+  const dashboardCards = [
+    {
+      id: "harvard",
+      logo: "/Logos/Harvard_logo.png",
+      mainHighlights: isArabic ? ["8", "الشهادات"] : ["8", "Certificates"],
+      lineHighlights: isArabic
+        ? [
+            ["~4", "24", "أشهر", "مهمة", "محاضرة"],
+            ["2", "شهادات احترافية"],
+            ["3", "مشاريع"],
+          ]
+        : [["~4 months", "24", "assignments", "lectures"], ["2", "professional certificates"], ["projects"]],
+      target: "certifications",
+    },
+    {
+      id: "academic",
+      logo: "/Logos/Qyem_logo.png",
+      mainHighlights: isArabic ? ["99%+", "الاستمرارية"] : ["99%+", "Consistency"],
+      lineHighlights: isArabic ? [["الهدف:", "99.5%+"], ["تحسن"]] : [["Target:", "99.5%+"], ["improvement"]],
+      target: "school-certificates",
+    },
+    {
+      id: "output",
+      logo: "/Logos/AMMMH_logo.png",
+      mainHighlights: isArabic ? ["6+", "مشاريع"] : ["6+", "Projects"],
+      lineHighlights: isArabic
+        ? [["الذكاء الاصطناعي", "الأمن السيبراني", "الروبوتات", "الويب"], ["مشاريع"]]
+        : [["Cybersecurity", "Robotics", "Web"], ["projects"]],
+      target: "projects",
+    },
+    {
+      id: "roadmap",
+      logo: "/Logos/AMMMH_logo.png",
+      lineHighlights: isArabic ? [["برنامجين", "Harvard"], ["ميدالية ذهبية"]] : [["2", "Harvard"], ["Gold Medal"]],
+    },
+    {
+      id: "career",
+      logo: "/Logos/AMMMH_logo.png",
+      mainHighlights: isArabic ? ["ذكاء", "أمن", "أنظمة"] : ["AI", "Cyber", "Systems"],
+      lineHighlights: isArabic ? [["ذكية"], ["أنظمة مفيدة"]] : [["intelligent"], ["useful systems"]],
+    },
+    {
+      id: "strengths",
+      logo: "/Logos/AMMMH_logo.png",
+      lineHighlights: isArabic ? [["الذكاء الاصطناعي"], ["توفير الوقت"]] : [["AI"], ["save time"]],
+    },
+  ].map((card) => {
+    const base = t(`hero.cards.${card.id}`);
+    return {
+      ...card,
+      title: base.title,
+      main: base.main,
+      lines: base.lines || [],
+      button: base.button,
+    };
+  });
 
   return (
     <section
@@ -265,21 +174,19 @@ const Hero = ({ lang }) => {
                 isArabic ? "" : "uppercase tracking-[0.3em]"
               }`}
             >
-              {isArabic ? "الملخص التنفيذي" : "Executive Summary"}
+              {t("hero.label")}
             </span>
             <span className="text-[12px] text-secondary border border-white/10 px-3 py-1 rounded-full bg-tertiary/40">
-              {isArabic ? "الصف العاشر • مدارس الإخاء (جدة)" : "Grade 10 • Al Ekhaa Private Schools (Jeddah)"}
+              {t("hero.badge")}
             </span>
           </div>
 
           <h1 className="text-white text-[30px] sm:text-[40px] md:text-[48px] font-bold leading-tight max-w-4xl">
-            {isArabic
-              ? "عبدالرحمن حسانين — أتعلم المهارات الحديثة والمهمة منذ سن مبكرة."
-              : "Abdelrahman Hassanein — learning modern, important skills at an early age."}
+            {t("hero.headline")}
           </h1>
 
           <p className="text-white-100 text-[15px] sm:text-[17px] max-w-3xl">
-            {isArabic ? "الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب" : "AI • Cybersecurity • Robotics • Web"}
+            {t("hero.subline")}
           </p>
         </div>
 
@@ -321,23 +228,11 @@ const Hero = ({ lang }) => {
                     isArabic ? "pr-6 text-right" : "pl-6 text-left"
                   }`}
                 >
-                  {card.lines.map((line) => {
-                    if (typeof line === "string") {
-                      return (
-                        <li key={line} className="break-words">
-                          {renderWithHighlights(line)}
-                        </li>
-                      );
-                    }
-
-                    const { text, highlights = [] } = line;
-
-                    return (
-                      <li key={text} className="break-words">
-                        {renderWithHighlights(text, highlights)}
-                      </li>
-                    );
-                  })}
+                  {card.lines.map((line, lineIndex) => (
+                    <li key={`${card.title}-line-${lineIndex}`} className="break-words">
+                      {renderWithHighlights(line, card.lineHighlights?.[lineIndex] || [])}
+                    </li>
+                  ))}
                 </ul>
 
                 {card.button && (

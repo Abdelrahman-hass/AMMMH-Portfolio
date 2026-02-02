@@ -5,23 +5,26 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 
-const Navbar = ({ lang, setLang }) => {
+const Navbar = ({ lang, setLang, t }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const navLabels = {
-    "executive-summary": "الملخص التنفيذي",
-    projects: "المشاريع",
-    certifications: "الشهادات",
-    "school-certificates": "الشهادات المدرسية",
-    education: "التعليم",
-    "about-my-school": "عن مدرستي",
-  };
-
   const localizedNavLinks = navLinks.map((nav) => ({
     ...nav,
-    title: lang === "ar" ? navLabels[nav.id] || nav.title : nav.title,
+    title:
+      nav.id === "executive-summary"
+        ? t("nav.executiveSummary")
+        : nav.id === "projects"
+        ? t("nav.projects")
+        : nav.id === "certifications"
+        ? t("nav.certifications")
+        : nav.id === "school-certificates"
+        ? t("nav.schoolCertificates")
+        : nav.id === "education"
+        ? t("nav.education")
+        : nav.id === "about-my-school"
+        ? t("nav.aboutMySchool")
+        : nav.title,
   }));
 
   const handleNavClick = (event, id, title) => {

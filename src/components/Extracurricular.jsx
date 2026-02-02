@@ -12,25 +12,19 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 const CertificationCard = ({
-  title,
-  titleAr,
+  id,
   icon,
-  type,
-  typeAr,
-  date,
-  dateAr,
-  points,
-  pointsAr,
   credential,
   lang,
+  t,
 }) => {
   const isHarvard = icon?.includes("Harvard_logo");
   const isMawhiba = icon?.includes("Mawhiba_logo");
   const iconSize = isHarvard ? "h-28" : isMawhiba ? "h-24" : "h-14";
-  const displayTitle = lang === "ar" ? titleAr || title : title;
-  const displayType = lang === "ar" ? typeAr || type : type;
-  const displayDate = lang === "ar" ? dateAr || date : date;
-  const displayPoints = lang === "ar" ? pointsAr || points : points;
+  const displayTitle = t(`extracurricular.items.${id}.title`);
+  const displayType = t(`extracurricular.items.${id}.type`);
+  const displayDate = t(`extracurricular.items.${id}.date`);
+  const displayPoints = t(`extracurricular.items.${id}.points`);
 
   return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
@@ -65,14 +59,14 @@ const CertificationCard = ({
         rel="noopener noreferrer"
         className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
       >
-        {lang === "ar" ? "عرض الشهادة" : "View the Certificate"}
+        {t("buttons.viewCertificate")}
       </a>
     </div>
   </div>
   );
 };
 
-const Extracurricular = ({ lang }) => {
+const Extracurricular = ({ lang, t }) => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -108,7 +102,7 @@ const Extracurricular = ({ lang }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {lang === "ar" ? "التعلم المستمر" : "Continuous Learning"}
+          {t("sections.certifications.sub")}
         </p>
       </motion.div>
 
@@ -121,7 +115,7 @@ const Extracurricular = ({ lang }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {lang === "ar" ? "الشهادات" : "Certifications"}
+          {t("sections.certifications.title")}
         </h2>
       </motion.div>
 
@@ -165,7 +159,7 @@ const Extracurricular = ({ lang }) => {
         >
           {extracurricular.map((certification, index) => (
             <SwiperSlide key={`certification-${index}`}>
-              <CertificationCard {...certification} lang={lang} />
+              <CertificationCard {...certification} lang={lang} t={t} />
             </SwiperSlide>
           ))}
         </Swiper>

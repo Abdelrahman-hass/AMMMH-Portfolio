@@ -12,23 +12,11 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-const SchoolCertificateCard = ({
-  title,
-  titleAr,
-  icon,
-  type,
-  typeAr,
-  date,
-  dateAr,
-  points,
-  pointsAr,
-  credential,
-  lang,
-}) => {
-  const displayTitle = lang === "ar" ? titleAr || title : title;
-  const displayType = lang === "ar" ? typeAr || type : type;
-  const displayDate = lang === "ar" ? dateAr || date : date;
-  const displayPoints = lang === "ar" ? pointsAr || points : points;
+const SchoolCertificateCard = ({ id, icon, credential, lang, t }) => {
+  const displayTitle = t(`schoolCertificates.items.${id}.title`);
+  const displayType = t(`schoolCertificates.items.${id}.type`);
+  const displayDate = t(`schoolCertificates.items.${id}.date`);
+  const displayPoints = t(`schoolCertificates.items.${id}.points`);
 
   return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
@@ -63,14 +51,14 @@ const SchoolCertificateCard = ({
         rel="noopener noreferrer"
         className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
       >
-        {lang === "ar" ? "عرض الشهادة" : "View the Certificate"}
+        {t("buttons.viewCertificate")}
       </a>
     </div>
   </div>
   );
 };
 
-const SchoolCertificates = ({ lang }) => {
+const SchoolCertificates = ({ lang, t }) => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -106,7 +94,7 @@ const SchoolCertificates = ({ lang }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {lang === "ar" ? "السجل الأكاديمي" : "Academic Records"}
+          {t("sections.schoolCertificates.sub")}
         </p>
       </motion.div>
 
@@ -119,7 +107,7 @@ const SchoolCertificates = ({ lang }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {lang === "ar" ? "الشهادات المدرسية" : "School Certificates"}
+          {t("sections.schoolCertificates.title")}
         </h2>
       </motion.div>
 
@@ -162,7 +150,7 @@ const SchoolCertificates = ({ lang }) => {
         >
           {schoolCertificates.map((certification, index) => (
             <SwiperSlide key={`school-cert-${index}`}>
-              <SchoolCertificateCard {...certification} lang={lang} />
+              <SchoolCertificateCard {...certification} lang={lang} t={t} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -12,12 +12,12 @@ import { education } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const EducationCard = ({ education, index, lang }) => {
+const EducationCard = ({ education, index, lang, t }) => {
   const isLeft = index % 2 === 0;
-  const title = lang === "ar" ? education.titleAr || education.title : education.title;
-  const company = lang === "ar" ? education.company_nameAr || education.company_name : education.company_name;
-  const date = lang === "ar" ? education.dateAr || education.date : education.date;
-  const points = lang === "ar" ? education.pointsAr || education.points : education.points;
+  const title = t(`education.${education.id}.title`);
+  const company = t(`education.${education.id}.company`);
+  const date = t(`education.${education.id}.date`);
+  const points = t(`education.${education.id}.points`);
   return (
     <div className="relative">
       <VerticalTimelineElement
@@ -84,7 +84,7 @@ const EducationCard = ({ education, index, lang }) => {
   );
 };
 
-const Education = ({ lang }) => {
+const Education = ({ lang, t }) => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const mainControls = useAnimation();
@@ -106,7 +106,7 @@ const Education = ({ lang }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {lang === "ar" ? "ما درسته حتى الآن" : "What I have Studied so far"}
+          {t("sections.education.sub")}
         </p>
       </motion.div>
 
@@ -119,14 +119,14 @@ const Education = ({ lang }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {lang === "ar" ? "التعليم" : "Education."}
+          {t("sections.education.title")}
         </h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col" dir={lang === "ar" ? "ltr" : undefined}>
         <VerticalTimeline>
           {education.map((education, index) => (
-            <EducationCard key={`experience-${index}`} education={education} index={index} lang={lang} />
+            <EducationCard key={`experience-${index}`} education={education} index={index} lang={lang} t={t} />
           ))}
         </VerticalTimeline>
       </div>
