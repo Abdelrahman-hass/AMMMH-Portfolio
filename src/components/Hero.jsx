@@ -260,7 +260,11 @@ const Hero = ({ lang }) => {
       <div className={`max-w-7xl mx-auto ${styles.paddingX}`}>
         <div className={`flex flex-col gap-6 ${isArabic ? "text-right" : "text-left"}`}>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="uppercase tracking-[0.3em] text-[12px] text-secondary font-semibold">
+            <span
+              className={`text-[12px] text-secondary font-semibold ${
+                isArabic ? "" : "uppercase tracking-[0.3em]"
+              }`}
+            >
               {isArabic ? "الملخص التنفيذي" : "Executive Summary"}
             </span>
             <span className="text-[12px] text-secondary border border-white/10 px-3 py-1 rounded-full bg-tertiary/40">

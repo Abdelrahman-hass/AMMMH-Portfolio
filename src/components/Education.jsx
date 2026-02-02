@@ -14,6 +14,7 @@ import { textVariant } from "../utils/motion";
 
 const EducationCard = ({ education, index, lang }) => {
   const isLeft = index % 2 === 0;
+  const forceRight = lang === "ar";
   const title = lang === "ar" ? education.titleAr || education.title : education.title;
   const company = lang === "ar" ? education.company_nameAr || education.company_name : education.company_name;
   const date = lang === "ar" ? education.dateAr || education.date : education.date;
@@ -21,7 +22,7 @@ const EducationCard = ({ education, index, lang }) => {
   return (
     <div className="relative">
       <VerticalTimelineElement
-        position={isLeft ? "left" : "right"}
+        position={forceRight ? "right" : isLeft ? "left" : "right"}
         contentStyle={{
           background: "#1d1836",
           color: "#fff",

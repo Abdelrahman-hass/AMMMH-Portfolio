@@ -6,7 +6,7 @@ import Feedbacks from './components/Feedbacks'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
-  const [lang, setLang] = useState(() => localStorage.getItem("lang") || "ar")
+  const [lang, setLang] = useState("ar")
 
   useEffect(() => {
     localStorage.setItem("lang", lang)
