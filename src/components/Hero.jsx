@@ -21,6 +21,11 @@ const Hero = ({ lang, t }) => {
     "مهارات تقنية": "text-blue-300",
     "عالية التأثير": "text-purple-300",
     "الأداء الأكاديمي": "text-purple-200",
+    Technology: "text-cyan-300",
+    "التقنية": "text-cyan-300",
+    knowledge: "text-purple-300",
+    technology: "text-cyan-300",
+    "معرفة تقنية": "text-purple-300",
     "الاستمرارية": "text-purple-200",
     "الهدف:": "text-purple-200",
     Cybersecurity: "text-cyan-300",
@@ -160,8 +165,8 @@ const Hero = ({ lang, t }) => {
     {
       id: "career",
       logo: "/Logos/AMMMH_logo.png",
-      mainHighlights: isArabic ? ["ذكاء", "أمن", "أنظمة"] : ["AI", "Cybersecurity", "Systems"],
-      lineHighlights: isArabic ? [["ذكية", "آمنة"], []] : [["intelligent", "secure"], []],
+      mainHighlights: isArabic ? ["التقنية"] : ["Technology"],
+      lineHighlights: isArabic ? [["معرفة تقنية"]] : [["technology", "knowledge"]],
     },
     {
       id: "strengths",

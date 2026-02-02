@@ -46,8 +46,8 @@ export const translations = {
         },
         career: {
           title: "Career Path",
-          main: "AI • Cybersecurity • Systems",
-          lines: ["Building intelligent, secure platforms"],
+          main: "Technology",
+          lines: ["Building technology knowledge"],
         },
         strengths: {
           title: "My Strengths",
@@ -252,7 +252,7 @@ export const translations = {
     hero: {
       label: "الملخص التنفيذي",
       badge: "الصف العاشر • مدارس الإخاء (جدة)",
-      headline: "عبدالرحمن حسنين — يبني مهارات تقنية حديثة وعالية التأثير منذ سن مبكرة.",
+      headline: "عبدالرحمن حسانين — يبني مهارات تقنية حديثة وعالية التأثير منذ سن مبكرة.",
       subline: "الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب",
       cards: {
         harvard: {
@@ -284,8 +284,8 @@ export const translations = {
         },
         career: {
           title: "المسار المهني",
-          main: "ذكاء اصطناعي • أمن سيبراني • أنظمة",
-          lines: ["بناء منصات ذكية وآمنة"],
+          main: "التقنية",
+          lines: ["بناء معرفة تقنية"],
         },
         strengths: {
           title: "مميزاتي",
