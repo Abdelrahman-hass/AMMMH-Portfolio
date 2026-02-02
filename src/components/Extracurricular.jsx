@@ -11,14 +11,19 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-const CertificationCard = ({ title, icon, type, date, points, credential }) => (
+const CertificationCard = ({ title, icon, type, date, points, credential }) => {
+  const isHarvard = icon?.includes("Harvard_logo");
+  const isMawhiba = icon?.includes("Mawhiba_logo");
+  const iconSize = isHarvard ? "h-20" : isMawhiba ? "h-16" : "h-14";
+
+  return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
     <div>
       <div className="relative w-full h-[70px] mb-4">
         <img
           src={icon}
           alt={title}
-          className="w-auto h-full object-contain no-select"
+          className={`w-auto ${iconSize} object-contain no-select`}
           loading="lazy"
           decoding="async"
         />
@@ -48,7 +53,8 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => (
       </a>
     </div>
   </div>
-);
+  );
+};
 
 const Extracurricular = () => {
   const [isMobile, setIsMobile] = useState(false);
