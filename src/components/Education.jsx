@@ -58,8 +58,9 @@ const EducationCard = ({ education, index, lang, t }) => {
 
         <ul
           className={`mt-5 list-disc space-y-2 ${
-            lang === "ar" ? "text-right list-inside pr-2" : "ml-5 text-left"
+            lang === "ar" ? "text-right list-outside pr-6" : "ml-5 text-left"
           }`}
+          dir={lang === "ar" ? "rtl" : "ltr"}
         >
           {points.map((point, index) => (
             <li
