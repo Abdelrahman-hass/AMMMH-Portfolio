@@ -100,6 +100,19 @@ const Hero = () => {
       target: "certifications",
     },
     {
+      title: "Academic Results",
+      logo: "/Logos/Qyem_logo.png",
+      main: "99%+\u00A0Consistency",
+      mainHighlights: ["99%+", "Consistency"],
+      lines: [
+        { text: "Target: 99.5%+ yearly average", highlights: ["Target:", "99.5%+"] },
+        { text: "Focused study and steady improvement", highlights: ["improvement"] },
+      ],
+      highlight: "99%+",
+      button: "View School Certificates",
+      target: "school-certificates",
+    },
+    {
       title: "Tech Output",
       logo: "/Logos/AMMMH_logo.png",
       main: "6+\u00A0Projects",
@@ -114,19 +127,6 @@ const Hero = () => {
       highlight: "6+",
       button: "View Projects",
       target: "projects",
-    },
-    {
-      title: "Academic Results",
-      logo: "/Logos/Qyem_logo.png",
-      main: "99%+\u00A0Consistency",
-      mainHighlights: ["99%+", "Consistency"],
-      lines: [
-        { text: "Target: 99.5%+ yearly average", highlights: ["Target:", "99.5%+"] },
-        { text: "Focused study and steady improvement", highlights: ["improvement"] },
-      ],
-      highlight: "99%+",
-      button: "View School Certificates",
-      target: "school-certificates",
     },
     {
       title: "Learning Roadmap (2026)",
