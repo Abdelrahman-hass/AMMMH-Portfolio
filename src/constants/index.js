@@ -110,9 +110,16 @@ const education = [
     icon: rhhs,
     iconBg: "#fff",
     date: "2025 - 2026 (Term 1)",
+    titleAr: "الصف العاشر",
+    company_nameAr: "مدارس الإخاء",
+    dateAr: "2025 - 2026 (الترم الأول)",
     points: [
       "Completed Term 1 at Al Ekhaa Private Schools with strong performance.",
       "Term 1 Grade: 99.85%",
+    ],
+    pointsAr: [
+      "أكملت الترم الأول في مدارس الإخاء بأداء قوي.",
+      "درجة الترم الأول: 99.85%",
     ],
     certificatesUrl: "/certificates-grade-10.html",
   },
@@ -122,9 +129,16 @@ const education = [
     icon: rhhs,
     iconBg: "#fff",
     date: "2024 - 2025",
+    titleAr: "الصف التاسع",
+    company_nameAr: "مدارس الإخاء",
+    dateAr: "2024 - 2025",
     points: [
       "Consistently high results and steady improvement throughout the year.",
       "Year Grade: 99.58%",
+    ],
+    pointsAr: [
+      "نتائج عالية وتحسن ثابت طوال العام.",
+      "درجة السنة: 99.58%",
     ],
     certificatesUrl: "/certificates-grade-9.html",
   },
@@ -134,9 +148,16 @@ const education = [
     icon: rhhs,
     iconBg: "#fff",
     date: "2023 - 2024",
+    titleAr: "الصف الثامن",
+    company_nameAr: "مدارس الإخاء",
+    dateAr: "2023 - 2024",
     points: [
       "Maintained excellent performance across all subjects at Al Ekhaa Private Schools.",
       "Year Grade: 99.48%",
+    ],
+    pointsAr: [
+      "حافظت على أداء ممتاز في جميع المواد في مدارس الإخاء.",
+      "درجة السنة: 99.48%",
     ],
     certificatesUrl: "/certificates-grade-8.html",
   },
@@ -146,9 +167,16 @@ const education = [
     icon: rhhs,
     iconBg: "#fff",
     date: "2022 - 2023",
+    titleAr: "الصف السابع",
+    company_nameAr: "مدارس الإخاء",
+    dateAr: "2022 - 2023",
     points: [
       "Continued my journey at Al Ekhaa Private Schools, focused on building strong study habits.",
       "Year Grade: 99%",
+    ],
+    pointsAr: [
+      "واصلت رحلتي في مدارس الإخاء مع التركيز على بناء عادات دراسة قوية.",
+      "درجة السنة: 99%",
     ],
   },
   {
@@ -157,10 +185,18 @@ const education = [
     icon: rhhs,
     iconBg: "#fff",
     date: "2019 - 2022",
+    titleAr: "الصفوف 4–6",
+    company_nameAr: "مدارس الإخاء",
+    dateAr: "2019 - 2022",
     points: [
       "Started my journey at Al Ekhaa Private Schools in Grade 4.",
       "Built strong academic foundations through Grades 5 and 6.",
       "Continued to grow with consistent performance and discipline.",
+    ],
+    pointsAr: [
+      "بدأت رحلتي في مدارس الإخاء في الصف الرابع.",
+      "بنيت أساسًا أكاديميًا قويًا خلال الصفين الخامس والسادس.",
+      "واصلت التقدم بانضباط وأداء ثابت.",
     ],
   },
 ];
@@ -352,9 +388,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة CS50P",
+    typeAr: "HarvardX / edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Certificate of completion for CS50P.",
       "Focus on Python programming fundamentals.",
+    ],
+    pointsAr: [
+      "شهادة إكمال CS50P.",
+      "تركيز على أساسيات البرمجة بلغة بايثون.",
     ],
     credential: "/certificate-cs50p.html",
   },
@@ -364,9 +407,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة CS50x",
+    typeAr: "HarvardX / edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Certificate of completion for CS50x.",
       "Covers core computer science concepts.",
+    ],
+    pointsAr: [
+      "شهادة إكمال CS50x.",
+      "تغطي مفاهيم علوم الحاسب الأساسية.",
     ],
     credential: "/certificate-cs50x.html",
   },
@@ -376,9 +426,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة الأمن السيبراني CS50",
+    typeAr: "HarvardX / edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Cybersecurity course completion certificate.",
       "Covers security concepts and best practices.",
+    ],
+    pointsAr: [
+      "شهادة إكمال دورة الأمن السيبراني.",
+      "تغطي مفاهيم الأمن وأفضل الممارسات.",
     ],
     credential: "/certificate-cs50-cybersecurity.html",
   },
@@ -388,9 +445,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة الأمن السيبراني CS50",
+    typeAr: "شهادة CS50",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Official CS50 cybersecurity certificate.",
       "Verified completion and achievement.",
+    ],
+    pointsAr: [
+      "شهادة CS50 الرسمية للأمن السيبراني.",
+      "إكمال موثق وإنجاز معتمد.",
     ],
     credential: "/certificate-cs50-cybersecurity-direct.html",
   },
@@ -400,9 +464,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة CS50P (edX)",
+    typeAr: "HarvardX / edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "edX credential for CS50P.",
       "Verifies completion and achievement.",
+    ],
+    pointsAr: [
+      "اعتماد edX لـ CS50P.",
+      "يوثق الإكمال والإنجاز.",
     ],
     credential: "/certificate-cs50p-edx.html",
   },
@@ -412,9 +483,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة CS50x (edX)",
+    typeAr: "HarvardX / edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "edX credential for CS50x.",
       "Verifies completion and achievement.",
+    ],
+    pointsAr: [
+      "اعتماد edX لـ CS50x.",
+      "يوثق الإكمال والإنجاز.",
     ],
     credential: "/certificate-cs50x-edx.html",
   },
@@ -424,9 +502,16 @@ const extracurricular = [
     icon: "/Logos/Mawhiba_logo.png",
     iconBg: "#050C18",
     date: "Issued: See certificate",
+    titleAr: "شهادة Mawhiba Hub",
+    typeAr: "Mawhiba Hub",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Official Mawhiba Hub certificate.",
       "Recognizes participation and achievement.",
+    ],
+    pointsAr: [
+      "شهادة Mawhiba Hub الرسمية.",
+      "توثق المشاركة والإنجاز.",
     ],
     credential: "/certificate-mawhiba-hub.html",
   },
@@ -436,9 +521,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة احترافية (edX)",
+    typeAr: "شهادة احترافية من edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Professional certificate credential.",
       "Issued and verified by edX.",
+    ],
+    pointsAr: [
+      "اعتماد شهادة احترافية.",
+      "صادرة وموثقة من edX.",
     ],
     credential: "/certificate-professional-edx.html",
   },
@@ -448,9 +540,16 @@ const extracurricular = [
     icon: "/Logos/Harvard_logo.png",
     iconBg: "#0b1f2a",
     date: "Issued: See certificate",
+    titleAr: "شهادة احترافية (الأمن السيبراني)",
+    typeAr: "شهادة احترافية من edX",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Cybersecurity professional certificate.",
       "Issued and verified by edX.",
+    ],
+    pointsAr: [
+      "شهادة احترافية في الأمن السيبراني.",
+      "صادرة وموثقة من edX.",
     ],
     credential: "/certificate-professional-cybersecurity.html",
   },
@@ -463,9 +562,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificates",
+    titleAr: "شهادات الصف الثامن",
+    typeAr: "مدارس الإخاء",
+    dateAr: "صادرة: عرض الشهادات",
     points: [
       "Grade 8 academic performance certificates.",
       "Includes quarterly results and achievements.",
+    ],
+    pointsAr: [
+      "شهادات الأداء الأكاديمي للصف الثامن.",
+      "تتضمن نتائج وإنجازات الفصول الدراسية.",
     ],
     credential: "/certificates-grade-8.html",
   },
@@ -475,9 +581,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificates",
+    titleAr: "شهادات الصف التاسع",
+    typeAr: "مدارس الإخاء",
+    dateAr: "صادرة: عرض الشهادات",
     points: [
       "Grade 9 academic performance certificates.",
       "Includes quarterly results and achievements.",
+    ],
+    pointsAr: [
+      "شهادات الأداء الأكاديمي للصف التاسع.",
+      "تتضمن نتائج وإنجازات الفصول الدراسية.",
     ],
     credential: "/certificates-grade-9.html",
   },
@@ -487,9 +600,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificates",
+    titleAr: "شهادات الصف العاشر",
+    typeAr: "مدارس الإخاء",
+    dateAr: "صادرة: عرض الشهادات",
     points: [
       "Grade 10 Term 1 certificates.",
       "Shows academic performance for Term 1.",
+    ],
+    pointsAr: [
+      "شهادات الصف العاشر للترم الأول.",
+      "تظهر الأداء الأكاديمي للترم الأول.",
     ],
     credential: "/certificates-grade-10.html",
   },
@@ -499,9 +619,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificate",
+    titleAr: "شهادة تكريم",
+    typeAr: "مدارس الإخاء",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Official school award certificate.",
       "Recognizes academic effort and achievement.",
+    ],
+    pointsAr: [
+      "شهادة تكريم مدرسية رسمية.",
+      "توثق الجهد والإنجاز الأكاديمي.",
     ],
     credential: "/certificate-award.html",
   },
@@ -511,9 +638,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificate",
+    titleAr: "شهادة تكريم 2",
+    typeAr: "مدارس الإخاء",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Official school award certificate.",
       "Recognizes continued excellence and performance.",
+    ],
+    pointsAr: [
+      "شهادة تكريم مدرسية رسمية.",
+      "توثق التميز والأداء المستمر.",
     ],
     credential: "/certificate-award-2.html",
   },
@@ -523,9 +657,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificate",
+    titleAr: "شهادة تكريم 3",
+    typeAr: "مدارس الإخاء",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "Official school award certificate.",
       "Recognizes outstanding academic results.",
+    ],
+    pointsAr: [
+      "شهادة تكريم مدرسية رسمية.",
+      "توثق النتائج الأكاديمية المتميزة.",
     ],
     credential: "/certificate-award-3.html",
   },
@@ -535,9 +676,16 @@ const schoolCertificates = [
     icon: "/Logos/Qyem_logo.png",
     iconBg: "#1b1f3a",
     date: "Issued: See certificate",
+    titleAr: "شهادة STEAM",
+    typeAr: "إنجاز مدرسي",
+    dateAr: "صادرة: عرض الشهادة",
     points: [
       "School recognition certificate.",
       "Celebrates applied learning and creativity.",
+    ],
+    pointsAr: [
+      "شهادة تقدير مدرسية.",
+      "تحتفي بالتعلم التطبيقي والإبداع.",
     ],
     credential: "/certificate-steam.html",
   },
@@ -548,6 +696,8 @@ const projects = [
     name: "AIST (Advanced Intelligent Smart Desk)",
     description:
       "AIST (Advanced Intelligent Smart Desk) is a next-generation interactive desktop system inspired by futuristic HUD technology. It combines AI, gesture control, 3D visualization, voice interaction, and advanced UI into one intelligent platform.",
+    descriptionAr:
+      "نظام AIST هو مكتب تفاعلي من الجيل القادم مستوحى من واجهات HUD المستقبلية. يجمع الذكاء الاصطناعي والتحكم بالإيماءات والتصور ثلاثي الأبعاد والتفاعل الصوتي وواجهة متقدمة في منصة واحدة.",
     tags: [
       { name: "AI", color: "blue-text-gradient" },
       { name: "HUD", color: "green-text-gradient" },
@@ -562,6 +712,8 @@ const projects = [
     name: "ELEGOO Smart Car",
     description:
       "The ELEGOO Smart Car is an autonomous vehicle powered by an UNO R3 microcontroller. It uses DC motors and servo steering to move and navigate its environment.",
+    descriptionAr:
+      "سيارة ELEGOO الذكية مركبة ذاتية التحكم تعمل بوحدة UNO R3. تستخدم محركات DC وتوجيه سيرفو للحركة والتنقل في البيئة.",
     tags: [
       { name: "Robotics", color: "blue-text-gradient" },
       { name: "Arduino", color: "green-text-gradient" },
@@ -576,6 +728,8 @@ const projects = [
     name: "CS50x Project — ARNcode Web Designed App",
     description:
       "A web-designed application project built for CS50x, showcased in the demo with its interface flow, core pages, and main functionality.",
+    descriptionAr:
+      "مشروع تطبيق ويب لـ CS50x يعرض في الفيديو تدفق الواجهة والصفحات الأساسية والوظائف الرئيسية.",
     tags: [
       { name: "CS50x", color: "blue-text-gradient" },
       { name: "Web App", color: "green-text-gradient" },
@@ -588,6 +742,8 @@ const projects = [
     name: "CS50 Cyber Security Project",
     description:
       "A cybersecurity project demo highlighting security concepts, testing flow, and results presented in the video.",
+    descriptionAr:
+      "عرض لمشروع أمن سيبراني يوضح مفاهيم الحماية وتدفق الاختبارات والنتائج في الفيديو.",
     tags: [
       { name: "Security", color: "blue-text-gradient" },
       { name: "CS50", color: "green-text-gradient" },
@@ -600,6 +756,8 @@ const projects = [
     name: "CS50P Project",
     description:
       "A CS50P Python project demo showing the program workflow, outputs, and key features from the video.",
+    descriptionAr:
+      "عرض لمشروع CS50P بلغة بايثون يوضح سير العمل والمخرجات والميزات الرئيسية في الفيديو.",
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "CS50P", color: "green-text-gradient" },
@@ -638,6 +796,8 @@ const projects = [
     name: "My Protoflio",
     description:
       "My Protoflio is the personal portfolio website you are viewing now. It highlights my projects, certifications, education, and 3D work in a clean, interactive layout.",
+    descriptionAr:
+      "موقعي الشخصي الذي تشاهده الآن، يعرض مشاريعي وشهاداتي وتعليمي في تصميم تفاعلي وأنيق.",
     tags: [
       { name: "Portfolio", color: "blue-text-gradient" },
       { name: "Three.js", color: "green-text-gradient" },

@@ -11,10 +11,26 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-const CertificationCard = ({ title, icon, type, date, points, credential }) => {
+const CertificationCard = ({
+  title,
+  titleAr,
+  icon,
+  type,
+  typeAr,
+  date,
+  dateAr,
+  points,
+  pointsAr,
+  credential,
+  lang,
+}) => {
   const isHarvard = icon?.includes("Harvard_logo");
   const isMawhiba = icon?.includes("Mawhiba_logo");
   const iconSize = isHarvard ? "h-28" : isMawhiba ? "h-24" : "h-14";
+  const displayTitle = lang === "ar" ? titleAr || title : title;
+  const displayType = lang === "ar" ? typeAr || type : type;
+  const displayDate = lang === "ar" ? dateAr || date : date;
+  const displayPoints = lang === "ar" ? pointsAr || points : points;
 
   return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
@@ -22,17 +38,17 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => {
       <div className="relative w-full h-[70px] mb-4">
         <img
           src={icon}
-          alt={title}
+          alt={displayTitle}
           className={`w-auto ${iconSize} object-contain no-select`}
           loading="lazy"
           decoding="async"
         />
       </div>
-      <h3 className="text-white font-bold text-[20px] mb-2 no-select">{title}</h3>
-      <p className="text-secondary text-[12px] mb-1 no-select">{type}</p>
-      <p className="text-secondary text-[12px] mb-3 no-select">{date}</p>
-      <ul className="list-disc ml-5 space-y-1">
-        {points.slice(0, 2).map((point, index) => (
+      <h3 className="text-white font-bold text-[20px] mb-2 no-select">{displayTitle}</h3>
+      <p className="text-secondary text-[12px] mb-1 no-select">{displayType}</p>
+      <p className="text-secondary text-[12px] mb-3 no-select">{displayDate}</p>
+      <ul className={`list-disc space-y-1 ${lang === "ar" ? "mr-5 text-right" : "ml-5 text-left"}`}>
+        {displayPoints.slice(0, 2).map((point, index) => (
           <li
             key={`certification-point-${index}`}
             className="text-white-100 text-[12px] pl-1 tracking-wider no-select"
@@ -49,14 +65,14 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => {
         rel="noopener noreferrer"
         className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
       >
-        View the Certificate
+        {lang === "ar" ? "عرض الشهادة" : "View the Certificate"}
       </a>
     </div>
   </div>
   );
 };
 
-const Extracurricular = () => {
+const Extracurricular = ({ lang }) => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -91,7 +107,9 @@ const Extracurricular = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <p className={`${styles.sectionSubText} text-center`}>Continuous Learning</p>
+        <p className={`${styles.sectionSubText} text-center`}>
+          {lang === "ar" ? "التعلم المستمر" : "Continuous Learning"}
+        </p>
       </motion.div>
 
       <motion.div
@@ -102,7 +120,9 @@ const Extracurricular = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>Certifications</h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          {lang === "ar" ? "الشهادات" : "Certifications"}
+        </h2>
       </motion.div>
 
       <motion.div 
@@ -144,7 +164,7 @@ const Extracurricular = () => {
         >
           {extracurricular.map((certification, index) => (
             <SwiperSlide key={`certification-${index}`}>
-              <CertificationCard {...certification} />
+              <CertificationCard {...certification} lang={lang} />
             </SwiperSlide>
           ))}
         </Swiper>

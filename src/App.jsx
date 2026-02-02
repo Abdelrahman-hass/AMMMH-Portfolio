@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Education, Experience, Extracurricular, Hero, Navbar, Works, SchoolCertificates } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
@@ -6,18 +6,20 @@ import Feedbacks from './components/Feedbacks'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
+  const [lang, setLang] = useState("en")
+
   return (
       <BrowserRouter>
-        <div className='relative z-0 bg-primary'>
+        <div className='relative z-0 bg-primary' dir={lang === "ar" ? "rtl" : "ltr"}>
           <div className="div bg-hero-pattern bg-cover bg-no-repeat bg-center">
-            <Navbar />
-            <Hero />
+            <Navbar lang={lang} setLang={setLang} />
+            <Hero lang={lang} />
           </div>
-          <Works />
-          <Extracurricular />
-          <SchoolCertificates />
-          <Education />
-          <Experience />
+          <Works lang={lang} />
+          <Extracurricular lang={lang} />
+          <SchoolCertificates lang={lang} />
+          <Education lang={lang} />
+          <Experience lang={lang} />
           {/* <Feedbacks /> */}
           <SpeedInsights />
           <div className="div relative z-0" />

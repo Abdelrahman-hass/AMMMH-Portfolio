@@ -5,10 +5,24 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 
-const Navbar = () => {
+const Navbar = ({ lang, setLang }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navLabels = {
+    "executive-summary": "الملخص التنفيذي",
+    projects: "المشاريع",
+    certifications: "الشهادات",
+    "school-certificates": "الشهادات المدرسية",
+    education: "التعليم",
+    "about-my-school": "عن مدرستي",
+  };
+
+  const localizedNavLinks = navLinks.map((nav) => ({
+    ...nav,
+    title: lang === "ar" ? navLabels[nav.id] || nav.title : nav.title,
+  }));
 
   const handleNavClick = (event, id, title) => {
     event.preventDefault();
@@ -123,7 +137,7 @@ const Navbar = () => {
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
+          {localizedNavLinks.map((nav) => (
             <motion.li
               key={nav.id}
               initial={{ opacity: 0, y: -20 }}
@@ -143,6 +157,16 @@ const Navbar = () => {
           ))}
         </ul>
 
+        <div className="hidden sm:flex items-center gap-4 ml-6">
+          <button
+            type="button"
+            onClick={() => setLang(lang === "en" ? "ar" : "en")}
+            className="px-3 py-1 rounded-full border border-white/20 text-[12px] font-semibold text-white bg-tertiary/60 hover:bg-tertiary/90 transition-all"
+          >
+            {lang === "en" ? "AR" : "EN"}
+          </button>
+        </div>
+
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           {/* Menu Icon Toggle */}
           <div style={menuIconStyle} onClick={() => setToggle(!toggle)}>
@@ -161,7 +185,7 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-              {navLinks.map((nav) => (
+              {localizedNavLinks.map((nav) => (
                 <motion.li
                   key={nav.id}
                   initial={{ opacity: 0, x: 20 }}
@@ -194,6 +218,15 @@ const Navbar = () => {
                   </a>
                 </motion.li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setLang(lang === "en" ? "ar" : "en")}
+                  className="mt-2 px-3 py-1 rounded-full border border-white/20 text-[12px] font-semibold text-white bg-tertiary/60 hover:bg-tertiary/90 transition-all"
+                >
+                  {lang === "en" ? "AR" : "EN"}
+                </button>
+              </li>
             </ul>
           </motion.div>
         </div>

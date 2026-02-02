@@ -11,11 +11,13 @@ import { fadeIn } from "../utils/motion";
 const ProjectCard = ({
   name,
   description,
+  descriptionAr,
   tags,
   image,
   source_code_link,
   live_project_link,
   animate,
+  lang,
 }) => {
   return (
     <motion.div variants={animate}>
@@ -56,7 +58,9 @@ const ProjectCard = ({
 
         <div className="mt-5 flex-1">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className={`mt-2 text-secondary text-[14px] ${lang === "ar" ? "text-right" : "text-left"}`}>
+            {lang === "ar" ? descriptionAr || description : description}
+          </p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -70,7 +74,7 @@ const ProjectCard = ({
         {live_project_link && (
           <a href={live_project_link} target="_blank" rel="noopener noreferrer" className="mt-auto">
             <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
-              View Project
+              {lang === "ar" ? "عرض المشروع" : "View Project"}
             </button>
           </a>
         )}
@@ -79,7 +83,7 @@ const ProjectCard = ({
   );
 };
 
-const Works = () => {
+const Works = ({ lang }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" }); // Adjust amount as needed
   const mainControls = useAnimation();
@@ -101,7 +105,7 @@ const Works = () => {
         }}
       >
         <h3 className={`${styles.sectionSubText} text-center`}>
-          Innovative Creations
+          {lang === "ar" ? "ابتكارات مميزة" : "Innovative Creations"}
         </h3>
       </motion.div>
 
@@ -113,7 +117,9 @@ const Works = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h3 className={`${styles.sectionHeadText} text-center`}>Projects.</h3>
+        <h3 className={`${styles.sectionHeadText} text-center`}>
+          {lang === "ar" ? "المشاريع" : "Projects."}
+        </h3>
       </motion.div>
 
       <motion.div>
@@ -122,6 +128,7 @@ const Works = () => {
             <ProjectCard
               key={`project-${index}`}
               animate={fadeIn("up", "spring", index * 0.5, 0.75)}
+              lang={lang}
               {...project}
             />
           ))}

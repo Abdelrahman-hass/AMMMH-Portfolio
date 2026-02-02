@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 
-const Hero = () => {
+const Hero = ({ lang }) => {
   const highlightClasses = {
     Harvard: "text-red-300",
     "6+": "text-blue-300",
@@ -11,6 +11,8 @@ const Hero = () => {
     "Target:": "text-purple-200",
     "99%+": "text-purple-300",
     Consistency: "text-purple-200",
+    "الاستمرارية": "text-purple-200",
+    "الهدف:": "text-purple-200",
     Cybersecurity: "text-cyan-300",
     Cyber: "text-cyan-300",
     Robotics: "text-emerald-300",
@@ -31,6 +33,25 @@ const Hero = () => {
     assignments: "text-amber-200",
     lectures: "text-amber-200",
     "professional certificates": "text-pink-300",
+    "الشهادات": "text-violet-200",
+    "شهادات احترافية": "text-pink-300",
+    "مشاريع": "text-indigo-200",
+    "الذكاء الاصطناعي": "text-purple-300",
+    "الأمن السيبراني": "text-cyan-300",
+    "الروبوتات": "text-emerald-300",
+    "الويب": "text-sky-300",
+    "توفير الوقت": "text-emerald-300",
+    "أنظمة مفيدة": "text-cyan-300",
+    "تحسن": "text-teal-300",
+    "ميدالية ذهبية": "text-amber-300",
+    "برنامجين": "text-amber-300",
+    "أشهر": "text-amber-200",
+    "مهمة": "text-amber-200",
+    "محاضرة": "text-amber-200",
+    "ذكية": "text-purple-300",
+    "ذكاء": "text-purple-300",
+    "أمن": "text-cyan-300",
+    "أنظمة": "text-indigo-300",
   };
 
   const numberRegex = /(\d+(?:\.\d+)?%?\+?)/g;
@@ -81,85 +102,155 @@ const Hero = () => {
     }
   };
 
-  const dashboardCards = [
-    {
-      title: "Harvard Credentials",
-      logo: "/Logos/Harvard_logo.png",
-      main: "8\u00A0Certificates",
-      mainHighlights: ["8", "Certificates"],
-      lines: [
+  const isArabic = lang === "ar";
+
+  const dashboardCards = isArabic
+    ? [
         {
-          text: "Completed in ~4 months • 24 assignments • 24 lectures",
-          highlights: ["~4 months", "24", "assignments", "lectures"],
+          title: "اعتمادات Harvard",
+          logo: "/Logos/Harvard_logo.png",
+          main: "8\u00A0الشهادات",
+          mainHighlights: ["8", "الشهادات"],
+          lines: [
+            {
+              text: "أكملت خلال ~4 أشهر • 24 مهمة • 24 محاضرة",
+              highlights: ["~4", "24", "أشهر", "مهمة", "محاضرة"],
+            },
+            { text: "2 شهادات احترافية", highlights: ["2", "شهادات احترافية"] },
+            { text: "أنجزت 3 مشاريع خلال البرنامج", highlights: ["3", "مشاريع"] },
+          ],
+          button: "عرض الشهادات",
+          target: "certifications",
         },
-        { text: "2 professional certificates", highlights: ["2", "professional certificates"] },
-        { text: "Built 3 projects during the program", highlights: ["projects"] },
-      ],
-      highlight: "8",
-      button: "View Certificates",
-      target: "certifications",
-    },
-    {
-      title: "Academic Results",
-      logo: "/Logos/Qyem_logo.png",
-      main: "99%+\u00A0Consistency",
-      mainHighlights: ["99%+", "Consistency"],
-      lines: [
-        { text: "Target: 99.5%+ yearly average", highlights: ["Target:", "99.5%+"] },
-        { text: "Focused study and steady improvement", highlights: ["improvement"] },
-      ],
-      highlight: "99%+",
-      button: "View School Certificates",
-      target: "school-certificates",
-    },
-    {
-      title: "Tech Output",
-      logo: "/Logos/AMMMH_logo.png",
-      main: "6+\u00A0Projects",
-      mainHighlights: ["6+", "Projects"],
-      lines: [
         {
-          text: "AI • Cybersecurity • Robotics • Web",
-          highlights: ["Cybersecurity", "Robotics", "Web"],
+          title: "النتائج الأكاديمية",
+          logo: "/Logos/Qyem_logo.png",
+          main: "99%+\u00A0الاستمرارية",
+          mainHighlights: ["99%+", "الاستمرارية"],
+          lines: [
+            { text: "الهدف: 99.5%+ متوسط سنوي", highlights: ["الهدف:", "99.5%+"] },
+            { text: "دراسة مركزة وتحسن مستمر", highlights: ["تحسن"] },
+          ],
+          button: "عرض الشهادات المدرسية",
+          target: "school-certificates",
         },
-        { text: "Building real student projects", highlights: ["projects"] },
-      ],
-      highlight: "6+",
-      button: "View Projects",
-      target: "projects",
-    },
-    {
-      title: "Learning Roadmap (2026)",
-      logo: "/Logos/AMMMH_logo.png",
-      main: "Next Milestones",
-      lines: [
-        { text: "Complete 2 additional Harvard/edX programs", highlights: ["2", "Harvard"] },
-        { text: "Aim for Gold Medal in Math Kangaroo competitions", highlights: ["Gold Medal"] },
-      ],
-      highlight: "MIT",
-    },
-    {
-      title: "Career Path",
-      logo: "/Logos/AMMMH_logo.png",
-      main: "AI • Cyber • Systems",
-      mainHighlights: ["AI", "Cyber", "Systems"],
-      lines: [
-        { text: "Goal: Build intelligent learning platforms", highlights: ["intelligent"] },
-        { text: "Focus on safe, useful systems", highlights: ["useful systems"] },
-      ],
-      highlight: "AI",
-    },
-    {
-      title: "My Strengths",
-      logo: "/Logos/AMMMH_logo.png",
-      main: "Smart Learning",
-      lines: [
-        { text: "Use AI to research and find reliable information faster", highlights: ["AI"] },
-        { text: "Apply AI to real tasks and save time while learning", highlights: ["save time"] },
-      ],
-      highlight: "AI",
-    },
-  ];
+        {
+          title: "الإنتاج التقني",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "6+\u00A0مشاريع",
+          mainHighlights: ["6+", "مشاريع"],
+          lines: [
+            {
+              text: "الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب",
+              highlights: ["الذكاء الاصطناعي", "الأمن السيبراني", "الروبوتات", "الويب"],
+            },
+            { text: "بناء مشاريع طلابية حقيقية", highlights: ["مشاريع"] },
+          ],
+          button: "عرض المشاريع",
+          target: "projects",
+        },
+        {
+          title: "خارطة التعلم (2026)",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "المحطات القادمة",
+          lines: [
+            { text: "إكمال برنامجين إضافيين من Harvard/edX", highlights: ["برنامجين", "Harvard"] },
+            { text: "الهدف: ميدالية ذهبية في مسابقة الكنغر الرياضي", highlights: ["ميدالية ذهبية"] },
+          ],
+        },
+        {
+          title: "المسار المهني",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "ذكاء اصطناعي • أمن • أنظمة",
+          mainHighlights: ["ذكاء", "أمن", "أنظمة"],
+          lines: [
+            { text: "الهدف: بناء منصات تعلم ذكية", highlights: ["ذكية"] },
+            { text: "التركيز على أنظمة آمنة ومفيدة", highlights: ["أنظمة مفيدة"] },
+          ],
+        },
+        {
+          title: "مميزاتي",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "تعلم وبحث ذكي",
+          lines: [
+            { text: "أستخدم الذكاء الاصطناعي للبحث عن معلومات موثوقة بسرعة", highlights: ["الذكاء الاصطناعي"] },
+            { text: "أطبق الذكاء الاصطناعي لتوفير الوقت أثناء التعلم", highlights: ["توفير الوقت"] },
+          ],
+        },
+      ]
+    : [
+        {
+          title: "Harvard Credentials",
+          logo: "/Logos/Harvard_logo.png",
+          main: "8\u00A0Certificates",
+          mainHighlights: ["8", "Certificates"],
+          lines: [
+            {
+              text: "Completed in ~4 months • 24 assignments • 24 lectures",
+              highlights: ["~4 months", "24", "assignments", "lectures"],
+            },
+            { text: "2 professional certificates", highlights: ["2", "professional certificates"] },
+            { text: "Built 3 projects during the program", highlights: ["projects"] },
+          ],
+          button: "View Certificates",
+          target: "certifications",
+        },
+        {
+          title: "Academic Results",
+          logo: "/Logos/Qyem_logo.png",
+          main: "99%+\u00A0Consistency",
+          mainHighlights: ["99%+", "Consistency"],
+          lines: [
+            { text: "Target: 99.5%+ yearly average", highlights: ["Target:", "99.5%+"] },
+            { text: "Focused study and steady improvement", highlights: ["improvement"] },
+          ],
+          button: "View School Certificates",
+          target: "school-certificates",
+        },
+        {
+          title: "Tech Output",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "6+\u00A0Projects",
+          mainHighlights: ["6+", "Projects"],
+          lines: [
+            {
+              text: "AI • Cybersecurity • Robotics • Web",
+              highlights: ["Cybersecurity", "Robotics", "Web"],
+            },
+            { text: "Building real student projects", highlights: ["projects"] },
+          ],
+          button: "View Projects",
+          target: "projects",
+        },
+        {
+          title: "Learning Roadmap (2026)",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "Next Milestones",
+          lines: [
+            { text: "Complete 2 additional Harvard/edX programs", highlights: ["2", "Harvard"] },
+            { text: "Aim for Gold Medal in Math Kangaroo competitions", highlights: ["Gold Medal"] },
+          ],
+        },
+        {
+          title: "Career Path",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "AI • Cyber • Systems",
+          mainHighlights: ["AI", "Cyber", "Systems"],
+          lines: [
+            { text: "Goal: Build intelligent learning platforms", highlights: ["intelligent"] },
+            { text: "Focus on safe, useful systems", highlights: ["useful systems"] },
+          ],
+        },
+        {
+          title: "My Strengths",
+          logo: "/Logos/AMMMH_logo.png",
+          main: "Smart Learning",
+          lines: [
+            { text: "Use AI to research and find reliable information faster", highlights: ["AI"] },
+            { text: "Apply AI to real tasks and save time while learning", highlights: ["save time"] },
+          ],
+        },
+      ];
 
   return (
     <section
@@ -167,22 +258,24 @@ const Hero = () => {
       className="relative w-full min-h-screen mx-auto pb-24 pt-[140px] sm:pt-[160px]"
     >
       <div className={`max-w-7xl mx-auto ${styles.paddingX}`}>
-        <div className="flex flex-col gap-6">
+        <div className={`flex flex-col gap-6 ${isArabic ? "text-right" : "text-left"}`}>
           <div className="flex flex-wrap items-center gap-3">
             <span className="uppercase tracking-[0.3em] text-[12px] text-secondary font-semibold">
-              Executive Summary
+              {isArabic ? "الملخص التنفيذي" : "Executive Summary"}
             </span>
             <span className="text-[12px] text-secondary border border-white/10 px-3 py-1 rounded-full bg-tertiary/40">
-              Grade 10 • Al Ekhaa Private Schools (Jeddah)
+              {isArabic ? "الصف العاشر • مدارس الإخاء (جدة)" : "Grade 10 • Al Ekhaa Private Schools (Jeddah)"}
             </span>
           </div>
 
           <h1 className="text-white text-[30px] sm:text-[40px] md:text-[48px] font-bold leading-tight max-w-4xl">
-            Abdelrahman Hassanein — learning modern, important skills at an early age.
+            {isArabic
+              ? "عبدالرحمن حسانين — أتعلم المهارات الحديثة والمهمة منذ سن مبكرة."
+              : "Abdelrahman Hassanein — learning modern, important skills at an early age."}
           </h1>
 
           <p className="text-white-100 text-[15px] sm:text-[17px] max-w-3xl">
-            AI • Cybersecurity • Robotics • Web
+            {isArabic ? "الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب" : "AI • Cybersecurity • Robotics • Web"}
           </p>
         </div>
 
@@ -219,7 +312,11 @@ const Hero = () => {
               </div>
 
               <div className="flex flex-col justify-between min-h-[130px]">
-                <ul className="space-y-4 text-secondary text-[15px] md:text-[16px] list-disc pl-6 leading-relaxed">
+                <ul
+                  className={`space-y-4 text-secondary text-[15px] md:text-[16px] list-disc leading-relaxed ${
+                    isArabic ? "pr-6 text-right" : "pl-6 text-left"
+                  }`}
+                >
                   {card.lines.map((line) => {
                     if (typeof line === "string") {
                       return (

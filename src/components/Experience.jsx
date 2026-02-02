@@ -9,6 +9,9 @@ import { fadeIn } from "../utils/motion";
 const schoolDescription =
   "Al Ekhaa Private Schools is one of the leading private educational institutions in Jeddah, recognized for academic excellence, early adoption of modern and international education systems, and graduating students who achieve outstanding results in national assessments and professional fields.";
 
+const schoolDescriptionAr =
+  "مدارس الإخاء من المؤسسات التعليمية الخاصة الرائدة في جدة، تتميز بالتفوق الأكاديمي والتبني المبكر للأنظمة التعليمية الحديثة والدولية، وتخريج طلاب يحققون نتائج متميزة في التقييمات الوطنية والمجالات المهنية.";
+
 const platformLinks = [
   {
     label: "Website",
@@ -37,7 +40,8 @@ const platformLinks = [
   },
 ];
 
-const Experience = () => {
+const Experience = ({ lang }) => {
+  const isArabic = lang === "ar";
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const mainControls = useAnimation();
@@ -58,7 +62,9 @@ const Experience = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <p className={`${styles.sectionSubText} text-center`}>Al Ekhaa Private Schools</p>
+        <p className={`${styles.sectionSubText} text-center`}>
+          {isArabic ? "مدارس الإخاء" : "Al Ekhaa Private Schools"}
+        </p>
       </motion.div>
 
       <motion.div
@@ -69,7 +75,9 @@ const Experience = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>About My School</h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          {isArabic ? "عن مدرستي" : "About My School"}
+        </h2>
       </motion.div>
 
       <div className="mt-16 flex justify-center">
@@ -79,11 +87,19 @@ const Experience = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex-1 bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)]"
+            className={`flex-1 bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)] ${
+              isArabic ? "text-right" : "text-left"
+            }`}
           >
-            <h3 className="text-white text-[24px] font-bold">Al Ekhaa Private Schools (Jeddah)</h3>
-            <p className="text-secondary text-[16px] mt-2">Grade 10 High School</p>
-            <p className="text-white-100 text-[15px] mt-6 leading-7">{schoolDescription}</p>
+            <h3 className="text-white text-[24px] font-bold">
+              {isArabic ? "مدارس الإخاء (جدة)" : "Al Ekhaa Private Schools (Jeddah)"}
+            </h3>
+            <p className="text-secondary text-[16px] mt-2">
+              {isArabic ? "طالب الصف العاشر" : "Grade 10 High School"}
+            </p>
+            <p className="text-white-100 text-[15px] mt-6 leading-7">
+              {isArabic ? schoolDescriptionAr : schoolDescription}
+            </p>
           </motion.div>
 
           <motion.div
@@ -93,7 +109,9 @@ const Experience = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="w-full lg:w-[320px] bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)]"
           >
-            <h3 className="text-white text-[20px] font-bold text-center">Official Platforms</h3>
+            <h3 className="text-white text-[20px] font-bold text-center">
+              {isArabic ? "المنصات الرسمية" : "Official Platforms"}
+            </h3>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-5">
               {platformLinks.map(({ label, href, Icon }) => (
                 <a

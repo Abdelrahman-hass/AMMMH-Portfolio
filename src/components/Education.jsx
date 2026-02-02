@@ -12,8 +12,12 @@ import { education } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const EducationCard = ({ education, index }) => {
+const EducationCard = ({ education, index, lang }) => {
   const isLeft = index % 2 === 0;
+  const title = lang === "ar" ? education.titleAr || education.title : education.title;
+  const company = lang === "ar" ? education.company_nameAr || education.company_name : education.company_name;
+  const date = lang === "ar" ? education.dateAr || education.date : education.date;
+  const points = lang === "ar" ? education.pointsAr || education.points : education.points;
   return (
     <div className="relative">
       <VerticalTimelineElement
@@ -24,7 +28,7 @@ const EducationCard = ({ education, index }) => {
           minHeight: "240px",
         }}
         contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-        date={education.date}
+        date={date}
         iconStyle={{
           background: education.iconBg,
           width: "60px",
@@ -45,14 +49,14 @@ const EducationCard = ({ education, index }) => {
         }
       >
         <div>
-          <h3 className="text-white text-[24px] font-bold">{education.title}</h3>
+          <h3 className="text-white text-[24px] font-bold">{title}</h3>
           <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
-            {education.company_name}
+            {company}
           </p>
         </div>
 
-        <ul className="mt-5 list-disc ml-5 space-y-2">
-          {education.points.map((point, index) => (
+        <ul className={`mt-5 list-disc space-y-2 ${lang === "ar" ? "mr-5 text-right" : "ml-5 text-left"}`}>
+          {points.map((point, index) => (
             <li
               key={`experience-point-${index}`}
               className="text-white-100 text-[14px] pl-1 tracking-wider"
@@ -70,7 +74,7 @@ const EducationCard = ({ education, index }) => {
               rel="noreferrer"
               className="inline-flex items-center px-5 py-2 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-md shadow-[0_5px_0_0_rgba(0,0,0,0.6)] transition-all duration-100 ease-in-out hover:shadow-[0_3px_0_0_rgba(0,0,0,0.6)] hover:translate-y-[2px] active:translate-y-1 active:shadow-none select-none"
             >
-              View Certificates
+              {lang === "ar" ? "عرض الشهادات" : "View Certificates"}
             </a>
           </div>
         )}
@@ -80,7 +84,7 @@ const EducationCard = ({ education, index }) => {
   );
 };
 
-const Education = () => {
+const Education = ({ lang }) => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const mainControls = useAnimation();
@@ -101,7 +105,9 @@ const Education = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <p className={`${styles.sectionSubText} text-center`}>What I have Studied so far</p>
+        <p className={`${styles.sectionSubText} text-center`}>
+          {lang === "ar" ? "ما درسته حتى الآن" : "What I have Studied so far"}
+        </p>
       </motion.div>
 
       <motion.div
@@ -112,13 +118,15 @@ const Education = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>Education.</h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          {lang === "ar" ? "التعليم" : "Education."}
+        </h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {education.map((education, index) => (
-            <EducationCard key={`experience-${index}`} education={education} index={index} />
+            <EducationCard key={`experience-${index}`} education={education} index={index} lang={lang} />
           ))}
         </VerticalTimeline>
       </div>
