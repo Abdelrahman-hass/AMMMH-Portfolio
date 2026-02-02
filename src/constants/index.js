@@ -711,26 +711,6 @@ const schoolCertificates = [
     credential: "/certificate-steam.html",
   },
   {
-    id: "steam2",
-    title: "Steam Certificate 2",
-    type: "School Achievement",
-    icon: "/Logos/Qyem_logo.png",
-    iconBg: "#1b1f3a",
-    date: "Issued: See certificate",
-    titleAr: "شهادة STEAM 2",
-    typeAr: "إنجاز مدرسي",
-    dateAr: "صادرة: عرض الشهادة",
-    points: [
-      "School recognition certificate.",
-      "Additional STEAM achievement.",
-    ],
-    pointsAr: [
-      "شهادة تقدير مدرسية.",
-      "إنجاز إضافي في STEAM.",
-    ],
-    credential: "/certificate-steam-2.html",
-  },
-  {
     id: "ramadanQuran",
     title: "Ramadan Quran Competition",
     type: "School Achievement",
@@ -789,6 +769,26 @@ const schoolCertificates = [
       "المركز الثاني - طوال العام.",
     ],
     credential: "/certificate-grade8-whole-year-2nd-position.html",
+  },
+  {
+    id: "grade8StarWeek",
+    title: "Grade 8 - Star of the Week",
+    type: "School Achievement",
+    icon: "/Logos/Qyem_logo.png",
+    iconBg: "#1b1f3a",
+    date: "Issued: See certificate",
+    titleAr: "الصف الثامن - نجم الأسبوع",
+    typeAr: "إنجاز مدرسي",
+    dateAr: "صادرة: عرض الشهادة",
+    points: [
+      "Grade 8 recognition certificate.",
+      "Star of the week award.",
+    ],
+    pointsAr: [
+      "شهادة تقدير للصف الثامن.",
+      "جائزة نجم الأسبوع.",
+    ],
+    credential: "/certificate-grade8-star-of-week.html",
   },
 ];
 

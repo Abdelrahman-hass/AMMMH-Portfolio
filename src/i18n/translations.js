@@ -217,12 +217,6 @@ export const translations = {
           date: "Issued: See certificate",
           points: ["School recognition certificate.", "Celebrates applied learning and creativity."],
         },
-        steam2: {
-          title: "Steam Certificate 2",
-          type: "School Achievement",
-          date: "Issued: See certificate",
-          points: ["School recognition certificate.", "Additional STEAM achievement."],
-        },
         ramadanQuran: {
           title: "Ramadan Quran Competition",
           type: "School Achievement",
@@ -240,6 +234,12 @@ export const translations = {
           type: "School Achievement",
           date: "Issued: See certificate",
           points: ["Grade 8 achievement certificate.", "Second position - whole year."],
+        },
+        grade8StarWeek: {
+          title: "Grade 8 - Star of the Week",
+          type: "School Achievement",
+          date: "Issued: See certificate",
+          points: ["Grade 8 recognition certificate.", "Star of the week award."],
         },
       },
     },
@@ -473,12 +473,6 @@ export const translations = {
           date: "صادرة: عرض الشهادة",
           points: ["شهادة تقدير مدرسية.", "تحتفي بالتعلم التطبيقي والإبداع."],
         },
-        steam2: {
-          title: "شهادة STEAM 2",
-          type: "إنجاز مدرسي",
-          date: "صادرة: عرض الشهادة",
-          points: ["شهادة تقدير مدرسية.", "إنجاز إضافي في STEAM."],
-        },
         ramadanQuran: {
           title: "مسابقة القرآن في رمضان",
           type: "إنجاز مدرسي",
@@ -496,6 +490,12 @@ export const translations = {
           type: "إنجاز مدرسي",
           date: "صادرة: عرض الشهادة",
           points: ["شهادة إنجاز للصف الثامن.", "المركز الثاني - طوال العام."],
+        },
+        grade8StarWeek: {
+          title: "الصف الثامن - نجم الأسبوع",
+          type: "إنجاز مدرسي",
+          date: "صادرة: عرض الشهادة",
+          points: ["شهادة تقدير للصف الثامن.", "جائزة نجم الأسبوع."],
         },
       },
     },
