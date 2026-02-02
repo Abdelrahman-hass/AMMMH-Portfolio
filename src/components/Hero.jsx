@@ -15,7 +15,7 @@ const Hero = () => {
     Cyber: "text-cyan-300",
     Robotics: "text-emerald-300",
     Web: "text-sky-300",
-    "8": "text-violet-300",
+    "8": "text-amber-300",
     "24": "text-amber-300",
     "4": "text-amber-300",
     "2.5": "text-amber-300",
