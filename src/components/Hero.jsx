@@ -79,8 +79,11 @@ const Hero = () => {
   ];
 
   return (
-    <section id="executive-summary" className="relative w-full min-h-screen mx-auto pb-24">
-      <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX}`}>
+    <section
+      id="executive-summary"
+      className="relative w-full min-h-screen mx-auto pb-24 pt-[140px] sm:pt-[160px]"
+    >
+      <div className={`max-w-7xl mx-auto ${styles.paddingX}`}>
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center gap-3">
             <span className="uppercase tracking-[0.3em] text-[12px] text-secondary font-semibold">
@@ -192,7 +195,6 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="h-[3200px] sm:h-[2800px] md:h-[1700px] lg:h-[1400px]" aria-hidden="true" />
     </section>
   );
 };
