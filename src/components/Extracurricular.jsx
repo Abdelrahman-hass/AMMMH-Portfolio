@@ -131,6 +131,7 @@ const Extracurricular = ({ lang }) => {
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
         className="mt-20 flex flex-col items-center"
+        dir="ltr"
       >
         <Swiper
           effect={'coverflow'}

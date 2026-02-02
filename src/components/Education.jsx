@@ -123,7 +123,7 @@ const Education = ({ lang }) => {
         </h2>
       </motion.div>
 
-      <div className="mt-20 flex flex-col">
+      <div className="mt-20 flex flex-col" dir={lang === "ar" ? "ltr" : undefined}>
         <VerticalTimeline>
           {education.map((education, index) => (
             <EducationCard key={`experience-${index}`} education={education} index={index} lang={lang} />

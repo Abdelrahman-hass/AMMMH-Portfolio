@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Education, Experience, Extracurricular, Hero, Navbar, Works, SchoolCertificates } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
@@ -6,7 +6,11 @@ import Feedbacks from './components/Feedbacks'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
-  const [lang, setLang] = useState("en")
+  const [lang, setLang] = useState(() => localStorage.getItem("lang") || "ar")
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang)
+  }, [lang])
 
   return (
       <BrowserRouter>
