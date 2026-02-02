@@ -30,6 +30,7 @@ const Hero = () => {
     "~4 months": "text-amber-300",
     assignments: "text-amber-200",
     lectures: "text-amber-200",
+    "professional certificates": "text-pink-300",
   };
 
   const numberRegex = /(\d+(?:\.\d+)?%?\+?)/g;
@@ -88,9 +89,10 @@ const Hero = () => {
       mainHighlights: ["8", "Certificates"],
       lines: [
         {
-          text: "Completed in ~4 months • 24 assignments • 24 lectures (avg 2.5h)",
-          highlights: ["~4 months", "24", "assignments", "lectures", "(avg 2.5h)", "2.5"],
+          text: "Completed in ~4 months • 24 assignments • 24 lectures",
+          highlights: ["~4 months", "24", "assignments", "lectures"],
         },
+        { text: "2 professional certificates", highlights: ["2", "professional certificates"] },
         { text: "Built 3 projects during the program", highlights: ["projects"] },
       ],
       highlight: "8",
@@ -194,12 +196,14 @@ const Hero = () => {
               className="bg-tertiary/80 backdrop-blur-xl p-7 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)] flex flex-col justify-between min-h-[380px]"
             >
               <div className="flex flex-col items-center text-center min-h-[104px]">
-                <div className="flex justify-center mb-3">
+                <div className="flex justify-center items-center mb-3 h-32">
                   <img
                     src={card.logo}
                     alt={`${card.title} logo`}
                     className={`${
-                      card.title === "Academic Results" ? "h-26 md:h-30" : "h-36 md:h-40"
+                      card.title === "Academic Results"
+                        ? "h-20 md:h-22"
+                        : "h-36 md:h-40"
                     } w-auto object-contain`}
                     loading="lazy"
                     decoding="async"
