@@ -9,9 +9,18 @@ const Hero = ({ lang, t }) => {
     Projects: "text-indigo-200",
     Certificates: "text-violet-200",
     "99.5%+": "text-purple-300",
+    "99.5%": "text-purple-300",
     "Target:": "text-purple-200",
     "99%+": "text-purple-300",
+    "+99%": "text-purple-300",
     Consistency: "text-purple-200",
+    Performance: "text-purple-200",
+    "Academic Performance": "text-purple-200",
+    "high-impact": "text-purple-300",
+    modern: "text-blue-300",
+    "مهارات تقنية": "text-blue-300",
+    "عالية التأثير": "text-purple-300",
+    "الأداء الأكاديمي": "text-purple-200",
     "الاستمرارية": "text-purple-200",
     "الهدف:": "text-purple-200",
     Cybersecurity: "text-cyan-300",
@@ -35,6 +44,7 @@ const Hero = ({ lang, t }) => {
     lectures: "text-amber-200",
     "professional certificates": "text-pink-300",
     "الشهادات": "text-violet-200",
+    "شهادات": "text-violet-200",
     "شهادات احترافية": "text-pink-300",
     "مشاريع": "text-indigo-200",
     "الذكاء الاصطناعي": "text-purple-300",
@@ -53,6 +63,9 @@ const Hero = ({ lang, t }) => {
     "ذكاء": "text-purple-300",
     "أمن": "text-cyan-300",
     "أنظمة": "text-indigo-300",
+    Harvard: "text-red-300",
+    edX: "text-red-300",
+    MIT: "text-red-300",
   };
 
   const numberRegex = /(\d+(?:\.\d+)?%?\+?)/g;
@@ -112,39 +125,39 @@ const Hero = ({ lang, t }) => {
       mainHighlights: isArabic ? ["8", "الشهادات"] : ["8", "Certificates"],
       lineHighlights: isArabic
         ? [
-            ["~4", "24", "أشهر", "مهمة", "محاضرة"],
-            ["2", "شهادات احترافية"],
+            ["~4", "أشهر"],
+            ["2", "احترافية"],
             ["3", "مشاريع"],
           ]
-        : [["~4 months", "24", "assignments", "lectures"], ["2", "professional certificates"], ["projects"]],
+        : [["~4 months"], ["2", "Professional"], ["3", "projects"]],
       target: "certifications",
     },
     {
       id: "academic",
       logo: "/Logos/Qyem_logo.png",
-      mainHighlights: isArabic ? ["99%+", "الاستمرارية"] : ["99%+", "Consistency"],
-      lineHighlights: isArabic ? [["الهدف:", "99.5%+"], ["تحسن"]] : [["Target:", "99.5%+"], ["improvement"]],
+      mainHighlights: isArabic ? ["+99%"] : ["99%+"],
+      lineHighlights: isArabic ? [["99.5%"], []] : [["99.5%"], []],
       target: "school-certificates",
     },
     {
       id: "output",
       logo: "/Logos/AMMMH_logo.png",
-      mainHighlights: isArabic ? ["6+", "مشاريع"] : ["6+", "Projects"],
+      mainHighlights: isArabic ? ["+6", "مشاريع"] : ["6+", "Projects"],
       lineHighlights: isArabic
-        ? [["الذكاء الاصطناعي", "الأمن السيبراني", "الروبوتات", "الويب"], ["مشاريع"]]
-        : [["Cybersecurity", "Robotics", "Web"], ["projects"]],
+        ? [["الذكاء الاصطناعي", "الأمن السيبراني", "الروبوتات", "الويب"], []]
+        : [["AI", "Cybersecurity", "Robotics", "Web"], []],
       target: "projects",
     },
     {
       id: "roadmap",
       logo: "/Logos/AMMMH_logo.png",
-      lineHighlights: isArabic ? [["برنامجين", "Harvard"], ["ميدالية ذهبية"]] : [["2", "Harvard"], ["Gold Medal"]],
+      lineHighlights: isArabic ? [["برنامجين", "Harvard", "edX"], ["ميدالية ذهبية"]] : [["2", "Harvard", "edX"], ["Gold Medal"]],
     },
     {
       id: "career",
       logo: "/Logos/AMMMH_logo.png",
-      mainHighlights: isArabic ? ["ذكاء", "أمن", "أنظمة"] : ["AI", "Cyber", "Systems"],
-      lineHighlights: isArabic ? [["ذكية"], ["أنظمة مفيدة"]] : [["intelligent"], ["useful systems"]],
+      mainHighlights: isArabic ? ["ذكاء", "أمن", "أنظمة"] : ["AI", "Cybersecurity", "Systems"],
+      lineHighlights: isArabic ? [["ذكية", "آمنة"], []] : [["intelligent", "secure"], []],
     },
     {
       id: "strengths",
@@ -184,11 +197,19 @@ const Hero = ({ lang, t }) => {
           </div>
 
           <h1 className="text-white text-[30px] sm:text-[40px] md:text-[48px] font-bold leading-tight max-w-4xl">
-            {safeT("hero.headline")}
+            {renderWithHighlights(
+              safeT("hero.headline"),
+              isArabic ? ["مهارات تقنية", "عالية التأثير"] : ["modern", "high-impact"]
+            )}
           </h1>
 
           <p className="text-white-100 text-[15px] sm:text-[17px] max-w-3xl">
-            {safeT("hero.subline")}
+            {renderWithHighlights(
+              safeT("hero.subline"),
+              isArabic
+                ? ["الذكاء الاصطناعي", "الأمن السيبراني", "الروبوتات", "الويب"]
+                : ["AI", "Cybersecurity", "Robotics", "Web"]
+            )}
           </p>
         </div>
 

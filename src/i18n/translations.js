@@ -11,29 +11,29 @@ export const translations = {
     hero: {
       label: "Executive Summary",
       badge: "Grade 10 • Al Ekhaa Private Schools (Jeddah)",
-      headline: "Abdelrahman Hassanein — learning modern, important skills at an early age.",
+      headline: "Abdelrahman Hassanein — building modern, high-impact technical skills early.",
       subline: "AI • Cybersecurity • Robotics • Web",
       cards: {
         harvard: {
           title: "Harvard Credentials",
           main: "8\u00A0Certificates",
           lines: [
-            "Completed in ~4 months • 24 assignments • 24 lectures",
-            "2 professional certificates",
-            "Built 3 projects during the program",
+            "Completed in ~4 months",
+            "2 Professional credentials",
+            "Built 3 applied projects",
           ],
           button: "View Certificates",
         },
         academic: {
-          title: "Academic Results",
+          title: "Academic Performance",
           main: "99%+\u00A0Consistency",
-          lines: ["Target: 99.5%+ yearly average", "Focused study and steady improvement"],
+          lines: ["Target: 99.5% yearly average", "Focused, measurable improvement"],
           button: "View School Certificates",
         },
         output: {
           title: "Tech Output",
           main: "6+\u00A0Projects",
-          lines: ["AI • Cybersecurity • Robotics • Web", "Building real student projects"],
+          lines: ["AI • Cybersecurity • Robotics • Web", "Real student-built systems"],
           button: "View Projects",
         },
         roadmap: {
@@ -41,21 +41,18 @@ export const translations = {
           main: "Next Milestones",
           lines: [
             "Complete 2 additional Harvard/edX programs",
-            "Aim for Gold Medal in Math Kangaroo competitions",
+            "Gold Medal target — Math Kangaroo",
           ],
         },
         career: {
           title: "Career Path",
-          main: "AI • Cyber • Systems",
-          lines: ["Goal: Build intelligent learning platforms", "Focus on safe, useful systems"],
+          main: "AI • Cybersecurity • Systems",
+          lines: ["Building intelligent, secure platforms"],
         },
         strengths: {
           title: "My Strengths",
           main: "Smart Learning",
-          lines: [
-            "Use AI to research and find reliable information faster",
-            "Apply AI to real tasks and save time while learning",
-          ],
+          lines: ["Use AI to research and find reliable information faster", "Apply AI to real tasks and save time"],
         },
       },
     },
@@ -255,28 +252,28 @@ export const translations = {
     hero: {
       label: "الملخص التنفيذي",
       badge: "الصف العاشر • مدارس الإخاء (جدة)",
-      headline: "عبدالرحمن حسانين — أتعلم المهارات الحديثة والمهمة منذ سن مبكرة.",
+      headline: "عبدالرحمن حسنين — يبني مهارات تقنية حديثة وعالية التأثير منذ سن مبكرة.",
       subline: "الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب",
       cards: {
         harvard: {
           title: "اعتمادات Harvard",
-          main: "8\u00A0الشهادات",
+          main: "8\u00A0شهادات",
           lines: [
-            "أكملت خلال ~4 أشهر • 24 مهمة • 24 محاضرة",
+            "أُنجزت خلال ~4 أشهر",
             "2 شهادات احترافية",
-            "أنجزت 3 مشاريع خلال البرنامج",
+            "تنفيذ 3 مشاريع تطبيقية",
           ],
           button: "عرض الشهادات",
         },
         academic: {
-          title: "النتائج الأكاديمية",
-          main: "99%+\u00A0الاستمرارية",
-          lines: ["الهدف: 99.5%+ متوسط سنوي", "دراسة مركزة وتحسن مستمر"],
+          title: "الأداء الأكاديمي",
+          main: "+99%\u00A0استمرارية",
+          lines: ["الهدف: 99.5% متوسط سنوي", "تحسن منتظم وقابل للقياس"],
           button: "عرض شهادات المدرسة",
         },
         output: {
           title: "الإنتاج التقني",
-          main: "6+\u00A0مشاريع",
+          main: "+6\u00A0مشاريع",
           lines: ["الذكاء الاصطناعي • الأمن السيبراني • الروبوتات • الويب", "بناء مشاريع طلابية حقيقية"],
           button: "عرض المشاريع",
         },
@@ -287,15 +284,15 @@ export const translations = {
         },
         career: {
           title: "المسار المهني",
-          main: "ذكاء اصطناعي • أمن • أنظمة",
-          lines: ["الهدف: بناء منصات تعلم ذكية", "التركيز على أنظمة آمنة ومفيدة"],
+          main: "ذكاء اصطناعي • أمن سيبراني • أنظمة",
+          lines: ["بناء منصات ذكية وآمنة"],
         },
         strengths: {
           title: "مميزاتي",
           main: "تعلم وبحث ذكي",
           lines: [
             "أستخدم الذكاء الاصطناعي للبحث عن معلومات موثوقة بسرعة",
-            "أطبق الذكاء الاصطناعي لتوفير الوقت أثناء التعلم",
+            "أطبق الذكاء الاصطناعي لتوفير الوقت",
           ],
         },
       },
