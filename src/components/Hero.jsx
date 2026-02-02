@@ -2,6 +2,20 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 
 const Hero = () => {
+  const highlightClasses = {
+    Harvard: "text-red-300",
+    "6+": "text-blue-300",
+    Projects: "text-blue-300",
+    "99.5%+": "text-purple-300",
+    Cybersecurity: "text-cyan-300",
+    Robotics: "text-emerald-300",
+    Web: "text-sky-300",
+    "8": "text-violet-300",
+    Certificates: "text-violet-300",
+    "24": "text-amber-300",
+    "(avg 2.5h)": "text-amber-300",
+  };
+
   const scrollToId = (id) => {
     const target = document.getElementById(id);
     if (target) {
@@ -15,10 +29,13 @@ const Hero = () => {
       logo: "/Logos/Harvard_logo.png",
       main: "8 Certificates",
       lines: [
-        { text: "Completed in ~4 months • 24 assignments • 24 lectures (avg 2.5h)" },
+        {
+          text: "Completed in ~4 months • 24 assignments • 24 lectures (avg 2.5h)",
+          highlights: ["24", "(avg 2.5h)"],
+        },
         { text: "Built 3 projects during the program", highlights: ["projects"] },
       ],
-      highlight: "Harvard",
+      highlight: "8",
       button: "View Certificates",
       target: "certifications",
     },
@@ -27,10 +44,13 @@ const Hero = () => {
       logo: "/Logos/AMMMH_logo.png",
       main: "6+ Projects",
       lines: [
-        { text: "AI • Cybersecurity • Robotics • Web", highlights: ["AI"] },
+        {
+          text: "AI • Cybersecurity • Robotics • Web",
+          highlights: ["Cybersecurity", "Robotics", "Web"],
+        },
         { text: "Building real student projects", highlights: ["projects"] },
       ],
-      highlight: "Projects",
+      highlight: "6+",
       button: "View Projects",
       target: "projects",
     },
@@ -166,8 +186,9 @@ const Hero = () => {
                             (word) => typeof part === "string" && part.toLowerCase() === word.toLowerCase()
                           );
                           if (match) {
+                            const highlightClass = highlightClasses[match] || "text-purple-300";
                             return (
-                              <span key={`${text}-${idx}`} className="text-purple-300 font-bold">
+                              <span key={`${text}-${idx}`} className={`${highlightClass} font-bold`}>
                                 {part}
                               </span>
                             );
