@@ -5,17 +5,20 @@ const Hero = () => {
   const highlightClasses = {
     Harvard: "text-red-300",
     "6+": "text-blue-300",
-    Projects: "text-blue-300",
-    Certificates: "text-violet-300",
+    Projects: "text-indigo-200",
+    Certificates: "text-violet-200",
     "99.5%+": "text-purple-300",
+    "Target:": "text-purple-200",
     "99%+": "text-purple-300",
-    Consistency: "text-purple-300",
+    Consistency: "text-purple-200",
     Cybersecurity: "text-cyan-300",
     Cyber: "text-cyan-300",
     Robotics: "text-emerald-300",
     Web: "text-sky-300",
     "8": "text-violet-300",
     "24": "text-amber-300",
+    "4": "text-amber-300",
+    "2.5": "text-amber-300",
     "(avg 2.5h)": "text-amber-300",
     AI: "text-purple-300",
     Systems: "text-indigo-300",
@@ -24,6 +27,9 @@ const Hero = () => {
     "save time": "text-emerald-300",
     "useful systems": "text-cyan-300",
     improvement: "text-teal-300",
+    "~4 months": "text-amber-300",
+    assignments: "text-amber-200",
+    lectures: "text-amber-200",
   };
 
   const scrollToId = (id) => {
@@ -42,7 +48,7 @@ const Hero = () => {
       lines: [
         {
           text: "Completed in ~4 months • 24 assignments • 24 lectures (avg 2.5h)",
-          highlights: ["24", "(avg 2.5h)"],
+          highlights: ["~4 months", "24", "assignments", "lectures", "(avg 2.5h)", "2.5"],
         },
         { text: "Built 3 projects during the program", highlights: ["projects"] },
       ],
@@ -72,7 +78,7 @@ const Hero = () => {
       main: "99%+\u00A0Consistency",
       mainHighlights: ["99%+", "Consistency"],
       lines: [
-        { text: "Target: 99.5%+ yearly average", highlights: ["99.5%+"] },
+        { text: "Target: 99.5%+ yearly average", highlights: ["Target:", "99.5%+"] },
         { text: "Focused study and steady improvement", highlights: ["improvement"] },
       ],
       highlight: "99%+",
@@ -163,7 +169,7 @@ const Hero = () => {
                 </h3>
               </div>
 
-              <div className="text-white text-[22px] md:text-[24px] font-bold text-center h-[64px] flex items-center justify-center whitespace-nowrap truncate">
+              <div className="text-white text-[24px] md:text-[26px] font-bold text-center h-[64px] flex items-center justify-center whitespace-nowrap truncate">
                 {(() => {
                   if (card.mainHighlights && card.mainHighlights.length > 0) {
                     let parts = [card.main];
