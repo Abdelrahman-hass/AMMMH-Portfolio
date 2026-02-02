@@ -32,7 +32,7 @@ const Hero = () => {
     {
       title: "Harvard Credentials",
       logo: "/Logos/Harvard_logo.png",
-      main: "8 Certificates",
+      main: "8\u00A0Certificates",
       mainHighlights: ["8", "Certificates"],
       lines: [
         {
@@ -48,7 +48,7 @@ const Hero = () => {
     {
       title: "Tech Output",
       logo: "/Logos/AMMMH_logo.png",
-      main: "6+ Projects",
+      main: "6+\u00A0Projects",
       mainHighlights: ["6+", "Projects"],
       lines: [
         {
