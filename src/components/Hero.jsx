@@ -6,14 +6,19 @@ const Hero = () => {
     Harvard: "text-red-300",
     "6+": "text-blue-300",
     Projects: "text-blue-300",
+    Certificates: "text-violet-300",
     "99.5%+": "text-purple-300",
     Cybersecurity: "text-cyan-300",
+    Cyber: "text-cyan-300",
     Robotics: "text-emerald-300",
     Web: "text-sky-300",
     "8": "text-violet-300",
-    Certificates: "text-violet-300",
     "24": "text-amber-300",
     "(avg 2.5h)": "text-amber-300",
+    AI: "text-purple-300",
+    Systems: "text-indigo-300",
+    intelligent: "text-purple-300",
+    "2": "text-amber-300",
   };
 
   const scrollToId = (id) => {
@@ -28,6 +33,7 @@ const Hero = () => {
       title: "Harvard Credentials",
       logo: "/Logos/Harvard_logo.png",
       main: "8 Certificates",
+      mainHighlights: ["8", "Certificates"],
       lines: [
         {
           text: "Completed in ~4 months • 24 assignments • 24 lectures (avg 2.5h)",
@@ -43,6 +49,7 @@ const Hero = () => {
       title: "Tech Output",
       logo: "/Logos/AMMMH_logo.png",
       main: "6+ Projects",
+      mainHighlights: ["6+", "Projects"],
       lines: [
         {
           text: "AI • Cybersecurity • Robotics • Web",
@@ -58,6 +65,7 @@ const Hero = () => {
       title: "Academic Results",
       logo: "/Logos/Qyem_logo.png",
       main: "99%+\u00A0Consistency",
+      mainHighlights: ["99.5%+"],
       lines: [
         { text: "Target: 99.5%+ yearly average", highlights: ["99.5%+"] },
         { text: "Focused study and steady improvement" },
@@ -71,7 +79,7 @@ const Hero = () => {
       logo: "/Logos/AMMMH_logo.png",
       main: "Next Milestones",
       lines: [
-        { text: "Complete 2 additional Harvard/edX programs", highlights: ["Harvard"] },
+        { text: "Complete 2 additional Harvard/edX programs", highlights: ["2", "Harvard"] },
         { text: "Aim for Gold Medal in Math Kangaroo competitions", highlights: ["Gold Medal"] },
       ],
       highlight: "MIT",
@@ -80,8 +88,9 @@ const Hero = () => {
       title: "Career Path",
       logo: "/Logos/AMMMH_logo.png",
       main: "AI • Cyber • Systems",
+      mainHighlights: ["AI", "Cyber", "Systems"],
       lines: [
-        { text: "Goal: Build intelligent learning platforms", highlights: ["AI"] },
+        { text: "Goal: Build intelligent learning platforms", highlights: ["intelligent"] },
         { text: "Focus on safe, useful systems" },
       ],
       highlight: "AI",
@@ -148,14 +157,42 @@ const Hero = () => {
               </div>
 
               <div className="text-white text-[22px] md:text-[24px] font-bold text-center h-[64px] flex items-center justify-center whitespace-nowrap truncate">
-                {card.main.split(card.highlight || "").map((part, idx, arr) => (
-                  <span key={`${card.title}-main-${idx}`}>
-                    {part}
-                    {idx < arr.length - 1 && (
-                      <span className="text-purple-300 font-extrabold">{card.highlight}</span>
-                    )}
-                  </span>
-                ))}
+                {(() => {
+                  if (card.mainHighlights && card.mainHighlights.length > 0) {
+                    let parts = [card.main];
+                    card.mainHighlights.forEach((word) => {
+                      parts = parts.flatMap((part) =>
+                        typeof part === "string"
+                          ? part.split(new RegExp(`(${word})`, "gi"))
+                          : part
+                      );
+                    });
+
+                    return parts.map((part, idx) => {
+                      const match = card.mainHighlights.find(
+                        (word) => typeof part === "string" && part.toLowerCase() === word.toLowerCase()
+                      );
+                      if (match) {
+                        const highlightClass = highlightClasses[match] || "text-purple-300";
+                        return (
+                          <span key={`${card.title}-main-${idx}`} className={`${highlightClass} font-extrabold`}>
+                            {part}
+                          </span>
+                        );
+                      }
+                      return <span key={`${card.title}-main-${idx}`}>{part}</span>;
+                    });
+                  }
+
+                  return card.main.split(card.highlight || "").map((part, idx, arr) => (
+                    <span key={`${card.title}-main-${idx}`}>
+                      {part}
+                      {idx < arr.length - 1 && (
+                        <span className="text-purple-300 font-extrabold">{card.highlight}</span>
+                      )}
+                    </span>
+                  ));
+                })()}
               </div>
 
               <div className="flex flex-col justify-between min-h-[130px]">
