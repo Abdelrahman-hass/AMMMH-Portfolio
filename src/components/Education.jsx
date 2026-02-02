@@ -56,13 +56,13 @@ const EducationCard = ({ education, index, lang, t }) => {
           </p>
         </div>
 
-        <ul className={`mt-5 list-disc space-y-2 ${lang === "ar" ? "ml-5 text-right" : "ml-5 text-left"}`} dir={lang === "ar" ? "ltr" : "ltr"}>
+        <ul className={`mt-5 list-disc space-y-2 ${lang === "ar" ? "mr-5 text-right" : "ml-5 text-left"}`}>
           {points.map((point, index) => (
             <li
               key={`experience-point-${index}`}
               className="text-white-100 text-[14px] pl-1 tracking-wider"
             >
-              <span dir={lang === "ar" ? "rtl" : "ltr"}>{point}</span>
+              {point}
             </li>
           ))}
         </ul>

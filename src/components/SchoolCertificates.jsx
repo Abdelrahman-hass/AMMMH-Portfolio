@@ -34,13 +34,13 @@ const SchoolCertificateCard = ({ id, icon, credential, lang, t }) => {
       <h3 className={`text-white font-bold text-[20px] mb-2 no-select ${lang === "ar" ? "text-right" : "text-left"}`}>{displayTitle}</h3>
       <p className={`text-secondary text-[12px] mb-1 no-select ${lang === "ar" ? "text-right" : "text-left"}`}>{displayType}</p>
       <p className={`text-secondary text-[12px] mb-3 no-select ${lang === "ar" ? "text-right" : "text-left"}`}>{displayDate}</p>
-      <ul className={`list-disc space-y-1 ${lang === "ar" ? "ml-5 text-right" : "ml-5 text-left"}`} dir={lang === "ar" ? "ltr" : "ltr"}>
+      <ul className={`list-disc space-y-1 ${lang === "ar" ? "mr-5 text-right" : "ml-5 text-left"}`}>
         {displayPoints.slice(0, 2).map((point, index) => (
           <li
             key={`school-cert-point-${index}`}
             className="text-white-100 text-[12px] pl-1 tracking-wider no-select"
           >
-            <span dir={lang === "ar" ? "rtl" : "ltr"}>{point}</span>
+            {point}
           </li>
         ))}
       </ul>
