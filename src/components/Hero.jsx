@@ -32,6 +32,47 @@ const Hero = () => {
     lectures: "text-amber-200",
   };
 
+  const numberRegex = /(\d+(?:\.\d+)?%?\+?)/g;
+
+  const renderWithHighlights = (text, highlights = []) => {
+    if (!text) return null;
+    let parts = [text];
+    highlights.forEach((word) => {
+      parts = parts.flatMap((part) =>
+        typeof part === "string" ? part.split(new RegExp(`(${word})`, "gi")) : part
+      );
+    });
+
+    return parts.flatMap((part, idx) => {
+      if (typeof part !== "string") return part;
+
+      const highlightMatch = highlights.find(
+        (word) => part.toLowerCase() === word.toLowerCase()
+      );
+      if (highlightMatch) {
+        const highlightClass = highlightClasses[highlightMatch] || "text-purple-300";
+        return (
+          <span key={`hl-${text}-${idx}`} className={`${highlightClass} font-extrabold`}>
+            {part}
+          </span>
+        );
+      }
+
+      const numberParts = part.split(numberRegex);
+      return numberParts.map((numPart, numIdx) => {
+        if (!numPart) return null;
+        if (numberRegex.test(numPart)) {
+          return (
+            <span key={`num-${text}-${idx}-${numIdx}`} className="text-amber-300 font-extrabold">
+              {numPart}
+            </span>
+          );
+        }
+        return <span key={`txt-${text}-${idx}-${numIdx}`}>{numPart}</span>;
+      });
+    });
+  };
+
   const scrollToId = (id) => {
     const target = document.getElementById(id);
     if (target) {
@@ -158,7 +199,7 @@ const Hero = () => {
                     src={card.logo}
                     alt={`${card.title} logo`}
                     className={`${
-                      card.title === "Academic Results" ? "h-22 md:h-24" : "h-28 md:h-32"
+                      card.title === "Academic Results" ? "h-26 md:h-30" : "h-36 md:h-40"
                     } w-auto object-contain`}
                     loading="lazy"
                     decoding="async"
@@ -170,42 +211,7 @@ const Hero = () => {
               </div>
 
               <div className="text-white text-[24px] md:text-[26px] font-bold text-center h-[64px] flex items-center justify-center whitespace-nowrap truncate">
-                {(() => {
-                  if (card.mainHighlights && card.mainHighlights.length > 0) {
-                    let parts = [card.main];
-                    card.mainHighlights.forEach((word) => {
-                      parts = parts.flatMap((part) =>
-                        typeof part === "string"
-                          ? part.split(new RegExp(`(${word})`, "gi"))
-                          : part
-                      );
-                    });
-
-                    return parts.map((part, idx) => {
-                      const match = card.mainHighlights.find(
-                        (word) => typeof part === "string" && part.toLowerCase() === word.toLowerCase()
-                      );
-                      if (match) {
-                        const highlightClass = highlightClasses[match] || "text-purple-300";
-                        return (
-                          <span key={`${card.title}-main-${idx}`} className={`${highlightClass} font-extrabold`}>
-                            {part}
-                          </span>
-                        );
-                      }
-                      return <span key={`${card.title}-main-${idx}`}>{part}</span>;
-                    });
-                  }
-
-                  return card.main.split(card.highlight || "").map((part, idx, arr) => (
-                    <span key={`${card.title}-main-${idx}`}>
-                      {part}
-                      {idx < arr.length - 1 && (
-                        <span className="text-purple-300 font-extrabold">{card.highlight}</span>
-                      )}
-                    </span>
-                  ));
-                })()}
+                {renderWithHighlights(card.main, card.mainHighlights || [])}
               </div>
 
               <div className="flex flex-col justify-between min-h-[130px]">
@@ -214,37 +220,16 @@ const Hero = () => {
                     if (typeof line === "string") {
                       return (
                         <li key={line} className="break-words">
-                          {line}
+                          {renderWithHighlights(line)}
                         </li>
                       );
                     }
 
                     const { text, highlights = [] } = line;
-                    let parts = [text];
-                    highlights.forEach((word) => {
-                      parts = parts.flatMap((part) =>
-                        typeof part === "string"
-                          ? part.split(new RegExp(`(${word})`, "gi"))
-                          : part
-                      );
-                    });
 
                     return (
                       <li key={text} className="break-words">
-                        {parts.map((part, idx) => {
-                          const match = highlights.find(
-                            (word) => typeof part === "string" && part.toLowerCase() === word.toLowerCase()
-                          );
-                          if (match) {
-                            const highlightClass = highlightClasses[match] || "text-purple-300";
-                            return (
-                              <span key={`${text}-${idx}`} className={`${highlightClass} font-bold`}>
-                                {part}
-                              </span>
-                            );
-                          }
-                          return <span key={`${text}-${idx}`}>{part}</span>;
-                        })}
+                        {renderWithHighlights(text, highlights)}
                       </li>
                     );
                   })}
