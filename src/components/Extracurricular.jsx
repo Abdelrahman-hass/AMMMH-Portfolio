@@ -28,7 +28,7 @@ const CertificationCard = ({
   const displayPoints = safeT(`extracurricular.items.${id}.points`);
 
   return (
-  <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
+  <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select" dir="ltr">
     <div>
       <div className="relative w-full h-[70px] mb-4">
         <img
@@ -39,10 +39,10 @@ const CertificationCard = ({
           decoding="async"
         />
       </div>
-      <h3 className="text-white font-bold text-[20px] mb-2 no-select">{displayTitle}</h3>
-      <p className="text-secondary text-[12px] mb-1 no-select">{displayType}</p>
-      <p className="text-secondary text-[12px] mb-3 no-select">{displayDate}</p>
-      <ul className={`list-disc space-y-1 ${lang === "ar" ? "mr-5 text-right" : "ml-5 text-left"}`}>
+      <h3 className="text-white font-bold text-[20px] mb-2 no-select text-left">{displayTitle}</h3>
+      <p className="text-secondary text-[12px] mb-1 no-select text-left">{displayType}</p>
+      <p className="text-secondary text-[12px] mb-3 no-select text-left">{displayDate}</p>
+      <ul className="list-disc space-y-1 ml-5 text-left">
         {displayPoints.slice(0, 2).map((point, index) => (
           <li
             key={`certification-point-${index}`}

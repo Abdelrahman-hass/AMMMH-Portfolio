@@ -49,14 +49,14 @@ const EducationCard = ({ education, index, lang, t }) => {
           </div>
         }
       >
-        <div>
-          <h3 className="text-white text-[24px] font-bold">{title}</h3>
-          <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
+        <div dir="ltr">
+          <h3 className="text-white text-[24px] font-bold text-left">{title}</h3>
+          <p className="text-secondary text-[16px] font-semibold text-left" style={{ margin: 0 }}>
             {company}
           </p>
         </div>
 
-        <ul className={`mt-5 list-disc space-y-2 ${lang === "ar" ? "mr-5 text-right" : "ml-5 text-left"}`}>
+        <ul className="mt-5 list-disc space-y-2 ml-5 text-left" dir="ltr">
           {points.map((point, index) => (
             <li
               key={`experience-point-${index}`}
