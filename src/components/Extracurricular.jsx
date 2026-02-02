@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 const CertificationCard = ({ title, icon, type, date, points, credential }) => {
   const isHarvard = icon?.includes("Harvard_logo");
   const isMawhiba = icon?.includes("Mawhiba_logo");
-  const iconSize = isHarvard ? "h-24" : isMawhiba ? "h-20" : "h-14";
+  const iconSize = isHarvard ? "h-28" : isMawhiba ? "h-24" : "h-14";
 
   return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
