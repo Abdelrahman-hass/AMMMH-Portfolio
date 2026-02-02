@@ -13,11 +13,12 @@ import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
 const EducationCard = ({ education, index, lang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const isLeft = index % 2 === 0;
-  const title = t(`education.${education.id}.title`);
-  const company = t(`education.${education.id}.company`);
-  const date = t(`education.${education.id}.date`);
-  const points = t(`education.${education.id}.points`);
+  const title = safeT(`education.${education.id}.title`);
+  const company = safeT(`education.${education.id}.company`);
+  const date = safeT(`education.${education.id}.date`);
+  const points = safeT(`education.${education.id}.points`);
   return (
     <div className="relative">
       <VerticalTimelineElement
@@ -85,6 +86,7 @@ const EducationCard = ({ education, index, lang, t }) => {
 };
 
 const Education = ({ lang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const mainControls = useAnimation();
@@ -106,7 +108,7 @@ const Education = ({ lang, t }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {t("sections.education.sub")}
+          {safeT("sections.education.sub")}
         </p>
       </motion.div>
 
@@ -119,7 +121,7 @@ const Education = ({ lang, t }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {t("sections.education.title")}
+          {safeT("sections.education.title")}
         </h2>
       </motion.div>
 

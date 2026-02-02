@@ -36,6 +36,7 @@ const platformLinks = [
 
 const Experience = ({ lang, t }) => {
   const isArabic = lang === "ar";
+  const safeT = typeof t === "function" ? t : (key) => key;
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const mainControls = useAnimation();
@@ -57,7 +58,7 @@ const Experience = ({ lang, t }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {t("sections.aboutMySchool.sub")}
+          {safeT("sections.aboutMySchool.sub")}
         </p>
       </motion.div>
 
@@ -70,7 +71,7 @@ const Experience = ({ lang, t }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {t("sections.aboutMySchool.title")}
+          {safeT("sections.aboutMySchool.title")}
         </h2>
       </motion.div>
 
@@ -85,10 +86,10 @@ const Experience = ({ lang, t }) => {
               isArabic ? "text-right" : "text-left"
             }`}
           >
-            <h3 className="text-white text-[24px] font-bold">{t("aboutMySchool.title")}</h3>
-            <p className="text-secondary text-[16px] mt-2">{t("aboutMySchool.subtitle")}</p>
+            <h3 className="text-white text-[24px] font-bold">{safeT("aboutMySchool.title")}</h3>
+            <p className="text-secondary text-[16px] mt-2">{safeT("aboutMySchool.subtitle")}</p>
             <p className="text-white-100 text-[15px] mt-6 leading-7">
-              {t("aboutMySchool.description")}
+              {safeT("aboutMySchool.description")}
             </p>
           </motion.div>
 
@@ -100,7 +101,7 @@ const Experience = ({ lang, t }) => {
             className="w-full lg:w-[320px] bg-tertiary/80 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)]"
           >
             <h3 className="text-white text-[20px] font-bold text-center">
-              {t("aboutMySchool.platforms")}
+              {safeT("aboutMySchool.platforms")}
             </h3>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-5">
               {platformLinks.map(({ label, href, Icon }) => (

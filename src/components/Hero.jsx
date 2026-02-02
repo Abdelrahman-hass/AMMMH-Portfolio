@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 
 const Hero = ({ lang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const highlightClasses = {
     Harvard: "text-red-300",
     "6+": "text-blue-300",
@@ -151,13 +152,14 @@ const Hero = ({ lang, t }) => {
       lineHighlights: isArabic ? [["الذكاء الاصطناعي"], ["توفير الوقت"]] : [["AI"], ["save time"]],
     },
   ].map((card) => {
-    const base = t(`hero.cards.${card.id}`);
+    const base = safeT(`hero.cards.${card.id}`);
+    const fallback = typeof base === "string" ? {} : base;
     return {
       ...card,
-      title: base.title,
-      main: base.main,
-      lines: base.lines || [],
-      button: base.button,
+      title: fallback.title,
+      main: fallback.main,
+      lines: fallback.lines || [],
+      button: fallback.button,
     };
   });
 
@@ -174,19 +176,19 @@ const Hero = ({ lang, t }) => {
                 isArabic ? "" : "uppercase tracking-[0.3em]"
               }`}
             >
-              {t("hero.label")}
+              {safeT("hero.label")}
             </span>
             <span className="text-[12px] text-secondary border border-white/10 px-3 py-1 rounded-full bg-tertiary/40">
-              {t("hero.badge")}
+              {safeT("hero.badge")}
             </span>
           </div>
 
           <h1 className="text-white text-[30px] sm:text-[40px] md:text-[48px] font-bold leading-tight max-w-4xl">
-            {t("hero.headline")}
+            {safeT("hero.headline")}
           </h1>
 
           <p className="text-white-100 text-[15px] sm:text-[17px] max-w-3xl">
-            {t("hero.subline")}
+            {safeT("hero.subline")}
           </p>
         </div>
 

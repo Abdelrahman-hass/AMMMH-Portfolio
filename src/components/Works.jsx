@@ -19,6 +19,7 @@ const ProjectCard = ({
   lang,
   t,
 }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   return (
     <motion.div variants={animate}>
       <Tilt
@@ -59,7 +60,7 @@ const ProjectCard = ({
         <div className="mt-5 flex-1">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className={`mt-2 text-secondary text-[14px] ${lang === "ar" ? "text-right" : "text-left"}`}>
-            {descriptionKey ? t(descriptionKey) : ""}
+            {descriptionKey ? safeT(descriptionKey) : ""}
           </p>
         </div>
 
@@ -74,7 +75,7 @@ const ProjectCard = ({
         {live_project_link && (
           <a href={live_project_link} target="_blank" rel="noopener noreferrer" className="mt-auto">
             <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
-              {t("buttons.viewProject")}
+              {safeT("buttons.viewProject")}
             </button>
           </a>
         )}
@@ -84,6 +85,7 @@ const ProjectCard = ({
 };
 
 const Works = ({ lang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" }); // Adjust amount as needed
   const mainControls = useAnimation();
@@ -105,7 +107,7 @@ const Works = ({ lang, t }) => {
         }}
       >
         <h3 className={`${styles.sectionSubText} text-center`}>
-          {t("sections.projects.sub")}
+          {safeT("sections.projects.sub")}
         </h3>
       </motion.div>
 
@@ -118,7 +120,7 @@ const Works = ({ lang, t }) => {
         }}
       >
         <h3 className={`${styles.sectionHeadText} text-center`}>
-          {t("sections.projects.title")}
+          {safeT("sections.projects.title")}
         </h3>
       </motion.div>
 

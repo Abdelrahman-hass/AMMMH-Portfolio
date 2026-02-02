@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 
 const Navbar = ({ lang, setLang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -13,17 +14,17 @@ const Navbar = ({ lang, setLang, t }) => {
     ...nav,
     title:
       nav.id === "executive-summary"
-        ? t("nav.executiveSummary")
+        ? safeT("nav.executiveSummary")
         : nav.id === "projects"
-        ? t("nav.projects")
+        ? safeT("nav.projects")
         : nav.id === "certifications"
-        ? t("nav.certifications")
+        ? safeT("nav.certifications")
         : nav.id === "school-certificates"
-        ? t("nav.schoolCertificates")
+        ? safeT("nav.schoolCertificates")
         : nav.id === "education"
-        ? t("nav.education")
+        ? safeT("nav.education")
         : nav.id === "about-my-school"
-        ? t("nav.aboutMySchool")
+        ? safeT("nav.aboutMySchool")
         : nav.title,
   }));
 

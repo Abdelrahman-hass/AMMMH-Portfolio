@@ -13,10 +13,11 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 const SchoolCertificateCard = ({ id, icon, credential, lang, t }) => {
-  const displayTitle = t(`schoolCertificates.items.${id}.title`);
-  const displayType = t(`schoolCertificates.items.${id}.type`);
-  const displayDate = t(`schoolCertificates.items.${id}.date`);
-  const displayPoints = t(`schoolCertificates.items.${id}.points`);
+  const safeT = typeof t === "function" ? t : (key) => key;
+  const displayTitle = safeT(`schoolCertificates.items.${id}.title`);
+  const displayType = safeT(`schoolCertificates.items.${id}.type`);
+  const displayDate = safeT(`schoolCertificates.items.${id}.date`);
+  const displayPoints = safeT(`schoolCertificates.items.${id}.points`);
 
   return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
@@ -51,7 +52,7 @@ const SchoolCertificateCard = ({ id, icon, credential, lang, t }) => {
         rel="noopener noreferrer"
         className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
       >
-        {t("buttons.viewCertificate")}
+        {safeT("buttons.viewCertificate")}
       </a>
     </div>
   </div>
@@ -59,6 +60,7 @@ const SchoolCertificateCard = ({ id, icon, credential, lang, t }) => {
 };
 
 const SchoolCertificates = ({ lang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -94,7 +96,7 @@ const SchoolCertificates = ({ lang, t }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {t("sections.schoolCertificates.sub")}
+          {safeT("sections.schoolCertificates.sub")}
         </p>
       </motion.div>
 
@@ -107,7 +109,7 @@ const SchoolCertificates = ({ lang, t }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {t("sections.schoolCertificates.title")}
+          {safeT("sections.schoolCertificates.title")}
         </h2>
       </motion.div>
 

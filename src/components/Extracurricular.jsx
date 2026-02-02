@@ -18,13 +18,14 @@ const CertificationCard = ({
   lang,
   t,
 }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const isHarvard = icon?.includes("Harvard_logo");
   const isMawhiba = icon?.includes("Mawhiba_logo");
   const iconSize = isHarvard ? "h-28" : isMawhiba ? "h-24" : "h-14";
-  const displayTitle = t(`extracurricular.items.${id}.title`);
-  const displayType = t(`extracurricular.items.${id}.type`);
-  const displayDate = t(`extracurricular.items.${id}.date`);
-  const displayPoints = t(`extracurricular.items.${id}.points`);
+  const displayTitle = safeT(`extracurricular.items.${id}.title`);
+  const displayType = safeT(`extracurricular.items.${id}.type`);
+  const displayDate = safeT(`extracurricular.items.${id}.date`);
+  const displayPoints = safeT(`extracurricular.items.${id}.points`);
 
   return (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
@@ -59,7 +60,7 @@ const CertificationCard = ({
         rel="noopener noreferrer"
         className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
       >
-        {t("buttons.viewCertificate")}
+        {safeT("buttons.viewCertificate")}
       </a>
     </div>
   </div>
@@ -67,6 +68,7 @@ const CertificationCard = ({
 };
 
 const Extracurricular = ({ lang, t }) => {
+  const safeT = typeof t === "function" ? t : (key) => key;
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -102,7 +104,7 @@ const Extracurricular = ({ lang, t }) => {
         }}
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          {t("sections.certifications.sub")}
+          {safeT("sections.certifications.sub")}
         </p>
       </motion.div>
 
@@ -115,7 +117,7 @@ const Extracurricular = ({ lang, t }) => {
         }}
       >
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          {t("sections.certifications.title")}
+          {safeT("sections.certifications.title")}
         </h2>
       </motion.div>
 
