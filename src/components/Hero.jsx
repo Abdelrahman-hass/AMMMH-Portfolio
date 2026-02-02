@@ -8,6 +8,8 @@ const Hero = () => {
     Projects: "text-blue-300",
     Certificates: "text-violet-300",
     "99.5%+": "text-purple-300",
+    "99%+": "text-purple-300",
+    Consistency: "text-purple-300",
     Cybersecurity: "text-cyan-300",
     Cyber: "text-cyan-300",
     Robotics: "text-emerald-300",
@@ -19,6 +21,9 @@ const Hero = () => {
     Systems: "text-indigo-300",
     intelligent: "text-purple-300",
     "2": "text-amber-300",
+    "save time": "text-emerald-300",
+    "useful systems": "text-cyan-300",
+    improvement: "text-teal-300",
   };
 
   const scrollToId = (id) => {
@@ -65,10 +70,10 @@ const Hero = () => {
       title: "Academic Results",
       logo: "/Logos/Qyem_logo.png",
       main: "99%+\u00A0Consistency",
-      mainHighlights: ["99.5%+"],
+      mainHighlights: ["99%+", "Consistency"],
       lines: [
         { text: "Target: 99.5%+ yearly average", highlights: ["99.5%+"] },
-        { text: "Focused study and steady improvement" },
+        { text: "Focused study and steady improvement", highlights: ["improvement"] },
       ],
       highlight: "99%+",
       button: "View School Certificates",
@@ -91,7 +96,7 @@ const Hero = () => {
       mainHighlights: ["AI", "Cyber", "Systems"],
       lines: [
         { text: "Goal: Build intelligent learning platforms", highlights: ["intelligent"] },
-        { text: "Focus on safe, useful systems" },
+        { text: "Focus on safe, useful systems", highlights: ["useful systems"] },
       ],
       highlight: "AI",
     },
@@ -101,7 +106,7 @@ const Hero = () => {
       main: "Smart Learning",
       lines: [
         { text: "Use AI to research and find reliable information faster", highlights: ["AI"] },
-        { text: "Apply AI to real tasks and save time while learning" },
+        { text: "Apply AI to real tasks and save time while learning", highlights: ["save time"] },
       ],
       highlight: "AI",
     },
@@ -146,7 +151,9 @@ const Hero = () => {
                   <img
                     src={card.logo}
                     alt={`${card.title} logo`}
-                    className="h-20 w-auto object-contain"
+                    className={`${
+                      card.title === "Academic Results" ? "h-20" : "h-24 md:h-28"
+                    } w-auto object-contain`}
                     loading="lazy"
                     decoding="async"
                   />
