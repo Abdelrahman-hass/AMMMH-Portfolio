@@ -202,7 +202,7 @@ const Hero = () => {
                     alt={`${card.title} logo`}
                     className={`${
                       card.title === "Academic Results"
-                        ? "h-20 md:h-22"
+                        ? "h-22 md:h-24"
                         : "h-36 md:h-40"
                     } w-auto object-contain`}
                     loading="lazy"
