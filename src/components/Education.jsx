@@ -49,20 +49,20 @@ const EducationCard = ({ education, index, lang, t }) => {
           </div>
         }
       >
-        <div dir="ltr">
-          <h3 className="text-white text-[24px] font-bold text-left">{title}</h3>
-          <p className="text-secondary text-[16px] font-semibold text-left" style={{ margin: 0 }}>
+        <div dir={lang === "ar" ? "rtl" : "ltr"}>
+          <h3 className={`text-white text-[24px] font-bold ${lang === "ar" ? "text-right" : "text-left"}`}>{title}</h3>
+          <p className={`text-secondary text-[16px] font-semibold ${lang === "ar" ? "text-right" : "text-left"}`} style={{ margin: 0 }}>
             {company}
           </p>
         </div>
 
-        <ul className="mt-5 list-disc space-y-2 ml-5 text-left" dir="ltr">
+        <ul className={`mt-5 list-disc space-y-2 ${lang === "ar" ? "ml-5 text-right" : "ml-5 text-left"}`} dir={lang === "ar" ? "ltr" : "ltr"}>
           {points.map((point, index) => (
             <li
               key={`experience-point-${index}`}
               className="text-white-100 text-[14px] pl-1 tracking-wider"
             >
-              {point}
+              <span dir={lang === "ar" ? "rtl" : "ltr"}>{point}</span>
             </li>
           ))}
         </ul>
