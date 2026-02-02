@@ -158,7 +158,7 @@ const Hero = () => {
                     src={card.logo}
                     alt={`${card.title} logo`}
                     className={`${
-                      card.title === "Academic Results" ? "h-20" : "h-24 md:h-28"
+                      card.title === "Academic Results" ? "h-22 md:h-24" : "h-28 md:h-32"
                     } w-auto object-contain`}
                     loading="lazy"
                     decoding="async"
