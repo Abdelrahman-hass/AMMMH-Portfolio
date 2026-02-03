@@ -140,7 +140,7 @@ const Navbar = ({ lang, setLang, t }) => {
           </motion.p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-6 lg:gap-8 text-[16px] lg:text-[18px] whitespace-nowrap'>
           {localizedNavLinks.map((nav) => (
             <motion.li
               key={nav.id}
@@ -152,7 +152,7 @@ const Navbar = ({ lang, setLang, t }) => {
                 href={`#${nav.id}`}
                 className={`${
                   active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300`}
+                } hover:text-white text-[16px] lg:text-[18px] font-medium cursor-pointer transition-colors duration-300`}
                 onClick={(event) => handleNavClick(event, nav.id, nav.title)}
               >
                 {nav.title}
