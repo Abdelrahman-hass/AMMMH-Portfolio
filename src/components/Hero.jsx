@@ -144,7 +144,7 @@ const Hero = ({ lang, t }) => {
       listClassName: isArabic ? "space-y-2.5 list-inside text-center sm:text-right sm:pr-5 leading-7 text-[13px] sm:text-[15px]" : "space-y-2.5 pl-5 text-left leading-6",
       mainHighlights: isArabic ? ["فضية", "116"] : ["Silver", "116"],
       lineHighlights: isArabic
-        ? [["أول ميدالية فضية", "مدارس الإخاء"], ["مسابقة الكنغر"], ["116", "117"], ["درجة واحدة", "الذهب"]]
+        ? [["أول ميدالية فضية", "مدارس الإخاء", "مسابقة الكنغر"], ["116", "117"], ["درجة واحدة", "الذهب"]]
         : [["First silver medalist", "Al Ekhaa"], ["Math Kangaroo"], ["116", "117"], ["1 mark", "Gold"]],
     },
     {

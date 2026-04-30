@@ -233,6 +233,18 @@ export const translations = {
           date: "Issued: See certificate",
           points: ["School recognition certificate.", "Awarded for Quran competition."],
         },
+        ramadanQuran2026: {
+          title: "Ramadan Quran Competition Certificate",
+          type: "School Achievement",
+          date: "Issued: See certificate",
+          points: ["School recognition certificate.", "Awarded for Quran competition in Ramadan."],
+        },
+        ramadanPerfectPerformance: {
+          title: "Perfect Performance in Ramadan",
+          type: "School Achievement",
+          date: "Issued: See certificate",
+          points: ["School recognition certificate.", "Recognizes perfect performance during Ramadan."],
+        },
         grade8FirstTerm2nd: {
           title: "Grade 8 - 2nd Position (First Term)",
           type: "School Achievement",
@@ -307,10 +319,9 @@ export const translations = {
         },
         kangaroo: {
           title: "إنجاز مسابقة الكنغر",
-          main: "ميدالية فضية\u00A0•\u00A0116",
+          main: "ميدالية فضية • 116",
           lines: [
-            "أول ميدالية فضية على مستوى مدارس الإخاء.",
-            "منذ بداية مشاركة المدرسة في مسابقة الكنغر.",
+            "أول ميدالية فضية على مستوى مدارس الإخاء منذ بداية مشاركة المدرسة في مسابقة الكنغر.",
             "حققت 116 درجة، والذهب يبدأ من 117.",
             "فارق درجة واحدة فقط عن الذهب.",
           ],
@@ -498,6 +509,18 @@ export const translations = {
           type: "إنجاز مدرسي",
           date: "صادرة: عرض الشهادة",
           points: ["شهادة تقدير مدرسية.", "تكريم لمسابقة القرآن."],
+        },
+        ramadanQuran2026: {
+          title: "شهادة مسابقة القرآن في رمضان",
+          type: "إنجاز مدرسي",
+          date: "صادرة: عرض الشهادة",
+          points: ["شهادة تقدير مدرسية.", "تكريم لمسابقة القرآن في رمضان."],
+        },
+        ramadanPerfectPerformance: {
+          title: "الأداء المثالي في شهر رمضان",
+          type: "إنجاز مدرسي",
+          date: "صادرة: عرض الشهادة",
+          points: ["شهادة تقدير مدرسية.", "تكريم للأداء المثالي خلال شهر رمضان."],
         },
         grade8FirstTerm2nd: {
           title: "الصف الثامن - المركز الثاني (الترم الأول)",
