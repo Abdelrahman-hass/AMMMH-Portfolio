@@ -273,6 +273,8 @@ export const translations = {
       platforms: "Official Platforms",
     },
     projects: {
+      edutab:
+        "Al Ekhaa Edu-tab is an educational tablet concept for school use, showing the interface, learning flow, and student-focused screens through project photos and videos.",
       aist:
         "AIST (Advanced Intelligent Smart Desk) is a next-generation interactive desktop system inspired by futuristic HUD technology. It combines AI, gesture control, 3D visualization, voice interaction, and advanced UI into one intelligent platform.",
       car:
@@ -319,7 +321,7 @@ export const translations = {
         },
         kangaroo: {
           title: "إنجاز مسابقة الكنغر",
-          main: "ميدالية فضية • 116",
+          main: "ميدالية\u00A0\u00A0فضية\u00A0•\u00A0116",
           lines: [
             "أول ميدالية فضية على مستوى مدارس الإخاء منذ بداية مشاركة المدرسة في مسابقة الكنغر.",
             "حققت 116 درجة، والذهب يبدأ من 117.",
@@ -550,6 +552,8 @@ export const translations = {
       platforms: "المنصات الرسمية",
     },
     projects: {
+      edutab:
+        "Al Ekhaa Edu-tab هو تصور لجهاز لوحي تعليمي للاستخدام المدرسي، يعرض الواجهة وتجربة التعلم وشاشات مخصصة للطلاب من خلال صور وفيديوهات المشروع.",
       aist:
         "نظام AIST هو مكتب تفاعلي من الجيل القادم مستوحى من واجهات HUD المستقبلية. يجمع الذكاء الاصطناعي والتحكم بالإيماءات والتصور ثلاثي الأبعاد والتفاعل الصوتي وواجهة متقدمة في منصة واحدة.",
       car:

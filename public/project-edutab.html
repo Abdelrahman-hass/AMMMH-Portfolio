@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="/Logos/AMMMH_logo.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al Ekhaa Edu-tab Gallery</title>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #0a0e27; color: #ffffff; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 32px 20px 48px; }
+      h1 { margin: 0 0 20px; font-size: 28px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+      .card { background: rgba(29, 24, 54, 0.9); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+      img, video { width: 100%; border-radius: 12px; display: block; }
+      .grid img { cursor: zoom-in; }
+      .section-title { margin: 24px 0 12px; font-size: 20px; }
+      .lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(5, 7, 20, 0.92); z-index: 9999; padding: 24px; }
+      .lightbox.show { display: flex; }
+      .lightbox img { max-width: 95vw; max-height: 90vh; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+      .lightbox-close { position: absolute; top: 16px; right: 20px; border: none; background: transparent; color: #ffffff; font-size: 32px; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Al Ekhaa Edu-tab Gallery</h1>
+      <div class="section-title">Images</div>
+      <div class="grid">
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0556.png" alt="Al Ekhaa Edu-tab image 0556" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0557.png" alt="Al Ekhaa Edu-tab image 0557" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0558.png" alt="Al Ekhaa Edu-tab image 0558" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0559.png" alt="Al Ekhaa Edu-tab image 0559" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0560.png" alt="Al Ekhaa Edu-tab image 0560" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0561.png" alt="Al Ekhaa Edu-tab image 0561" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0562.png" alt="Al Ekhaa Edu-tab image 0562" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0563.png" alt="Al Ekhaa Edu-tab image 0563" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0564.png" alt="Al Ekhaa Edu-tab image 0564" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0565.png" alt="Al Ekhaa Edu-tab image 0565" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0566.png" alt="Al Ekhaa Edu-tab image 0566" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0567.png" alt="Al Ekhaa Edu-tab image 0567" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0568.png" alt="Al Ekhaa Edu-tab image 0568" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0569.png" alt="Al Ekhaa Edu-tab image 0569" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0570.png" alt="Al Ekhaa Edu-tab image 0570" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/img-0571.png" alt="Al Ekhaa Edu-tab image 0571" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/field-1.jpeg" alt="Al Ekhaa Edu-tab field photo 1" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/field-2.jpeg" alt="Al Ekhaa Edu-tab field photo 2" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/field-3.jpeg" alt="Al Ekhaa Edu-tab field photo 3" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/field-4.jpeg" alt="Al Ekhaa Edu-tab field photo 4" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/field-5.jpeg" alt="Al Ekhaa Edu-tab field photo 5" /></div>
+        <div class="card"><img loading="lazy" decoding="async" src="/Projects/EduTab/images/field-6.jpeg" alt="Al Ekhaa Edu-tab field photo 6" /></div>
+      </div>
+      <div class="section-title">Videos</div>
+      <div class="grid">
+        <div class="card"><video controls preload="metadata" src="/Projects/EduTab/videos/demo-1.mp4"></video></div>
+        <div class="card"><video controls preload="metadata" src="/Projects/EduTab/videos/demo-2.mp4"></video></div>
+        <div class="card"><video controls preload="metadata" src="/Projects/EduTab/videos/demo-3.mp4"></video></div>
+      </div>
+    </div>
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close image">×</button>
+      <img loading="lazy" decoding="async" id="lightbox-image" alt="Expanded view" />
+    </div>
+    <script>
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      const openLightbox = (src) => {
+        lightboxImage.src = src;
+        lightbox.classList.add('show');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('show');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+      };
+
+      document.querySelectorAll('.grid img').forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img.src));
+      });
+
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.classList.contains('show')) {
+          closeLightbox();
+        }
+      });
+    </script>
+  </body>
+</html>

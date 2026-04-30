@@ -834,6 +834,18 @@ const schoolCertificates = [
 
 const projects = [
   {
+    name: "Al Ekhaa Edu-tab",
+    descriptionKey: "projects.edutab",
+    tags: [
+      { name: "Education", color: "blue-text-gradient" },
+      { name: "Prototype", color: "green-text-gradient" },
+      { name: "UI", color: "pink-text-gradient" },
+    ],
+    image: "/Projects/EduTab/images/img-0556.png",
+    source_code_link: "",
+    live_project_link: "/project-edutab.html",
+  },
+  {
     name: "AIST (Advanced Intelligent Smart Desk)",
     descriptionKey: "projects.aist",
     tags: [

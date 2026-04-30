@@ -273,7 +273,7 @@ const Hero = ({ lang, t }) => {
                   />
                 </div>
                 <h3 className="text-white text-[16px] md:text-[18px] font-semibold min-h-[28px] flex items-center justify-center text-center leading-snug tracking-wide w-full">
-                  {card.title}
+                  <span style={isArabic ? { wordSpacing: "0.18em" } : undefined}>{card.title}</span>
                 </h3>
               </div>
 
