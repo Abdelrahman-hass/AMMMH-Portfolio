@@ -11,12 +11,12 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = lang
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr"
+    document.documentElement.dir = "ltr"
   }, [lang])
 
   return (
       <BrowserRouter>
-        <div className='relative z-0 bg-primary' dir={lang === "ar" ? "rtl" : "ltr"} lang={lang}>
+        <div className='relative z-0 bg-primary' dir="ltr" lang={lang}>
           <div className="div bg-hero-pattern bg-cover bg-no-repeat bg-center">
             <Navbar lang={lang} setLang={setLang} t={t} />
             <Hero lang={lang} t={t} />

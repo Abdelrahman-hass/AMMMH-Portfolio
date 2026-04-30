@@ -34,7 +34,8 @@ export const translations = {
           title: "Math Kangaroo Achievement",
           main: "Silver Medal\u00A0•\u00A0116",
           lines: [
-            "First silver medalist across Al Ekhaa Schools since its Math Kangaroo participation began.",
+            "First silver medalist across Al Ekhaa Schools.",
+            "Since the school first joined Math Kangaroo.",
             "Scored 116 points; gold started at 117.",
             "Only 1 mark away from Gold.",
           ],
@@ -308,8 +309,9 @@ export const translations = {
           title: "إنجاز مسابقة الكنغر",
           main: "ميدالية فضية\u00A0•\u00A0116",
           lines: [
-            "أول ميدالية فضية على مستوى مدارس الإخاء منذ بداية مشاركتها في مسابقة الكنغر.",
-            "حققت 116 درجة، وكانت درجة الذهب من 117.",
+            "أول ميدالية فضية على مستوى مدارس الإخاء.",
+            "منذ بداية مشاركة المدرسة في مسابقة الكنغر.",
+            "حققت 116 درجة، والذهب يبدأ من 117.",
             "فارق درجة واحدة فقط عن الذهب.",
           ],
         },

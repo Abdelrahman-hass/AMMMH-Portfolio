@@ -137,6 +137,17 @@ const Hero = ({ lang, t }) => {
 
   const dashboardCards = [
     {
+      id: "kangaroo",
+      logo: "/new_edits/math-kangaroo-silver-2026.jpeg",
+      imageWrapperClassName: "flex justify-center items-center mb-4 h-44 sm:h-48 md:h-52",
+      imageClassName: "h-44 sm:h-48 md:h-52 max-w-full object-contain mix-blend-screen",
+      listClassName: isArabic ? "space-y-2.5 list-inside text-center sm:text-right sm:pr-5 leading-7 text-[13px] sm:text-[15px]" : "space-y-2.5 pl-5 text-left leading-6",
+      mainHighlights: isArabic ? ["فضية", "116"] : ["Silver", "116"],
+      lineHighlights: isArabic
+        ? [["أول ميدالية فضية", "مدارس الإخاء"], ["مسابقة الكنغر"], ["116", "117"], ["درجة واحدة", "الذهب"]]
+        : [["First silver medalist", "Al Ekhaa"], ["Math Kangaroo"], ["116", "117"], ["1 mark", "Gold"]],
+    },
+    {
       id: "harvard",
       logo: "/Logos/Harvard_logo.png",
       mainHighlights: isArabic ? ["8", "الشهادات"] : ["8", "Certificates"],
@@ -155,15 +166,6 @@ const Hero = ({ lang, t }) => {
       mainHighlights: isArabic ? ["+99%"] : ["99%+"],
       lineHighlights: isArabic ? [["99.5%"], []] : [["99.5%"], []],
       target: "school-certificates",
-    },
-    {
-      id: "kangaroo",
-      logo: "/new_edits/math-kangaroo-silver-2026.jpeg",
-      imageClassName: "h-28 md:h-32 rounded-xl object-cover border border-white/10 shadow-[0_10px_24px_rgba(0,0,0,0.28)]",
-      mainHighlights: isArabic ? ["فضية", "116"] : ["Silver", "116"],
-      lineHighlights: isArabic
-        ? [["أول ميدالية فضية", "مدارس الإخاء"], ["116", "117"], ["درجة واحدة", "الذهب"]]
-        : [["First silver medalist", "Al Ekhaa"], ["116", "117"], ["1 mark", "Gold"]],
     },
     {
       id: "output",
@@ -205,10 +207,14 @@ const Hero = ({ lang, t }) => {
   return (
     <section
       id="executive-summary"
-      className="relative w-full min-h-screen mx-auto pb-24 pt-[140px] sm:pt-[160px]"
+      className="relative w-full max-w-full overflow-x-hidden min-h-screen mx-auto pb-24 pt-[140px] sm:pt-[160px]"
+      dir="ltr"
     >
-      <div className={`max-w-7xl mx-auto ${styles.paddingX}`}>
-        <div className={`flex flex-col gap-6 ${isArabic ? "text-right" : "text-left"}`}>
+      <div className={`w-full max-w-7xl mx-auto ${styles.paddingX}`}>
+        <div
+          dir={isArabic ? "rtl" : "ltr"}
+          className={`flex flex-col gap-6 ${isArabic ? "text-center sm:text-right" : "text-left"}`}
+        >
           <div className="flex flex-wrap items-center gap-3">
             <span
               className={`text-[12px] text-secondary font-semibold ${
@@ -222,14 +228,14 @@ const Hero = ({ lang, t }) => {
             </span>
           </div>
 
-          <h1 className="text-white text-[30px] sm:text-[40px] md:text-[48px] font-bold leading-tight max-w-4xl">
+          <h1 className="mx-auto sm:mx-0 text-white text-[22px] xs:text-[30px] sm:text-[40px] md:text-[48px] font-bold leading-tight max-w-[calc(100vw-48px)] sm:max-w-4xl break-words">
             {renderWithHighlights(
               safeT("hero.headline"),
               isArabic ? ["مهارات تقنية", "عالية التأثير"] : ["modern", "high-impact"]
             )}
           </h1>
 
-          <p className="text-white-100 text-[15px] sm:text-[17px] max-w-3xl">
+          <p className="mx-auto sm:mx-0 text-white-100 text-[14px] sm:text-[17px] max-w-[calc(100vw-48px)] sm:max-w-3xl">
             {renderWithHighlights(
               safeT("hero.subline"),
               isArabic
@@ -239,17 +245,18 @@ const Hero = ({ lang, t }) => {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+        <div className="mt-10 grid w-full max-w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-7">
           {dashboardCards.map((card, index) => (
             <motion.div
               key={card.title}
+              dir={isArabic ? "rtl" : "ltr"}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-tertiary/80 backdrop-blur-xl p-7 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)] flex flex-col justify-between min-h-[380px]"
+              className="w-full max-w-[calc(100vw-48px)] md:max-w-full bg-tertiary/80 backdrop-blur-xl p-5 sm:p-7 rounded-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)] flex flex-col justify-between min-h-[380px]"
             >
               <div className="flex flex-col items-center text-center min-h-[104px]">
-                <div className="flex justify-center items-center mb-3 h-32">
+                <div className={card.imageWrapperClassName || "flex justify-center items-center mb-3 h-32"}>
                   <img
                     src={card.logo}
                     alt={`${card.title} logo`}
@@ -265,19 +272,19 @@ const Hero = ({ lang, t }) => {
                     decoding="async"
                   />
                 </div>
-                <h3 className="text-white text-[16px] md:text-[18px] font-semibold h-[28px] flex items-center justify-center text-center leading-none tracking-wide w-full truncate">
+                <h3 className="text-white text-[16px] md:text-[18px] font-semibold min-h-[28px] flex items-center justify-center text-center leading-snug tracking-wide w-full">
                   {card.title}
                 </h3>
               </div>
 
-              <div className="text-white text-[24px] md:text-[26px] font-bold text-center h-[64px] flex items-center justify-center leading-tight line-clamp-2">
+              <div className="text-white text-[22px] sm:text-[24px] md:text-[26px] font-bold text-center min-h-[64px] flex items-center justify-center leading-tight">
                 {renderWithHighlights(card.main, card.mainHighlights || [])}
               </div>
 
               <div className="flex flex-col justify-between min-h-[130px]">
                 <ul
-                  className={`space-y-4 text-secondary text-[15px] md:text-[16px] list-disc leading-relaxed ${
-                    isArabic ? "pr-6 text-right" : "pl-6 text-left"
+                  className={`text-secondary text-[14px] sm:text-[15px] md:text-[16px] list-disc ${
+                    card.listClassName || (isArabic ? "space-y-4 list-inside text-center sm:list-outside sm:pr-6 sm:text-right leading-relaxed" : "space-y-4 pl-6 text-left leading-relaxed")
                   }`}
                 >
                   {card.lines.map((line, lineIndex) => (
