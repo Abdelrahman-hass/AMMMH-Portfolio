@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { translations } from "./translations";
 
-const DEFAULT_LANG = "en";
+const DEFAULT_LANG = "ar";
+const FALLBACK_LANG = "en";
+const SUPPORTED_LANGS = new Set(["en", "ar"]);
 
 const getFromStorage = () => {
   if (typeof window === "undefined") return DEFAULT_LANG;
-  return localStorage.getItem("lang") || DEFAULT_LANG;
+  const storedLang = localStorage.getItem("lang");
+  return SUPPORTED_LANGS.has(storedLang) ? storedLang : DEFAULT_LANG;
 };
 
 const setToStorage = (lang) => {
@@ -29,7 +32,7 @@ export const useI18n = () => {
       const value = getNested(translations[lang], key);
       if (value !== undefined) return value;
 
-      const fallback = getNested(translations[DEFAULT_LANG], key);
+      const fallback = getNested(translations[FALLBACK_LANG], key);
       if (process.env.NODE_ENV !== "production") {
         console.warn(`Missing translation key: ${key}`);
       }
