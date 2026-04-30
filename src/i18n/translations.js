@@ -30,6 +30,15 @@ export const translations = {
           lines: ["Target: 99.5% yearly average", "Focused, measurable improvement"],
           button: "View School Certificates",
         },
+        kangaroo: {
+          title: "Math Kangaroo Achievement",
+          main: "Silver Medal\u00A0•\u00A0116",
+          lines: [
+            "First silver medalist across Al Ekhaa Schools since its Math Kangaroo participation began.",
+            "Scored 116 points; gold started at 117.",
+            "Only 1 mark away from Gold.",
+          ],
+        },
         output: {
           title: "Tech Output",
           main: "6+\u00A0Projects",
@@ -294,6 +303,15 @@ export const translations = {
           main: "+99%\u00A0استمرارية",
           lines: ["الهدف: 99.5% متوسط سنوي", "تحسن منتظم وقابل للقياس"],
           button: "عرض شهادات المدرسة",
+        },
+        kangaroo: {
+          title: "إنجاز مسابقة الكنغر",
+          main: "ميدالية فضية\u00A0•\u00A0116",
+          lines: [
+            "أول ميدالية فضية على مستوى مدارس الإخاء منذ بداية مشاركتها في مسابقة الكنغر.",
+            "حققت 116 درجة، وكانت درجة الذهب من 117.",
+            "فارق درجة واحدة فقط عن الذهب.",
+          ],
         },
         output: {
           title: "الإنتاج التقني",

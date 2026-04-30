@@ -68,9 +68,17 @@ const Hero = ({ lang, t }) => {
     "ذكاء": "text-purple-300",
     "أمن": "text-cyan-300",
     "أنظمة": "text-indigo-300",
-    Harvard: "text-red-300",
     edX: "text-red-300",
     MIT: "text-red-300",
+    "Math Kangaroo": "text-amber-300",
+    "Silver Medal": "text-slate-200",
+    Silver: "text-slate-200",
+    Gold: "text-amber-300",
+    "Al Ekhaa": "text-purple-200",
+    "الكنغر": "text-amber-300",
+    "فضية": "text-slate-200",
+    "الذهب": "text-amber-300",
+    "مدارس الإخاء": "text-purple-200",
   };
 
   const numberRegex = /(\d+(?:\.\d+)?%?\+?)/g;
@@ -147,6 +155,15 @@ const Hero = ({ lang, t }) => {
       mainHighlights: isArabic ? ["+99%"] : ["99%+"],
       lineHighlights: isArabic ? [["99.5%"], []] : [["99.5%"], []],
       target: "school-certificates",
+    },
+    {
+      id: "kangaroo",
+      logo: "/new_edits/math-kangaroo-silver-2026.jpeg",
+      imageClassName: "h-28 md:h-32 rounded-xl object-cover border border-white/10 shadow-[0_10px_24px_rgba(0,0,0,0.28)]",
+      mainHighlights: isArabic ? ["فضية", "116"] : ["Silver", "116"],
+      lineHighlights: isArabic
+        ? [["أول ميدالية فضية", "مدارس الإخاء"], ["116", "117"], ["درجة واحدة", "الذهب"]]
+        : [["First silver medalist", "Al Ekhaa"], ["116", "117"], ["1 mark", "Gold"]],
     },
     {
       id: "output",
@@ -236,11 +253,14 @@ const Hero = ({ lang, t }) => {
                   <img
                     src={card.logo}
                     alt={`${card.title} logo`}
-                    className={`${
-                      card.title === "Academic Results"
-                        ? "h-22 md:h-24"
-                        : "h-36 md:h-40"
-                    } w-auto object-contain`}
+                    className={
+                      card.imageClassName ||
+                      `${
+                        card.title === "Academic Results"
+                          ? "h-22 md:h-24"
+                          : "h-36 md:h-40"
+                      } w-auto object-contain`
+                    }
                     loading="lazy"
                     decoding="async"
                   />
